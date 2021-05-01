@@ -1,0 +1,13 @@
+{
+  "name": "School-Admin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "server": "json-server --watch db.json --port 5000 --middlewares ./range.js",
+    "client": "yarn start --prefix client",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
+  },
+  "repository": "https://github.com/jeffubayi/schhol-admin.git",
+  "author": "jeffubayi <jeffubayi@gmail.com>",
+  "license": "MIT"
+}
