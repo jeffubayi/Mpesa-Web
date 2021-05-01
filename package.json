@@ -9,5 +9,10 @@
   },
   "repository": "https://github.com/jeffubayi/schhol-admin.git",
   "author": "jeffubayi <jeffubayi@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "content-range": "^1.1.0",
+    "json-server": "^0.16.2"
+  }
 }
