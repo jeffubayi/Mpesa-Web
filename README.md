@@ -1,6 +1,10 @@
-# School Management Admin DashBoard
+# Astro
 
-> Example of React Admin. using JSON-Server for our REST API
+## School amanagement Dashboard
+
+###Built with:
+>  React Admin
+>  JSON-Server for our REST API
 
 ## Usage
 
