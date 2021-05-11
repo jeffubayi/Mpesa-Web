@@ -2,7 +2,7 @@
 
 ## School Management Dashboard
 
-###Built with:
+### Built with:
 >  React Admin
 >  JSON-Server for our REST API
 
