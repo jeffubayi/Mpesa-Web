@@ -1,6 +1,6 @@
 # Astro
 
-## School amanagement Dashboard
+## School Management Dashboard
 
 ###Built with:
 >  React Admin
