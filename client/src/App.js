@@ -9,15 +9,15 @@ import UserCreate from './components/Crud/StudentCreate'
 import UserEdit from './components/Crud/StudentEdit'
 import CommentList from './components/Crud/CommentList'
 import TodoList from './components/Crud/TodoList'
-
+import theme from  "./Theme"
 //API FOR Posts and Users data from https://jsonplaceholder.typicode.com
 import jsonServerProvider from 'ra-data-json-server';
-
 
 
 function App() {
   return (
     <Admin 
+      theme={theme}
       dataProvider={jsonServerProvider('https://jsonplaceholder.typicode.com')}
       >
         <Resource
