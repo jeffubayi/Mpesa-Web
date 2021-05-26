@@ -9,6 +9,7 @@ import UserCreate from './components/Crud/StudentCreate'
 import UserEdit from './components/Crud/StudentEdit'
 import CommentList from './components/Crud/CommentList'
 import TodoList from './components/Crud/TodoList'
+import dashboard from "./components/Layouts/Dashboard"
 import theme from  "./theme"
 
 //icons
@@ -24,8 +25,10 @@ function App() {
   return (
     <Admin 
       theme={theme}
+      dashboard={dashboard}
       dataProvider={jsonServerProvider('https://jsonplaceholder.typicode.com')}
       >
+        <Resource name="dashboard"/>
         <Resource
         name='posts'
         list={PostList}
