@@ -10,6 +10,12 @@ import UserEdit from './components/Crud/StudentEdit'
 import CommentList from './components/Crud/CommentList'
 import TodoList from './components/Crud/TodoList'
 import theme from  "./theme"
+
+//icons
+import HomeWorkIcon from '@material-ui/icons/HomeWork';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import StarsIcon from '@material-ui/icons/Stars';
+import ChatIcon from '@material-ui/icons/Chat';
 //API FOR Posts and Users data from https://jsonplaceholder.typicode.com
 import jsonServerProvider from 'ra-data-json-server';
 
@@ -23,21 +29,25 @@ function App() {
         <Resource
         name='posts'
         list={PostList}
+        icon={HomeWorkIcon}
         create={PostCreate}
         edit={PostEdit}
       />
       <Resource
         name='users'
         list={UserList}
+        icon={PeopleAltIcon}
         create={UserCreate}
         edit={UserEdit}
       />
       <Resource
         name='comments'
         list={CommentList}
+        icon={ChatIcon}
       />
       <Resource
         name='todos'
+        icon={StarsIcon}
         list={TodoList}
       />
     </Admin>
