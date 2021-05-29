@@ -10,7 +10,7 @@ import UserEdit from './components/Crud/StudentEdit'
 import CommentList from './components/Crud/CommentList'
 import TodoList from './components/Crud/TodoList'
 import dashboard from "./components/Layouts/Dashboard"
-import theme from  "./theme"
+import theme from  "./Theme"
 
 //icons
 import HomeWorkIcon from '@material-ui/icons/HomeWork';
