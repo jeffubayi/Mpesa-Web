@@ -5,7 +5,7 @@
 ### Built with:
 >  React Admin,
 
->  JSON-Server for our REST API
+>  GraphQl
 
 ## Usage
 
