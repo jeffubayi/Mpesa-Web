@@ -1,6 +1,6 @@
 
 import { createMuiTheme } from '@material-ui/core/styles';
-const theme = createMuiTheme({
+const styles = createMuiTheme({
   palette: {
     //type: "dark", // Switching the dark mode on is a single property value change.
   },
@@ -31,4 +31,4 @@ overrides: {
   },
 },
 });
-export default theme;
+export default styles;
