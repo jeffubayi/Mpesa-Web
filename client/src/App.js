@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 //RA 
 import { Admin,Resource } from 'react-admin'
 import PostList from './components/Crud/PostList'
@@ -20,10 +20,38 @@ import ChatIcon from '@material-ui/icons/Chat';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 //API FOR Posts and Users data from https://jsonplaceholder.typicode.com
 import jsonServerProvider from 'ra-data-json-server';
-
+import Modal from './components/features/Modal'
 
 function App() {
+  const [state, setState] = useState({
+    showModal: true,
+  });
+  
+  const {
+    showModal,
+  } = state;
+  
+  const toggleOpenModal = () => {
+    setState((state) => ({
+      ...state,
+      showModal: true,
+    }));
+  };
+
+  const toggleCloseModal = () => {
+    setState((state) => ({
+      ...state,
+      showModal: false,
+    }));
+  };
   return (
+    <div>
+      {showModal && (
+      <Modal
+      openDialog={toggleOpenModal}
+      closeDialog={toggleCloseModal}
+      />
+    )}
     <Admin 
       theme={theme}
       dashboard={dashboard}
@@ -55,6 +83,7 @@ function App() {
         list={TodoList}
       />
     </Admin>
+    </div>
   )
 }
 
