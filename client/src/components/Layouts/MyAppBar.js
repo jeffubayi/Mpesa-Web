@@ -2,6 +2,7 @@ import React ,{Fragment} from 'react';
 import { AppBar,UserMenu,MenuItemLink  } from 'react-admin';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import SettingsIcon from "@material-ui/icons/Settings";
 
 const useStyles = makeStyles({
     title: {
