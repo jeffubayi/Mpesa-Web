@@ -1,10 +1,7 @@
 import React ,{Fragment} from 'react';
-import { AppBar,ImageField } from 'react-admin';
+import { AppBar,UserMenu,MenuItemLink  } from 'react-admin';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
-
-import logo from './Logo.png';
 
 const useStyles = makeStyles({
     title: {
@@ -26,10 +23,25 @@ const useStyles = makeStyles({
   },
 });
 
+
+const AstroUserMenu = (props) => (
+  <UserMenu {...props}>
+    <MenuItemLink
+        to="/profile"
+        primaryText="My Profile"
+        leftIcon={<SettingsIcon />}
+      />
+  </UserMenu>
+);
+
 const MyAppBar = props => {
     const classes = useStyles();
     return (
-        <AppBar {...props}  className={classes.bar}  container={Fragment}>
+        <AppBar {...props}  
+           className={classes.bar} 
+           container={Fragment}
+           userMenu={<AstroUserMenu />}
+        >
       <Typography
         variant="h6"
         color="inherit"
