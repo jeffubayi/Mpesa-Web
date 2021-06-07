@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 //RA 
 import { Admin,Resource } from 'react-admin'
+//modules
 import PostList from './components/Crud/PostList'
 import PostCreate from './components/Crud/PostCreate'
 import PostEdit from './components/Crud/PostEdit'
@@ -11,6 +12,7 @@ import CommentList from './components/Crud/CommentList'
 import TodoList from './components/Crud/TodoList'
 import dashboard from "./components/Layouts/Dashboard"
 import theme from  "./styles"
+import Modal from './components/features/Modal'
 
 //icons
 import HomeWorkIcon from '@material-ui/icons/HomeWork';
@@ -18,9 +20,11 @@ import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import StarsIcon from '@material-ui/icons/Stars';
 import ChatIcon from '@material-ui/icons/Chat';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
+
 //API FOR Posts and Users data from https://jsonplaceholder.typicode.com
 import jsonServerProvider from 'ra-data-json-server';
-import Modal from './components/features/Modal'
+import authProvider from './providers/AuthProvider';
+
 
 function App() {
   const [state, setState] = useState({
@@ -56,6 +60,7 @@ function App() {
       theme={theme}
       dashboard={dashboard}
       dataProvider={jsonServerProvider('https://jsonplaceholder.typicode.com')}
+      authProvider={authProvider}
       >
         <Resource name="dashboard" icon={HomeWorkIcon} />
         <Resource
