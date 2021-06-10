@@ -13,6 +13,8 @@ import TodoList from './components/Crud/TodoList'
 import dashboard from "./components/Layouts/Dashboard"
 import theme from  "./styles"
 import Modal from './components/features/Modal'
+import LoginPage from './components/Auth/Login';
+import LogoutButton from './components/Auth/LoginButton';
 
 //icons
 import HomeWorkIcon from '@material-ui/icons/HomeWork';
@@ -61,6 +63,8 @@ function App() {
       dashboard={dashboard}
       dataProvider={jsonServerProvider('https://jsonplaceholder.typicode.com')}
       authProvider={authProvider}
+      loginPage={LoginPage}
+      logoutButton={LogoutButton}
       >
         <Resource name="dashboard" icon={HomeWorkIcon} />
         <Resource

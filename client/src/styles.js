@@ -29,6 +29,7 @@ overrides: {
       color: "inherit",
     },
   },
+  type:"dark",
 },
 });
 export default styles;
