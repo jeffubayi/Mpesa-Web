@@ -9116,6 +9116,11 @@ ra-core@^3.14.5:
     query-string "^5.1.1"
     reselect "~3.0.0"
 
+ra-data-google-sheets@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/ra-data-google-sheets/-/ra-data-google-sheets-0.0.1-security.tgz#09a0d26fcdb5f6602aaa76d651809f236eec5c7b"
+  integrity sha512-hDxWzgK9QyjY0OVlTGN8q/Xktq2iF5BaZcy4aSDyxBzwupo1MrquC/X4q1wXGKHg/G67YDTuA8i2KqSjUOn44w==
+
 ra-data-json-server@^3.14.5:
   version "3.14.5"
   resolved "https://registry.yarnpkg.com/ra-data-json-server/-/ra-data-json-server-3.14.5.tgz#7b0f6fdd32d5462868204a8da238f86853039f7b"

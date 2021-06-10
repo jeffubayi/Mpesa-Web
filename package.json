@@ -11,10 +11,14 @@
   "author": "jeffubayi <jeffubayi@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "chart.js": "^3.3.2",
     "concurrently": "^5.3.0",
     "content-range": "^1.1.0",
     "graphql": "^15.5.0",
     "json-server": "^0.16.2",
-    "ra-data-graphql": "^3.11.4"
+    "ra-data-graphql": "^3.11.4",
+    "react-chartjs-2": "^3.0.3",
+    "react-redux": "^7.2.4",
+    "styled-components": "^5.3.0"
   }
 }
