@@ -13,54 +13,32 @@ import {
   BooleanField,
   SimpleList,
 } from 'react-admin'
-import ProfileCard from "../Layouts/ProfileCard.js"
 import { makeStyles } from '@material-ui/styles';
-import Card from '@material-ui/core/Card';
-
 import { useMediaQuery } from '@material-ui/core';
+import classnames from 'classnames';
 
 const useStyles = makeStyles({
-  web: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    border: 0,
-    borderRadius: 3,
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    color: 'white',
-    height: 48,
-    padding: '0 10px',
-  },
-  mail: {
-    background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-    border: 0,
-    borderRadius: 3,
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    color: 'white',
-    height: 48,
-    padding: '0 10px',
-  },
-  priceCell: { fontWeight: 'bold' },
+    small: { color: 'green' },
+    big: { color: 'red' },    
 });
 
-const WebField = props => {
-  const classes = useStyles();
-  return <UrlField className={classes.web} {...props} />;
+const colored = WrappedComponent => props => {
+    const classes = useStyles();
+    return (
+        <WrappedComponent
+            className={classnames({
+                [classes.small]: props.record[props.source] === true,
+                [classes.big]: props.record[props.source] === false,
+            })}
+            {...props}
+        />
+    )
 };
 
-const MailField = props => {
-  const classes = useStyles();
-  return <EmailField className={classes.mail} {...props} />;
-};
 
-
-const InputField = props => {
-  const classes = useStyles();
-  return <TextField cellClassName={classes.priceCell} {...props} />;
-};
-
-const DisplayName = () => {
-  const {resource} = useResourceContext();
-  return <>{resource}</>;
-}
+const ColoredNumberField = colored(BooleanField);
+// Ensure the original component defaultProps are still applied as they may be used by its parents (such as the `Show` component):
+ColoredNumberField.defaultProps = NumberField.defaultProps;
 
 const TodoList = (props) => {
     const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
@@ -75,7 +53,7 @@ const TodoList = (props) => {
         <Datagrid>
         <TextField source='id' />
         <TextField source='title' />
-        <BooleanField source='completed' />
+        <ColoredNumberField source='completed' />
         </Datagrid>
     )}
 </List>
