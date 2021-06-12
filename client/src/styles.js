@@ -1,9 +1,21 @@
 
 import { createMuiTheme } from '@material-ui/core/styles';
+import indigo from '@material-ui/core/colors/indigo';
+import pink from '@material-ui/core/colors/pink';
+import red from '@material-ui/core/colors/red';
+
 const styles = createMuiTheme({
   palette: {
-    //type: "dark", // Switching the dark mode on is a single property value change.
-  },
+    primary: pink,
+    secondary: indigo,
+    error: red,
+    contrastThreshold: 3,
+    tonalOffset: 0.2,
+},
+typography: {
+    // Use the system font instead of the default Roboto font.
+    fontFamily: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Arial', 'sans-serif'].join(','),
+},
 overrides: {
   // hide the refresh button
   RaAppBar: {
@@ -13,7 +25,7 @@ overrides: {
                 display: 'none'
             }
         },
-        backgroundColor: "#e600ac"
+        backgroundColor: "#f50057"
     }
 },
   RaMenuItemLink: {
@@ -21,8 +33,7 @@ overrides: {
       color: "#000000",
     },
     active: {
-      color: "#e600ac",
-      borderBottom: "2px solid #e600ac",
+      color: "#f50057",
       fontWeight:"bold",
     },
     icon: {
@@ -31,5 +42,10 @@ overrides: {
   },
   type:"dark",
 },
+RaLayout: {
+  root: {
+    color: "#000000",
+  },
+}
 });
 export default styles;
