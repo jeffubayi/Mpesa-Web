@@ -15,6 +15,7 @@ import theme from  "./styles"
 import Modal from './components/features/Modal'
 import LoginPage from './components/Auth/Login';
 import LogoutButton from './components/Auth/LoginButton';
+import AlbumList from './components/Crud/album'
 
 //icons
 import HomeWorkIcon from '@material-ui/icons/HomeWork';
@@ -90,6 +91,11 @@ function App() {
         name='todos'
         icon={StarsIcon}
         list={TodoList}
+      />
+       <Resource
+        name='photos'
+        icon={StarsIcon}
+        list={AlbumList}
       />
     </Admin>
     </div>
