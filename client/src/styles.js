@@ -40,12 +40,19 @@ overrides: {
       color: "inherit",
     },
   },
-  type:"dark",
-},
-RaLayout: {
-  root: {
-    color: "#000000",
+  RaSaveButton: {
+    button: {
+      position: 'relative',
+      borderRadius:"30px"
   },
-}
+  leftIcon: {
+      marginRight:" 1rem ",
+  },
+  icon: {
+      fontSize: 18,
+  },
+  }
+},
+
 });
 export default styles;
