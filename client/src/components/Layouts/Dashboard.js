@@ -1,27 +1,34 @@
 import * as React from "react";
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import { Title } from 'react-admin';
-import {Line,Pie} from "react-chartjs-2";
+import {Bar} from "react-chartjs-2";
 import Paper from '@material-ui/core/Paper';
 import styled from 'styled-components';
+import Intro from "../features/Intro";
+import Card from "../features/Card";
 
 const Wrapper = styled.div`
 display: grid;
-grid-template-columns: repeat(2, 2fr);
+grid-template-columns: repeat(4, 2fr);
 width:auto;
 gap:3rem;
-margin-top:6rem;
+margin-top:1rem;
+`;
+
+const Wrap = styled.div`
+display: grid;
+width:auto;
+grid-template-columns: repeat(2, 2fr);
+gap:1rem;
 `;
 
 const data = {
-  labels: ["January", "February", "March", "April", "May"],
+ labels: ["Liked", "Disliked", "Least Rated",],
   datasets: [
     {
-      label: "Revenue",
+      label: "Posts Overview",
       fill: false,
       lineTension: 0.5,
-      backgroundColor: "#00acc1",
+      backgroundColor: "#f50057",
       borderWidth: 2,
       data: [65, 59, 80, 81, 56],
     },
@@ -29,12 +36,12 @@ const data = {
 };
 
 const state = {
-    labels: ["Orders", "Returns", "Ongoing",],
+    labels: ["Likes", "Dislikes", "Low Rates",],
     datasets: [{
         barPercentage: 0.5,
-        barThickness: 6,
-        maxBarThickness: 8,
-        minBarLength: 2,
+        barThickness: 2,
+        maxBarThickness: 3,
+        minBarLength: 1,
         hoverOffset: 4,
         backgroundColor: [
             'rgb(54, 162, 235)',
@@ -47,49 +54,32 @@ const state = {
 
 
 const Dashboard = () => (
-    <Card>
-        <Title style={{textAlign:"center"}}title="Astro-School" />
-        <CardContent>Students and Teachers Admin Panel </CardContent>
+  <div>
+    <Wrap>
+    <Intro/>
+    <Paper >
+    <Bar
+             data={data}
+             options={{
+               title: {
+                 display: true,
+                 text: "Posts",
+                 fontSize: 20,
+               },
+               legend: {
+                 display: false,
+               },
+             }}
+          />
+    </Paper>
+    </Wrap>
+    <h2 style={{textAlign:"center"}}>Latest Posts</h2>
         <Wrapper>
-        
-            <div>
-            <Paper elevation={3} >
-          
-        <Line
-            data={data}
-            options={{
-              title: {
-                display: true,
-                text: "Revenue Overview",
-                fontSize: 30,
-              },
-              legend: {
-                display: false,
-              },
-            }}
-          />
-         </Paper>
-          </div>
-         
-         
-          <div>
-          <Paper elevation={3} >
-          <Pie
-            data={state}
-            options={{
-              title: {
-                display: true,
-                text: "Orders Overview",
-                fontSize: 20,
-              },
-              legend: {
-                display: false,
-              },
-            }}
-          />
-           </Paper>
-              </div>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
           </Wrapper>
-    </Card>
+          </div>
 );
 export default Dashboard;

@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 const MyAppBar = props => {
     const classes = useStyles();
     return (
-        <AppBar {...props}  className={classes.bar}  container={Fragment}>
+        <AppBar {...props}  className={classes.bar}  container={Fragment} userMenu={false}>
       <Typography
         variant="h6"
         color="inherit"
