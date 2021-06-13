@@ -15,7 +15,7 @@ import theme from  "./styles"
 import Modal from './components/features/Modal'
 import LoginPage from './components/Auth/Login';
 import LogoutButton from './components/Auth/LoginButton';
-import AlbumList from './components/Crud/album'
+import AlbumList from './components/Crud/AlbumList'
 
 //icons
 import HomeWorkIcon from '@material-ui/icons/HomeWork';
