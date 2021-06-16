@@ -89,7 +89,7 @@ function App() {
       />
        <Resource
         name='photos'
-        icon={StarsIcon}
+        icon={MenuBookIcon}
         list={AlbumList}
       />
     </Admin>
