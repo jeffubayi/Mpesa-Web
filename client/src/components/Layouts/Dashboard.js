@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Title } from 'react-admin';
-import {Bar} from "react-chartjs-2";
 import Paper from '@material-ui/core/Paper';
 import styled from 'styled-components';
 import Intro from "../features/Intro";
@@ -58,7 +57,7 @@ const Dashboard = () => (
     <Wrap>
     <Intro/>
     <Paper >
-    <Bar
+    {/* <Bar
              data={data}
              options={{
                title: {
@@ -70,7 +69,7 @@ const Dashboard = () => (
                  display: false,
                },
              }}
-          />
+          /> */}
     </Paper>
     </Wrap>
     <h2 style={{textAlign:"center"}}>Latest Posts</h2>
