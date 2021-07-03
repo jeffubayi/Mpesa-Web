@@ -1,29 +1,40 @@
-# Astro
+## Minimal [(Free version)](https://minimal-kit-react.vercel.app/)
 
-## School Management Dashboard
+![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-### Built with:
->  React Admin,
+> Free React Admin Dashboard made with Material-UI components and React.
 
->  GraphQl
+![preview](public/static/preview.png)
 
-## Usage
+| [Minimal Free](https://minimal-kit-react.vercel.app/) | [Minimal](https://material-ui.com/store/items/minimal-dashboard/) |
+| --------------------------------------------------------- | :------------------------------------------------------------------------ |
+| **7** Demo pages                                          | **40** demo pages                                                         |
+| -                                                         | ✓ Multi-language                                                          |
+| -                                                         | ✓ Dark/Light Mode 🌓                                                      |
+| -                                                         | ✓ [More components](https://minimals.cc/components)                       |
+| -                                                         | ✓ TypeScript version                                                      |
+| -                                                         | ✓ Design files (Figma & Sketch)                                           |
 
-```
-# Install dependencies
-yarn
+## Page demo
 
-# Install client dependencies
-cd client
-yarn
-cd ..
+- [Dashboard](https://minimal-kit-react.vercel.app/dashboard/app)
+- [Users](https://minimal-kit-react.vercel.app/dashboard/user)
+- [Product](https://minimal-kit-react.vercel.app/dashboard/products)
+- [Blog](https://minimal-kit-react.vercel.app/dashboard/blog)
+- [Login](https://minimal-kit-react.vercel.app/login)
+- [Register](https://minimal-kit-react.vercel.app/register)
+- [Not Found](https://minimal-kit-react.vercel.app/404)
 
-# Run client and server (Visit http://localhost:3000)
-yarn dev
+## Getting started
 
-# Run server only (:5000)
-yarn server
+- Recommended `node js 14+` and `npm 6+`
+- Install dependencies: `npm install` or `yarn`
+- Start the server: `npm run start` or `yarn start`
 
-# Run client only (:3000)
-yarn client
-```
+## License
+
+Distributed under the MIT License. See [LICENSE](https://github.com/minimal-ui-kit/minimal.free/blob/main/LICENSE.md) for more information.
+
+## Contact us
+
+Email Us: support@minimals.cc
