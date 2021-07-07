@@ -10,19 +10,14 @@ import MenuPopover from '../../components/MenuPopover';
 const LANGS = [
   {
     value: 'en',
-    label: 'English',
-    icon: '/static/icons/ic_flag_en.svg'
+    label: 'Kenya',
+    icon: 'https://image.flaticon.com/icons/png/128/630/630611.png'
   },
   {
     value: 'de',
-    label: 'German',
-    icon: '/static/icons/ic_flag_de.svg'
+    label: 'Ethiopia',
+    icon: 'https://image.flaticon.com/icons/png/128/630/630603.png'
   },
-  {
-    value: 'fr',
-    label: 'French',
-    icon: '/static/icons/ic_flag_fr.svg'
-  }
 ];
 
 // ----------------------------------------------------------------------
@@ -66,7 +61,7 @@ export default function LanguagePopover() {
               sx={{ py: 1, px: 2.5 }}
             >
               <ListItemIcon>
-                <Box component="img" alt={option.label} src={option.icon} />
+                <Box component="img" alt={option.label} src={option.icon} style={{width:"2rem", height:"2rem"}} />
               </ListItemIcon>
               <ListItemText primaryTypographyProps={{ variant: 'body2' }}>
                 {option.label}
