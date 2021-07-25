@@ -44,7 +44,7 @@ export default function Page404() {
             </motion.div>
 
             <Button to="/" size="large" variant="contained" component={RouterLink}>
-              Go to Home
+              Go to Mpesa Home
             </Button>
           </Box>
         </MotionContainer>
