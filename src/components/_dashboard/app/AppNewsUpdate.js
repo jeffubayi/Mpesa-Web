@@ -16,10 +16,10 @@ import Scrollbar from '../../Scrollbar';
 const NEWS = [...Array(5)].map((_, index) => {
   const setIndex = index + 1;
   return {
-    title: faker.name.title(),
+    title: faker.name.firstName(),
     description: faker.lorem.paragraphs(),
     image: mockImgCover(setIndex),
-    postedAt: faker.date.soon()
+    postedAt: faker.date.recent()
   };
 });
 
@@ -43,7 +43,7 @@ function NewsItem({ news }) {
       <Box sx={{ minWidth: 240 }}>
         <Link to="#" color="inherit" underline="hover" component={RouterLink}>
           <Typography variant="subtitle2" noWrap>
-            {title}
+            {title}{faker.name.lastName()}
           </Typography>
         </Link>
         <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
