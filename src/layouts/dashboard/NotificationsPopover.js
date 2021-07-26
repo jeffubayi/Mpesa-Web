@@ -36,8 +36,8 @@ import MenuPopover from '../../components/MenuPopover';
 const NOTIFICATIONS = [
   {
     id: faker.datatype.uuid(),
-    title: 'Your order is placed',
-    description: 'waiting for shipping',
+    title: 'Mpesa statement',
+    description: 'Here is your Mpesa statement for the period of ... ',
     avatar: null,
     type: 'order_placed',
     createdAt: set(new Date(), { hours: 10, minutes: 30 }),
@@ -46,7 +46,7 @@ const NOTIFICATIONS = [
   {
     id: faker.datatype.uuid(),
     title: faker.name.findName(),
-    description: 'answered to your comment on the Minimal',
+    description: 'Mpesa confirmed, you have received Ksh ...',
     avatar: mockImgAvatar(2),
     type: 'friend_interactive',
     createdAt: sub(new Date(), { hours: 3, minutes: 30 }),
@@ -54,7 +54,7 @@ const NOTIFICATIONS = [
   },
   {
     id: faker.datatype.uuid(),
-    title: 'You have new message',
+    title: 'Safaricom',
     description: '5 unread messages',
     avatar: null,
     type: 'chat_message',
