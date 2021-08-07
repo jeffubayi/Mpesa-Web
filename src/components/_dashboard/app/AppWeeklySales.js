@@ -1,5 +1,4 @@
-import { Icon } from '@iconify/react';
-import androidFilled from '@iconify/icons-ant-design/android-filled';
+import SendIcon from '@material-ui/icons/Send';
 
 // material
 import { alpha, experimentalStyled as styled } from '@material-ui/core/styles';
@@ -39,7 +38,7 @@ export default function AppWeeklySales() {
   return (
     <RootStyle>
       <IconWrapperStyle>
-        <Icon icon={androidFilled} width={24} height={24} />
+        <SendIcon width={24} height={24} />
       </IconWrapperStyle>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
         Send and Request
