@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 // material
 import { experimentalStyled as styled } from '@material-ui/core/styles';
-import { Box, Link, Button, Drawer, Typography, Avatar, Stack } from '@material-ui/core';
+import { Box, Link, Drawer, Typography, Avatar, Stack,IconButton} from '@material-ui/core';
 // components
 import Logo from '../../components/Logo';
 import Scrollbar from '../../components/Scrollbar';
@@ -12,6 +12,9 @@ import { MHidden } from '../../components/@material-extend';
 //
 import sidebarConfig from './SidebarConfig';
 import account from '../../_mocks_/account';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import LanguageIcon from '@material-ui/icons/Language';
 
 // ----------------------------------------------------------------------
 
@@ -94,29 +97,30 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
             bgcolor: 'grey.200'
           }}
         >
-          <Box
-            component="img"
-            src="/static/illustrations/illustration_rocket.png"
-            sx={{ width: 100, position: 'absolute', top: -50 }}
+          <Avatar
+            alt="img"
+            src="https://images.hivisasa.com/1200/PZi9f5kxXWFB_IMG_15608513535938253.jpg"
           />
 
           <Box sx={{ textAlign: 'center' }}>
             <Typography gutterBottom variant="h6">
-              Get more?
+              Mpesa
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              From only $69
+             The future of money
             </Typography>
           </Box>
-
-          <Button
-            fullWidth
-            href="https://material-ui.com/store/items/minimal-dashboard/"
-            target="_blank"
-            variant="contained"
-          >
-            Upgrade to Pro
-          </Button>
+          <div style={{ display:"flex",flexDirection:"rows"}}>
+          <IconButton color="primary" aria-label="upload picture" component="span">
+          <TwitterIcon />
+        </IconButton>
+        <IconButton color="primary" aria-label="upload picture" component="span">
+          <LanguageIcon  />
+        </IconButton>
+        <IconButton color="primary" aria-label="upload picture" component="span">
+          <YouTubeIcon/>
+        </IconButton>
+        </div>
         </Stack>
       </Box>
     </Scrollbar>
