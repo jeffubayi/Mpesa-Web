@@ -23,22 +23,22 @@ const sidebarConfig = [
   },
   {
     title: 'discover',
-    path: '/dashboard/products',
+    path: '/dashboard/blog',
     icon: <ExploreIcon/>,
   },
   {
     title: 'my spend',
-    path: '/dashboard/blog',
+    path: '/dashboard/products',
     icon: getIcon(pieChart2Fill)
   },
   {
     title: 'grow',
-    path: '/404',
+    path: '/dashboard/products',
     icon: <TrendingUpIcon/>,
   },
   {
     title: 'settings',
-    path: '/register',
+    path: '/404',
     icon: < SettingsIcon/>,
   },
   {
