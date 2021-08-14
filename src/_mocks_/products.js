@@ -1,7 +1,6 @@
 import faker from 'faker';
 import { sample } from 'lodash';
 // utils
-import { mockImgProduct } from '../utils/mockImages';
 
 // ----------------------------------------------------------------------
 

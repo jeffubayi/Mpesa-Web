@@ -1,13 +1,9 @@
 import PropTypes from "prop-types";
-import { Link as RouterLink } from "react-router-dom";
 // material
-import { Box, Card, Link, Typography, Stack, Button } from "@material-ui/core";
+import { Box, Card,Stack, Button } from "@material-ui/core";
 import { experimentalStyled as styled } from "@material-ui/core/styles";
-// utils
-import { fCurrency } from "../../../utils/formatNumber";
 //
 import Label from "../../Label";
-import ColorPreview from "../../ColorPreview";
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +22,7 @@ ShopProductCard.propTypes = {
 };
 
 export default function ShopProductCard({ product }) {
-  const { name, cover, colors, status } = product;
+  const { name, cover,  status } = product;
 
   return (
     <Card>
