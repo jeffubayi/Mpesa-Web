@@ -18,7 +18,7 @@ const sidebarConfig = [
   },
   {
     title: 'transact',
-    path: '/dashboard/user',
+    path: '/dashboard/products',
     icon: <AddToHomeScreenIcon/>,
   },
   {
@@ -28,12 +28,12 @@ const sidebarConfig = [
   },
   {
     title: 'my spend',
-    path: '/dashboard/products',
+    path: '/dashboard/user',
     icon: getIcon(pieChart2Fill)
   },
   {
     title: 'grow',
-    path: '/dashboard/products',
+    path: '/404',
     icon: <TrendingUpIcon/>,
   },
   {

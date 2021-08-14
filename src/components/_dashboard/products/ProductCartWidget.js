@@ -1,8 +1,7 @@
-import { Icon } from '@iconify/react';
-import shoppingCartFill from '@iconify/icons-eva/shopping-cart-fill';
+import PermDeviceInformationIcon from '@material-ui/icons/PhoneIphone';
 // material
 import { experimentalStyled as styled } from '@material-ui/core/styles';
-import { Badge } from '@material-ui/core';
+import Badge from '@material-ui/core/Badge';
 
 // ----------------------------------------------------------------------
 
@@ -33,7 +32,7 @@ export default function CartWidget() {
   return (
     <RootStyle>
       <Badge showZero badgeContent={0} color="error" max={99}>
-        <Icon icon={shoppingCartFill} width={24} height={24} />
+        <PermDeviceInformationIcon/>
       </Badge>
     </RootStyle>
   );
