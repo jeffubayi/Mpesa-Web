@@ -1,12 +1,10 @@
-
-import {useState} from "react"
-import { filter } from 'lodash';
-import { sentenceCase } from 'change-case';
+import { useState } from "react";
+import { filter } from "lodash";
+import { sentenceCase } from "change-case";
 // material
 import {
   Stack,
   Card,
-  Typography,
   Table,
   Avatar,
   Checkbox,
@@ -15,23 +13,30 @@ import {
   TableCell,
   TableContainer,
   TablePagination,
+  ListItem,
+  List,
+  ListItemAvatar,
+  ListItemText
 } from "@material-ui/core";
-
+import { fDate } from '../../../utils/formatTime';
 // utils
 //
 import Scrollbar from "../../Scrollbar";
-import { UserListHead, UserListToolbar, UserMoreMenu } from '../../_dashboard/user';
-import USERLIST from '../../../_mocks_/user';
-import Label from '../../Label';
-import SearchNotFound from '../../SearchNotFound';
+import {
+  UserListHead,
+  UserListToolbar,
+  UserMoreMenu,
+} from "../../_dashboard/user";
+import USERLIST from "../../../_mocks_/user";
+import Label from "../../Label";
+import SearchNotFound from "../../SearchNotFound";
 
 // ----------------------------------------------------------------------
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', alignRight: false },
-  { id: 'company', label: 'Company', alignRight: false },
-  { id: 'isVerified', label: 'Verified', alignRight: false },
-  { id: 'status', label: 'Status', alignRight: false },
-  { id: '' }
+  { id: "name", label: "Name", alignRight: false },
+  { id: "role", label: "Amount", alignRight: false },
+  { id: "date", label: "Date", alignRight: false },
+  { id: "status", label: "Status", alignRight: false },
 ];
 
 // ----------------------------------------------------------------------
@@ -47,7 +52,7 @@ function descendingComparator(a, b, orderBy) {
 }
 
 function getComparator(order, orderBy) {
-  return order === 'desc'
+  return order === "desc"
     ? (a, b) => descendingComparator(a, b, orderBy)
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
@@ -60,22 +65,25 @@ function applySortFilter(array, comparator, query) {
     return a[1] - b[1];
   });
   if (query) {
-    return filter(array, (_user) => _user.name.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+    return filter(
+      array,
+      (_user) => _user.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
+    );
   }
   return stabilizedThis.map((el) => el[0]);
 }
 
 export default function AppNewsUpdate() {
   const [page, setPage] = useState(0);
-  const [order, setOrder] = useState('asc');
+  const [order, setOrder] = useState("asc");
   const [selected, setSelected] = useState([]);
-  const [orderBy, setOrderBy] = useState('name');
-  const [filterName, setFilterName] = useState('');
+  const [orderBy, setOrderBy] = useState("name");
+  const [filterName, setFilterName] = useState("");
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
   const handleRequestSort = (event, property) => {
-    const isAsc = orderBy === property && order === 'asc';
-    setOrder(isAsc ? 'desc' : 'asc');
+    const isAsc = orderBy === property && order === "asc";
+    setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
   };
 
@@ -119,9 +127,14 @@ export default function AppNewsUpdate() {
     setFilterName(event.target.value);
   };
 
-  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
 
-  const filteredUsers = applySortFilter(USERLIST, getComparator(order, orderBy), filterName);
+  const filteredUsers = applySortFilter(
+    USERLIST,
+    getComparator(order, orderBy),
+    filterName
+  );
 
   const isUserNotFound = filteredUsers.length === 0;
   return (
@@ -148,14 +161,8 @@ export default function AppNewsUpdate() {
               {filteredUsers
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row) => {
-                  const {
-                    id,
-                    name,
-                    status,
-                    company,
-                    avatarUrl,
-                    isVerified,
-                  } = row;
+                  const { id, name, status, company,role, avatarUrl, date } =
+                    row;
                   const isItemSelected = selected.indexOf(name) !== -1;
 
                   return (
@@ -175,20 +182,27 @@ export default function AppNewsUpdate() {
                       </TableCell>
                       <TableCell component="th" scope="row" padding="none">
                         <Stack direction="row" alignItems="center" spacing={2}>
-                          <Avatar alt={name} src={avatarUrl} />
-                          <Typography variant="subtitle2" noWrap>
-                            {name}
-                          </Typography>
+                          <List >
+                            <ListItem alignItems="flex-start">
+                              <ListItemAvatar>
+                                <Avatar alt={name} src={avatarUrl} />
+                              </ListItemAvatar>
+                              <ListItemText
+                                primary={name}
+                                secondary={company}
+                              />
+                            </ListItem>
+                          </List>
                         </Stack>
                       </TableCell>
-                      <TableCell align="left">{company}</TableCell>
+                      <TableCell align="left">{role}</TableCell>
                       <TableCell align="left">
-                        {isVerified ? "Yes" : "No"}
+                        {fDate(date)}
                       </TableCell>
                       <TableCell align="left">
                         <Label
                           variant="ghost"
-                          color={(status === "banned" && "error") || "success"}
+                          color={(status === "declined" && "error") || "success"}
                         >
                           {sentenceCase(status)}
                         </Label>
