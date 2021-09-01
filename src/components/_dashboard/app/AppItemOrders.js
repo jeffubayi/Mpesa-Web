@@ -10,8 +10,8 @@ const RootStyle = styled(Card)(({ theme }) => ({
   boxShadow: 'none',
   textAlign: 'center',
   padding: theme.spacing(5, 0),
-  color: theme.palette.warning.darker,
-  backgroundColor: theme.palette.warning.lighter
+  color: "#021C5B",
+  backgroundColor: '#699EFF',
 }));
 
 const IconWrapperStyle = styled('div')(({ theme }) => ({
@@ -23,9 +23,9 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
   height: theme.spacing(8),
   justifyContent: 'center',
   marginBottom: theme.spacing(3),
-  color: theme.palette.warning.dark,
-  backgroundImage: `linear-gradient(135deg, ${alpha(theme.palette.warning.dark, 0)} 0%, ${alpha(
-    theme.palette.warning.dark,
+  color: "#021C5B",
+  backgroundImage: `linear-gradient(135deg, ${alpha('#021C5B', 0)} 0%, ${alpha(
+    '#021C5B',
     0.24
   )} 100%)`
 }));
@@ -39,8 +39,8 @@ export default function AppItemOrders() {
       <IconWrapperStyle>
         <PaymentIcon width={24} height={24} />
       </IconWrapperStyle>
-      <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        Payments
+      <Typography variant="subtitle2" >
+        PAY
       </Typography>
     </RootStyle>
   );
