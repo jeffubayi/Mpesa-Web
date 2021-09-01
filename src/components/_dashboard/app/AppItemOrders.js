@@ -40,7 +40,7 @@ export default function AppItemOrders() {
         <PaymentIcon width={24} height={24} />
       </IconWrapperStyle>
       <Typography variant="subtitle2" >
-        Payments
+        PAY
       </Typography>
     </RootStyle>
   );

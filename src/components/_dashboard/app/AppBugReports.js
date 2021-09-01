@@ -39,7 +39,7 @@ export default function AppBugReports() {
         <RemoveCircleOutlineIcon width={24} height={24} />
       </IconWrapperStyle>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        Withdraw
+        WITHDRAW
       </Typography>
     </RootStyle>
   );
