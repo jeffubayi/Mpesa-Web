@@ -6,11 +6,10 @@ import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(Card)(({ theme }) => ({
-  boxShadow: 'none',
   textAlign: 'center',
   padding: theme.spacing(5, 0),
-  color: '#660228',
-  backgroundColor:"#FF5885"
+  color: "black",
+  backgroundColor:"#FFFF"
 }));
 
 const IconWrapperStyle = styled('div')(({ theme }) => ({
@@ -22,9 +21,9 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
   height: theme.spacing(8),
   justifyContent: 'center',
   marginBottom: theme.spacing(3),
-  color: '#660228',
-  backgroundImage: `linear-gradient(135deg, ${alpha('#660228', 0)} 0%, ${alpha(
-    '#660228',
+  color: '#f7005b',
+  backgroundImage: `linear-gradient(135deg, ${alpha('#f7005b', 0)} 0%, ${alpha(
+    '#f7005b',
     0.24
   )} 100%)`
 }));

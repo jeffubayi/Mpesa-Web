@@ -7,11 +7,10 @@ import { Card, Typography } from '@material-ui/core';
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(Card)(({ theme }) => ({
-  boxShadow: 'none',
   textAlign: 'center',
   padding: theme.spacing(5, 0),
-  color: "#021C5B",
-  backgroundColor: '#699EFF',
+  color: "black",
+  backgroundColor: '#FFFF',
 }));
 
 const IconWrapperStyle = styled('div')(({ theme }) => ({
@@ -23,9 +22,9 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
   height: theme.spacing(8),
   justifyContent: 'center',
   marginBottom: theme.spacing(3),
-  color: "#021C5B",
-  backgroundImage: `linear-gradient(135deg, ${alpha('#021C5B', 0)} 0%, ${alpha(
-    '#021C5B',
+  color: "#036ECC",
+  backgroundImage: `linear-gradient(135deg, ${alpha('#036ECC', 0)} 0%, ${alpha(
+    '#036ECC',
     0.24
   )} 100%)`
 }));

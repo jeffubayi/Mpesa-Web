@@ -7,11 +7,10 @@ import { Card, Typography } from '@material-ui/core';
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(Card)(({ theme }) => ({
-  boxShadow: 'none',
   textAlign: 'center',
   padding: theme.spacing(5, 0),
-  color: theme.palette.info.darker,
-  backgroundColor: "#23CDF3"
+  color: "black",
+  backgroundColor: "#FFF"
 }));
 
 const IconWrapperStyle = styled('div')(({ theme }) => ({
@@ -23,9 +22,9 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
   height: theme.spacing(8),
   justifyContent: 'center',
   marginBottom: theme.spacing(3),
-  color: theme.palette.info.dark,
-  backgroundImage: `linear-gradient(135deg, ${alpha(theme.palette.info.dark, 0)} 0%, ${alpha(
-    theme.palette.info.dark,
+  color:  "#11E2F6",
+  backgroundImage: `linear-gradient(135deg, ${alpha("#11E2F6", 0)} 0%, ${alpha(
+    "#11E2F6",
     0.24
   )} 100%)`
 }));
@@ -40,7 +39,7 @@ export default function AppNewUsers() {
         <PhonelinkRingIcon width={24} height={24} />
       </IconWrapperStyle>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        AIRTIME
+        AIR TIME
       </Typography>
     </RootStyle>
   );
