@@ -1,6 +1,6 @@
 
 // material
-import { Container,  Typography,Grid } from '@material-ui/core';
+import { Container  } from '@material-ui/core';
 // components
 import Page from '../components/Page';
 import {
