@@ -18,7 +18,7 @@ export default function DashboardApp() {
     <Page title="Home | M-PESA">
       <Container maxWidth="xl">
         <Box sx={{ pb: 5 }}>
-          <Typography variant="h5">Current Balance</Typography>
+          <Typography variant="subtitle-2">Balance</Typography>
           <Typography variant="h4"> Ksh. 100</Typography>
         </Box>
         <Grid container spacing={3}>

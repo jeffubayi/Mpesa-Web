@@ -1,28 +1,22 @@
 
 // material
-import { Container,  Typography } from '@material-ui/core';
+import { Container,  Typography,Grid } from '@material-ui/core';
 // components
 import Page from '../components/Page';
 import {
-  ProductList,
   ProductCartWidget,
 } from '../components/_dashboard/products';
-//
-import PRODUCTS from '../_mocks_/products';
-
+import Checkout from "../components/MpesaCheckout/Checkout"
 // ----------------------------------------------------------------------
 
-export default function EcommerceShop() {
+export default function EcommerceShop({products,...rest}) {
 
   return (
     <Page title="Transact | Mpesa">
       <Container>
-        <Typography variant="h4" sx={{ mb: 5 }}>
-          Transact
-        </Typography>
-
-        <ProductList products={PRODUCTS} />
-        <ProductCartWidget />
+       
+       < Checkout/>
+        <ProductCartWidget /> 
       </Container>
     </Page>
   );

@@ -39,8 +39,8 @@ export default function AppCurrentVisits() {
   const chartOptions = merge(BaseOptionChart(), {
     colors: [
       theme.palette.primary.main,
-      theme.palette.info.main,
-      theme.palette.warning.main,
+      "#036ECC",
+      "#11E2F6",
       theme.palette.error.main
     ],
     labels: ['Family & Friends', 'Daily Average', 'Bills & Services', 'General'],

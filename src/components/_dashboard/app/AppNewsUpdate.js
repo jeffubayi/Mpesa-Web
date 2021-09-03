@@ -15,6 +15,7 @@ import {
   TablePagination,
   ListItem,
   List,
+  CardHeader,
   ListItemAvatar,
   ListItemText
 } from "@material-ui/core";
@@ -139,6 +140,7 @@ export default function AppNewsUpdate() {
   const isUserNotFound = filteredUsers.length === 0;
   return (
     <Card>
+      <CardHeader title="Mpesa statement" />
       <UserListToolbar
         numSelected={selected.length}
         filterName={filterName}
