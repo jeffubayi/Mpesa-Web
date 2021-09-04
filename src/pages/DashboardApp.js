@@ -1,4 +1,5 @@
 // material
+import React from "react";
 import { Box, Grid, Container, Typography } from "@material-ui/core";
 // components
 import Page from "../components/Page";
@@ -10,13 +11,32 @@ import {
   AppNewsUpdate,
   AppWeeklySales,
 } from "../components/_dashboard/app";
-
+import Checkout from "../components/MpesaCheckout/SendMoneyDialog"
 // ----------------------------------------------------------------------
 
 export default function DashboardApp() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
+    
     <Page title="Home | M-PESA">
       <Container maxWidth="xl">
+      {open && (
+            <Checkout
+              openDialog={handleClickOpen}
+              closeDialog={handleClose}
+              buttonHelperText="Close"
+              title="Warning"
+              description="You lack permissions to view the requested resources"
+            />
+          )}
         <Box sx={{ pb: 5 }}>
           <Typography variant="subtitle-2">Balance</Typography>
           <Typography variant="h4"> Ksh. 100</Typography>
