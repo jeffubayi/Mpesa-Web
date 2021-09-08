@@ -144,7 +144,7 @@ function NotificationItem({ notification }) {
       }}
     >
       <ListItemAvatar>
-        <Avatar styles={{height:"10rem",width:"10rem"}} sx={{ bgcolor: 'background.neutral' }}>{avatar}</Avatar>
+        <Avatar  sx={{ bgcolor: 'background.neutral' }}>{avatar}</Avatar>
       </ListItemAvatar>
       <ListItemText
         primary={title}
