@@ -11,7 +11,7 @@ export default function SearchContact() {
       options={top100Films}
       getOptionLabel={(option) => option.title}
       style={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} label="Search Contact" variant="outlined" />}
     />
   );
 }
