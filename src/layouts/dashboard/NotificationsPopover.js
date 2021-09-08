@@ -25,8 +25,6 @@ import {
   ListSubheader,
   ListItemAvatar
 } from '@material-ui/core';
-// utils
-import { mockImgAvatar } from '../../utils/mockImages';
 // components
 import Scrollbar from '../../components/Scrollbar';
 import MenuPopover from '../../components/MenuPopover';
