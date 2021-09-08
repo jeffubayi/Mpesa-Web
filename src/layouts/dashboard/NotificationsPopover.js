@@ -93,7 +93,7 @@ function renderContent(notification) {
 
   if (notification.type === 'order_placed') {
     return {
-      avatar: <img alt={notification.title} styles={{height:"10rem",width:"10rem"}} src={logo} />,
+      avatar: <img alt={notification.title}  src={logo} />,
       title
     };
   }
@@ -144,7 +144,7 @@ function NotificationItem({ notification }) {
       }}
     >
       <ListItemAvatar>
-        <Avatar  sx={{ bgcolor: 'background.neutral' }}>{avatar}</Avatar>
+        <Avatar style={{backgroundSize:"cover"}} sx={{ bgcolor: 'background.neutral' }}>{avatar}</Avatar>
       </ListItemAvatar>
       <ListItemText
         primary={title}
