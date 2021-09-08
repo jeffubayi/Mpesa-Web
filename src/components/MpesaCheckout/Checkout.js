@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['Recipient Details ', 'Transaction Details', 'Confirm Transaction'];
 
 function getStepContent(step) {
   switch (step) {
@@ -95,11 +95,10 @@ export default function Checkout() {
             {activeStep === steps.length ? (
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
-                  Thank you for your order.
+                  Mpesa Confirmed.
                 </Typography>
                 <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order confirmation, and will
-                  send you an update when your order has shipped.
+                  Your transaction number is #2001539. We have emailed your mpesa statement.
                 </Typography>
               </React.Fragment>
             ) : (
@@ -108,7 +107,7 @@ export default function Checkout() {
                 <div className={classes.buttons}>
                   {activeStep !== 0 && (
                     <Button onClick={handleBack} className={classes.button}>
-                      Back
+                      Previous
                     </Button>
                   )}
                   <Button
@@ -117,7 +116,7 @@ export default function Checkout() {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                    {activeStep === steps.length - 1 ? 'Confirm ' : 'Next'}
                   </Button>
                 </div>
               </React.Fragment>

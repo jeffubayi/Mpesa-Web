@@ -95,13 +95,10 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         >
           <Avatar
             alt="img"
-            src="https://images.hivisasa.com/1200/PZi9f5kxXWFB_IMG_15608513535938253.jpg"
+            style={{height:"3.5rem",width:"3.5rem"}}
+            src="https://is2-ssl.mzstatic.com/image/thumb/Purple125/v4/c3/e5/58/c3e5585f-8b7d-a0b6-67c8-fc42850cd78f/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png"
           />
-
           <Box sx={{ textAlign: 'center' }}>
-            <Typography gutterBottom variant="h6">
-              Mpesa
-            </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
              The future of money
             </Typography>

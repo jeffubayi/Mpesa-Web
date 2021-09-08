@@ -25,29 +25,27 @@ import {
   ListSubheader,
   ListItemAvatar
 } from '@material-ui/core';
-// utils
-import { mockImgAvatar } from '../../utils/mockImages';
 // components
 import Scrollbar from '../../components/Scrollbar';
 import MenuPopover from '../../components/MenuPopover';
-
+import logo from "./mlogo.png"
 // ----------------------------------------------------------------------
 
 const NOTIFICATIONS = [
   {
     id: faker.datatype.uuid(),
-    title: 'Mpesa statement',
-    description: 'Here is your Mpesa statement for the period of ... ',
-    avatar: null,
+    title: 'Hakikisha Alert',
+    description: 'Cancelling too many transactions will make you unable to confirm other users names for a while',
+    avatar: logo,
     type: 'order_placed',
     createdAt: set(new Date(), { hours: 10, minutes: 30 }),
     isUnRead: true
   },
   {
     id: faker.datatype.uuid(),
-    title: faker.name.findName(),
-    description: 'Mpesa confirmed, you have received Ksh ...',
-    avatar: mockImgAvatar(2),
+    title: "Mpesa",
+    description: 'PKGLEGMQQP Confirmed, Ksh XXX sent to Safaricom Limited for account  on XXXX . New Mpesa balance is XXXX',
+    avatar: logo,
     type: 'friend_interactive',
     createdAt: sub(new Date(), { hours: 3, minutes: 30 }),
     isUnRead: true
@@ -93,30 +91,30 @@ function renderContent(notification) {
 
   if (notification.type === 'order_placed') {
     return {
-      avatar: <img alt={notification.title} src="/static/icons/ic_notification_package.svg" />,
+      avatar: <img alt={notification.title}  src={logo} />,
       title
     };
   }
   if (notification.type === 'order_shipped') {
     return {
-      avatar: <img alt={notification.title} src="/static/icons/ic_notification_shipping.svg" />,
+      avatar: <img alt={notification.title} src={logo}  />,
       title
     };
   }
   if (notification.type === 'mail') {
     return {
-      avatar: <img alt={notification.title} src="/static/icons/ic_notification_mail.svg" />,
+      avatar: <img alt={notification.title} src={logo}  />,
       title
     };
   }
   if (notification.type === 'chat_message') {
     return {
-      avatar: <img alt={notification.title} src="/static/icons/ic_notification_chat.svg" />,
+      avatar: <img alt={notification.title} src={logo}  />,
       title
     };
   }
   return {
-    avatar: <img alt={notification.title} src={notification.avatar} />,
+    avatar: <img alt={notification.title}  src={notification.avatar} />,
     title
   };
 }
@@ -144,7 +142,7 @@ function NotificationItem({ notification }) {
       }}
     >
       <ListItemAvatar>
-        <Avatar sx={{ bgcolor: 'background.neutral' }}>{avatar}</Avatar>
+        <Avatar style={{backgroundSize:"cover"}} sx={{ bgcolor: 'background.neutral' }}>{avatar}</Avatar>
       </ListItemAvatar>
       <ListItemText
         primary={title}
@@ -242,19 +240,6 @@ export default function NotificationsPopover() {
             }
           >
             {notifications.slice(0, 2).map((notification) => (
-              <NotificationItem key={notification.id} notification={notification} />
-            ))}
-          </List>
-
-          <List
-            disablePadding
-            subheader={
-              <ListSubheader disableSticky sx={{ py: 1, px: 2.5, typography: 'overline' }}>
-                Before that
-              </ListSubheader>
-            }
-          >
-            {notifications.slice(2, 5).map((notification) => (
               <NotificationItem key={notification.id} notification={notification} />
             ))}
           </List>
