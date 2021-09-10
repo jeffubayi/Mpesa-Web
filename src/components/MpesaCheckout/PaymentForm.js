@@ -2,18 +2,19 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 
 
 export default function PaymentForm() {
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Add transaction amount
-      </Typography>
-      <Grid container spacing={3}>
-      <Grid item xs={12} md={6}>
+      <Grid container spacing={3}
+      style={{
+          display: "grid",
+          gap: "2rem",
+          gridTemplateColumn: "repeat(2,auto",
+          padding:"0 3rem 0"
+        }}>
+      <Grid item xs={12} md={6} lg={12}>
           <TextField
             required
             id="cardNumber"
@@ -22,7 +23,7 @@ export default function PaymentForm() {
             autoComplete="cc-number"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} lg={12}>
           <TextField
             required
             id="cardNumber"
@@ -32,12 +33,7 @@ export default function PaymentForm() {
           />
         </Grid>
        
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={<Checkbox color="secondary" name="saveCard" value="yes" />}
-            label="Remember credit card details for next time"
-          />
-        </Grid>
+       
       </Grid>
     </React.Fragment>
   );
