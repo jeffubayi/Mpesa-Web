@@ -1,15 +1,12 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
+import {TextField,Divider }from "@material-ui/core";
 import SearchContact from "./SearchContact";
 
 export default function AddressForm() {
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Add Recipient number
-      </Typography>
       <Grid
         container
         spacing={3}
@@ -18,15 +15,23 @@ export default function AddressForm() {
           gap: "1rem",
           gridTemplateColumn: "repeat(3,auto",
           justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Grid item xs={12} sm={6}>
           <SearchContact />
         </Grid>
-        <div>
+        <div style={{
+          display: "grid",
+          gap: "1rem",
+          gridTemplateColumn: "repeat(1,auto",
+          justifyContent: "center",
+        }}>
+          <Divider/>
           <Typography variant="body2" gutterBottom>
             OR
           </Typography>
+          <Divider/>
         </div>
         <Grid item xs={12} sm={6} lg={12}>
           <TextField
@@ -34,7 +39,6 @@ export default function AddressForm() {
             id="cardNumber"
             label="Enter Phone number"
             fullWidth
-            autoComplete="cc-number"
           />
         </Grid>
       </Grid>

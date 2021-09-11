@@ -106,8 +106,8 @@ export default function Checkout() {
                 {getStepContent(activeStep)}
                 <div className={classes.buttons}>
                   {activeStep !== 0 && (
-                    <Button onClick={handleBack} className={classes.button}>
-                      Previous
+                    <Button onClick={handleBack} className={classes.button} variant="outlined" >
+                      PREVIOUS
                     </Button>
                   )}
                   <Button
@@ -116,7 +116,7 @@ export default function Checkout() {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Confirm ' : 'Next'}
+                    {activeStep === steps.length - 1 ? 'CONFIRM ' : 'CONTINUE'}
                   </Button>
                 </div>
               </React.Fragment>
