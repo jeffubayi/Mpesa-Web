@@ -4,13 +4,33 @@ import { Container, Typography } from "@material-ui/core";
 import Page from "../components/Page";
 import { ProductCartWidget } from "../components/_dashboard/products";
 import Checkout from "../components/MpesaCheckout/SendMoneyDialog";
-// ----------------------------------------------------------------------
-import Button from "@material-ui/core/Button";
+
+import { makeStyles } from "@material-ui/styles";
 import React from "react";
 import TransactCard from "./TransactCard";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  transactCard: {
+    width:"100%"
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: "#000",
+    fontSize:"0.8rem",
+    fontWeight:600,
+    backgroundColor: "#F4F6F8",
+  },
+}));
 
 export default function EcommerceShop({ products, ...rest }) {
   const [open, setOpen] = React.useState(false);
+  const classes = useStyles();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -21,120 +41,88 @@ export default function EcommerceShop({ products, ...rest }) {
   };
 
   return (
+    <>
+    {open && (
+      <Checkout
+        openDialog={handleClickOpen}
+        closeDialog={handleClose}
+        buttonHelperText="Close"
+        title="Warning"
+        description="You lack permissions to view the requested resources"
+      />
+    )}
     <Page title="Transact | Mpesa">
       <Container>
         <Typography variant="h4" gutterBottom>
           Transact
         </Typography>
-        <div>
-          <Typography variant="body2" gutterBottom>
-            SEND AND REQUEST
-          </Typography>
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              margin: "2rem",
-              gap: "3rem",
-            }}
-          >
-            <Button
-              variant="outlined"
-              color="primary"
-              onClick={handleClickOpen}
-            >
-              SEND AND REQUEST
-            </Button>
-            <TransactCard />
-            <TransactCard />
-            <TransactCard />
-            <TransactCard />
-          </div>
-          <Typography variant="body2" gutterBottom>
-            PAY
-          </Typography>
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              margin: "2rem",
-              gap: "3rem",
-            }}
-          >
-            <Button
-              variant="outlined"
-              color="primary"
-              onClick={handleClickOpen}
-            >
-              PAY
-            </Button>
-            <TransactCard />
-            <TransactCard />
-            <TransactCard />
-            <TransactCard />
-          </div>
-          <Typography variant="body2" gutterBottom>
-            WITHDRAW
-          </Typography>
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              margin: "2rem",
-              gap: "3rem",
-            }}
-          >
-            <Button
-              variant="outlined"
-              color="primary"
-              onClick={handleClickOpen}
-            >
-              WITHDRAW
-            </Button>
-            <TransactCard />
-            <TransactCard />
-            <TransactCard />
-            <TransactCard />
-          </div>
-          <Typography variant="body2" gutterBottom>
-            BUY AIRTIME
-          </Typography>
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              margin: "2rem",
-              gap: "3rem",
-            }}
-          >
-            <Button
-              variant="outlined"
-              color="primary"
-              onClick={handleClickOpen}
-            >
-              BUY AIRTIME
-            </Button>
-            <TransactCard />
-            <TransactCard />
-            <TransactCard />
-            <TransactCard />
-          </div>
-          {open && (
-            <Checkout
-              openDialog={handleClickOpen}
-              closeDialog={handleClose}
-              buttonHelperText="Close"
-              title="Warning"
-              description="You lack permissions to view the requested resources"
-            />
-          )}
+        <div >
+          <Grid container spacing={3}>
+            <Grid item xs={6} spacing={3}>
+              <Paper className={classes.paper}>SEND AND REQUEST</Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper className={classes.paper}>PAYMENT</Paper>
+            </Grid>
+            <Grid item xs={3}  onClick={handleClickOpen}>
+            <TransactCard  className={classes.transactCard}/>
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={6}>
+              <Paper className={classes.paper}>WITHDRAW</Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper className={classes.paper}>BUY AIRTIME</Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+            <Grid item xs={3}>
+              <TransactCard className={classes.transactCard} />
+            </Grid>
+          </Grid>
         </div>
         <ProductCartWidget />
       </Container>
     </Page>
+    </>
   );
 }
