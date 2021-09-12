@@ -10,6 +10,10 @@ export function fDateTime(date) {
   return format(new Date(date), 'dd MMM yyyy HH:mm');
 }
 
+export function fDateMonth(date) {
+  return format(new Date(date), ' MMMM ');
+}
+
 export function fDateTimeSuffix(date) {
   return format(new Date(date), 'dd/MM/yyyy hh:mm p');
 }
