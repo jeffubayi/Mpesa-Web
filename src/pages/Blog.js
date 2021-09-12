@@ -1,21 +1,15 @@
-import { Icon } from '@iconify/react';
-import plusFill from '@iconify/icons-eva/plus-fill';
-import { Link as RouterLink } from 'react-router-dom';
+
 // material
-import { Grid, Button, Container, Stack, Typography } from '@material-ui/core';
+import { Grid, Container, Stack, Typography } from '@material-ui/core';
 // components
 import Page from '../components/Page';
-import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from '../components/_dashboard/blog';
+import { BlogPostCard,HighlightCard } from '../components/_dashboard/blog';
 //
 import POSTS from '../_mocks_/blog';
 
 // ----------------------------------------------------------------------
 
-const SORT_OPTIONS = [
-  { value: 'latest', label: 'Latest' },
-  { value: 'popular', label: 'Popular' },
-  { value: 'oldest', label: 'Oldest' }
-];
+
 
 // ----------------------------------------------------------------------
 
@@ -30,8 +24,15 @@ export default function Blog() {
         </Stack>
 
         <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
-          <BlogPostsSearch posts={POSTS} />
-          <BlogPostsSort options={SORT_OPTIONS} />
+        <Typography variant="subtitle2" gutterBottom>
+            HIGHLIGHTED
+          </Typography>
+        </Stack>
+        <HighlightCard />
+        <Stack mb={5} direction="row" alignItems="center" justifyContent="space-between">
+        <Typography variant="subtitle2" gutterBottom>
+            DISCOVER MORE
+          </Typography>
         </Stack>
 
         <Grid container spacing={3}>
