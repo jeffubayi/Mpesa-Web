@@ -26,7 +26,7 @@ export default function DashboardApp() {
   };
   return (
     
-    <Page title="Home | M-PESA">
+    <Page title="Home | Mpesa">
       <Container maxWidth="xl">
       {open && (
             <Checkout

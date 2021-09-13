@@ -13,7 +13,7 @@ import MySpend from "../components/MpesaCheckout/MySpend"
 
 export default function User() {
   return (
-    <Page title="User ">
+    <Page title="My Spend | Mpesa">
       <Container>
         <Stack
           direction="row"
