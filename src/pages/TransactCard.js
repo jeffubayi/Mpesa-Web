@@ -9,7 +9,7 @@ import CallMadeIcon from "@material-ui/icons/CallMade";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    width: "13%",
+    width: "60%",
     backgroundColor: "#00AB55",
   },
   details: {
