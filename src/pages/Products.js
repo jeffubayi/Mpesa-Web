@@ -16,14 +16,14 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   transactCard: {
-    width:"100%"
+    width: "100%",
   },
   paper: {
     padding: theme.spacing(2),
     textAlign: "center",
     color: "#000",
-    fontSize:"0.8rem",
-    fontWeight:600,
+    fontSize: "0.8rem",
+    fontWeight: 600,
     backgroundColor: "#F4F6F8",
   },
 }));
@@ -42,87 +42,102 @@ export default function EcommerceShop({ products, ...rest }) {
 
   return (
     <>
-    {open && (
-      <Checkout
-        openDialog={handleClickOpen}
-        closeDialog={handleClose}
-        buttonHelperText="Close"
-        title="Warning"
-        description="You lack permissions to view the requested resources"
-      />
-    )}
-    <Page title="Transact | Mpesa">
-      <Container>
-        <Typography variant="h4" gutterBottom>
-          Transact
-        </Typography>
-        <div >
-          <Grid container spacing={3}>
-            <Grid item xs={6} spacing={3}>
-              <Paper className={classes.paper}>SEND AND REQUEST</Paper>
+      {open && (
+        <Checkout
+          openDialog={handleClickOpen}
+          closeDialog={handleClose}
+          buttonHelperText="Close"
+          title="Warning"
+          description="You lack permissions to view the requested resources"
+        />
+      )}
+      <Page title="Transact | Mpesa">
+        <Container>
+          <Typography variant="h4" gutterBottom>
+            Transact
+          </Typography>
+          <div>
+            <Grid container spacing={3}>
+              <Grid item xs={6} spacing={3}>
+                <Paper className={classes.paper}>SEND AND REQUEST</Paper>
+              </Grid>
+              <Grid item xs={6}>
+                <Paper className={classes.paper}>PAYMENT</Paper>
+              </Grid>
+              <Grid item xs={3} onClick={handleClickOpen}>
+                <TransactCard
+                  title="SEND MONEY"
+                  className={classes.transactCard}
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <TransactCard
+                  title="REQUEST MONEY"
+                  className={classes.transactCard}
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <TransactCard
+                  title="PAY BILL"
+                  className={classes.transactCard}
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <TransactCard
+                  title="BUY GOODS"
+                  className={classes.transactCard}
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <TransactCard title="GLOBAL" className={classes.transactCard} />
+              </Grid>
+              <Grid item xs={3}>
+                <TransactCard
+                  title="REQUEST ANOTHER"
+                  className={classes.transactCard}
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <TransactCard
+                  title="POCHI LA BIASHARA"
+                  className={classes.transactCard}
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <TransactCard title="FULIZA" className={classes.transactCard} />
+              </Grid>
+              <Grid item xs={6}>
+                <Paper className={classes.paper}>WITHDRAW</Paper>
+              </Grid>
+              <Grid item xs={6}>
+                <Paper className={classes.paper}>BUY AIRTIME</Paper>
+              </Grid>
+              <Grid item xs={3}>
+                <TransactCard
+                  title="AT AGENT"
+                  className={classes.transactCard}
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <TransactCard title="AT ATM" className={classes.transactCard} />
+              </Grid>
+              <Grid item xs={3}>
+                <TransactCard
+                  title="FOR MY NUMBER"
+                  className={classes.transactCard}
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <TransactCard
+                  title="FOR ANOTHER NUMBER"
+                  className={classes.transactCard}
+                />
+              </Grid>
             </Grid>
-            <Grid item xs={6}>
-              <Paper className={classes.paper}>PAYMENT</Paper>
-            </Grid>
-            <Grid item xs={3}  onClick={handleClickOpen}>
-            <TransactCard  className={classes.transactCard}/>
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={6}>
-              <Paper className={classes.paper}>WITHDRAW</Paper>
-            </Grid>
-            <Grid item xs={6}>
-              <Paper className={classes.paper}>BUY AIRTIME</Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-            <Grid item xs={3}>
-              <TransactCard className={classes.transactCard} />
-            </Grid>
-          </Grid>
-        </div>
-        <ProductCartWidget />
-      </Container>
-    </Page>
+          </div>
+          <ProductCartWidget />
+        </Container>
+      </Page>
     </>
   );
 }
