@@ -66,45 +66,59 @@ export default function EcommerceShop({ products, ...rest }) {
               </Grid>
               <Grid item xs={3} onClick={handleClickOpen}>
                 <TransactCard
+                  send
                   title="SEND MONEY"
                   className={classes.transactCard}
                 />
               </Grid>
               <Grid item xs={3}>
                 <TransactCard
+                  send
                   title="REQUEST MONEY"
                   className={classes.transactCard}
                 />
               </Grid>
               <Grid item xs={3}>
                 <TransactCard
+                  pay
                   title="PAY BILL"
                   className={classes.transactCard}
                 />
               </Grid>
               <Grid item xs={3}>
                 <TransactCard
+                  pay
                   title="BUY GOODS"
                   className={classes.transactCard}
                 />
               </Grid>
               <Grid item xs={3}>
-                <TransactCard title="GLOBAL" className={classes.transactCard} />
+                <TransactCard
+                  send
+                  title="GLOBAL"
+                  className={classes.transactCard}
+                />
               </Grid>
               <Grid item xs={3}>
                 <TransactCard
+                  send
                   title="REQUEST ANOTHER"
                   className={classes.transactCard}
                 />
               </Grid>
               <Grid item xs={3}>
                 <TransactCard
+                  pay
                   title="POCHI LA BIASHARA"
                   className={classes.transactCard}
                 />
               </Grid>
               <Grid item xs={3}>
-                <TransactCard title="FULIZA" className={classes.transactCard} />
+                <TransactCard
+                  pay
+                  title="FULIZA"
+                  className={classes.transactCard}
+                />
               </Grid>
               <Grid item xs={6}>
                 <Paper className={classes.paper}>WITHDRAW</Paper>
@@ -114,12 +128,17 @@ export default function EcommerceShop({ products, ...rest }) {
               </Grid>
               <Grid item xs={3}>
                 <TransactCard
+                  withdraw
                   title="AT AGENT"
                   className={classes.transactCard}
                 />
               </Grid>
               <Grid item xs={3}>
-                <TransactCard title="AT ATM" className={classes.transactCard} />
+                <TransactCard
+                  withdraw
+                  title="AT ATM"
+                  className={classes.transactCard}
+                />
               </Grid>
               <Grid item xs={3}>
                 <TransactCard
