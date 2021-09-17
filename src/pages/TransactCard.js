@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   controls: {
     display: "flex",
     justifyContent: "flex-end",
-    padding :"0.5rem"
+    padding: "0.5rem",
   },
   playIcon: {
     color: "#00AB55",
@@ -40,13 +40,14 @@ export default function TransactCard({ send, pay, withdraw, title }) {
   return (
     <Card
       style={{
+        display: "grid",
         backgroundColor: `${
           send ? "#00AB55" : pay ? "#036ECC" : withdraw ? "#f7005b" : "#11E2F6"
         }`,
       }}
     >
-      <div className={classes.details}>
-        <CardContent className={classes.content}>
+      <div>
+        <CardContent>
           <Typography variant="subtitle1" className={classes.cover}>
             {title}
           </Typography>

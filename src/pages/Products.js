@@ -57,7 +57,7 @@ export default function EcommerceShop({ products, ...rest }) {
             Transact
           </Typography>
           <div>
-            <Grid container spacing={3}>
+            <Grid container spacing={5}>
               <Grid item xs={6} spacing={3}>
                 <Paper className={classes.paper}>SEND AND REQUEST</Paper>
               </Grid>
@@ -71,49 +71,49 @@ export default function EcommerceShop({ products, ...rest }) {
                   className={classes.transactCard}
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={3} onClick={handleClickOpen}>
                 <TransactCard
                   send
                   title="REQUEST MONEY"
                   className={classes.transactCard}
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={3} onClick={handleClickOpen}>
                 <TransactCard
                   pay
                   title="PAY BILL"
                   className={classes.transactCard}
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={3} onClick={handleClickOpen}>
                 <TransactCard
                   pay
                   title="BUY GOODS"
                   className={classes.transactCard}
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={3} onClick={handleClickOpen}>
                 <TransactCard
                   send
                   title="GLOBAL"
                   className={classes.transactCard}
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={3} onClick={handleClickOpen} >
                 <TransactCard
                   send
                   title="REQUEST ANOTHER"
                   className={classes.transactCard}
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={3} onClick={handleClickOpen}>
                 <TransactCard
                   pay
                   title="POCHI LA BIASHARA"
                   className={classes.transactCard}
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={3} onClick={handleClickOpen}>
                 <TransactCard
                   pay
                   title="FULIZA"
@@ -126,27 +126,27 @@ export default function EcommerceShop({ products, ...rest }) {
               <Grid item xs={6}>
                 <Paper className={classes.paper}>BUY AIRTIME</Paper>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={3} onClick={handleClickOpen}>
                 <TransactCard
                   withdraw
                   title="AT AGENT"
                   className={classes.transactCard}
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={3} onClick={handleClickOpen} >
                 <TransactCard
                   withdraw
                   title="AT ATM"
                   className={classes.transactCard}
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={3} onClick={handleClickOpen} >
                 <TransactCard
                   title="FOR MY NUMBER"
                   className={classes.transactCard}
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={3} onClick={handleClickOpen} >
                 <TransactCard
                   title="FOR ANOTHER NUMBER"
                   className={classes.transactCard}
