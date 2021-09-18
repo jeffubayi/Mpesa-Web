@@ -35,7 +35,7 @@ export default function BlogPostCard({ post }) {
       <Card sx={{ position: "relative", textAlign: "center" }}>
         <CardMediaStyle>
           <Avatar
-            alt={title}
+            alt=""
             src={cover}
             style={{ width: "5rem", height: "5rem" }}
           />
