@@ -13,29 +13,24 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
   {
-    label: 'San Francisco – Oakland Bay Bridge, United States',
+    label: 'Payments have never been this easy,',
     imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
+      ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjYpAGdgHFnzHAlTLv6hoZyvq-kzISwPF70w&usqp=CAU',
   },
   {
-    label: 'Bird',
+    label: 'Download the Mpesa app on your phone and have it on the go',
     imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://www.safaricom.co.ke/blog/wp-content/uploads/2016/05/Blog_bannerapp.jpg',
   },
   {
-    label: 'Bali, Indonesia',
+    label: 'Checkout all the best deals inclusive',
     imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80',
+      ' https://secureservercdn.net/104.238.71.250/fcf.f5f.myftpupload.com/wp-content/uploads/AAEAAQAAAAAAAAISAAAAJDdhZjNjNzgwLWQ4N2EtNDFiOS1hNTQ3LWUxZWE3NjZkNzlmMA-2.png',
   },
   {
-    label: 'NeONBRAND Digital Marketing, Las Vegas, United States',
+    label: 'Transforming lives throughout the country',
     imgPath:
-      'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-  {
-    label: 'Goč, Serbia',
-    imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://cms.qz.com/wp-content/uploads/2013/11/reuters-mpesa.jpg?quality=75&strip=all&w=1600&h=900&crop=1',
   },
 ];
 
