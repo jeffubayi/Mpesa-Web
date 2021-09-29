@@ -4,6 +4,7 @@ import { alpha } from '@material-ui/core/styles';
 import { Box, MenuItem, ListItemIcon, ListItemText, IconButton } from '@material-ui/core';
 // components
 import MenuPopover from '../../components/MenuPopover';
+import SettingsOverscanIcon from '@material-ui/icons/SettingsOverscan';
 
 // ----------------------------------------------------------------------
 
@@ -48,7 +49,7 @@ export default function LanguagePopover() {
           })
         }}
       >
-        <img src={LANGS[0].icon} alt={LANGS[0].label} />
+        <SettingsOverscanIcon/>
       </IconButton>
 
       <MenuPopover open={open} onClose={handleClose} anchorEl={anchorRef.current}>
