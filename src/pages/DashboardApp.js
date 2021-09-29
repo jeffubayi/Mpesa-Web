@@ -12,6 +12,7 @@ import {
   AppWeeklySales,
 } from "../components/_dashboard/app";
 import Checkout from "../components/MpesaCheckout/SendMoneyDialog"
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 // ----------------------------------------------------------------------
 
 export default function DashboardApp() {
@@ -39,7 +40,7 @@ export default function DashboardApp() {
           )}
         <Box sx={{ pb: 5 }}>
           <Typography variant="subtitle-2">Balance</Typography>
-          <Typography variant="h4"> Ksh. 100</Typography>
+          <Typography variant="h4"> <span>Ksh. 100</span> <VisibilityOffIcon style={{fill:"grey"}}/></Typography>
         </Box>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3} onClick={handleClickOpen}>
