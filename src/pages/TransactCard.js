@@ -41,6 +41,7 @@ export default function TransactCard({ send, pay, withdraw, title }) {
     <Card
       style={{
         display: "grid",
+        width: "auto",
         backgroundColor: `${
           send ? "#00AB55" : pay ? "#036ECC" : withdraw ? "#f7005b" : "#11E2F6"
         }`,
