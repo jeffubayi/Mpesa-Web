@@ -9,6 +9,7 @@ import { makeStyles } from "@material-ui/styles";
 import React from "react";
 import TransactCard from "./TransactCard";
 import Paper from "@material-ui/core/Paper";
+import styled from "styled-components";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,6 +28,12 @@ const useStyles = makeStyles((theme) => ({
     margin: "1rem",
   },
 }));
+
+const CardWrapper = styled.div`
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(2, auto);
+`;
 
 export default function Transaction({ products, ...rest }) {
   const [open, setOpen] = React.useState(false);
@@ -57,14 +64,8 @@ export default function Transaction({ products, ...rest }) {
             Transact
           </Typography>
           <div>
-            <Paper className={classes.paper}>SEND</Paper>
-            <div
-              style={{
-                display: "grid",
-                gap: "1.2rem",
-                gridTemplateColumns: "repeat(2,auto)",
-              }}
-            >
+            <Paper className={classes.paper}>SEND AND REQUEST</Paper>
+            <CardWrapper>
               <TransactCard
                 send
                 title="SEND MONEY"
@@ -77,24 +78,18 @@ export default function Transaction({ products, ...rest }) {
               />
               <TransactCard
                 send
-                title="SEND MONEY"
+                title="GLOBAL"
                 className={classes.transactCard}
               />
               <TransactCard
                 send
-                title="REQUEST MONEY"
+                title="REQUEST ANOTHER"
                 className={classes.transactCard}
               />
-            </div>
+            </CardWrapper>
 
             <Paper className={classes.paper}>PAYMENT</Paper>
-            <div
-              style={{
-                display: "grid",
-                gap: "1.2rem",
-                gridTemplateColumns: "repeat(2,auto)",
-              }}
-            >
+            <CardWrapper>
               <TransactCard
                 pay
                 title="PAY BILL"
@@ -102,12 +97,12 @@ export default function Transaction({ products, ...rest }) {
               />
               <TransactCard
                 pay
-                title="REQUEST MONEY"
+                title="BUY GOODS"
                 className={classes.transactCard}
               />
               <TransactCard
                 pay
-                title="SEND MONEY"
+                title="POCHI LA BIASHARA"
                 className={classes.transactCard}
               />
               <TransactCard
@@ -115,16 +110,10 @@ export default function Transaction({ products, ...rest }) {
                 title="FULIZA"
                 className={classes.transactCard}
               />
-            </div>
+            </CardWrapper>
 
             <Paper className={classes.paper}>WITHDRAW</Paper>
-            <div
-              style={{
-                display: "grid",
-                gap: "1.2rem",
-                gridTemplateColumns: "repeat(2,auto)",
-              }}
-            >
+            <CardWrapper>
               <TransactCard
                 withdraw
                 title="AT ATM"
@@ -135,16 +124,10 @@ export default function Transaction({ products, ...rest }) {
                 title="AT AGENT"
                 className={classes.transactCard}
               />
-            </div>
+            </CardWrapper>
 
             <Paper className={classes.paper}>BUY AIRTIME</Paper>
-            <div
-              style={{
-                display: "grid",
-                gap: "1.2rem",
-                gridTemplateColumns: "repeat(2,auto)",
-              }}
-            >
+            <CardWrapper>
               <TransactCard
                 title="FOR MY NUMBER"
                 className={classes.transactCard}
@@ -153,7 +136,7 @@ export default function Transaction({ products, ...rest }) {
                 title="FOR ANOTHER NUMBER"
                 className={classes.transactCard}
               />
-            </div>
+            </CardWrapper>
           </div>
           <ProductCartWidget />
         </Container>
