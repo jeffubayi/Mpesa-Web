@@ -11,6 +11,17 @@ import TransactCard from "./TransactCard";
 import Paper from "@material-ui/core/Paper";
 import styled from "styled-components";
 import CallMadeIcon from "@material-ui/icons/CallMade";
+import ImportExportIcon from '@material-ui/icons/ImportExport';
+import TrendingDownIcon from '@material-ui/icons/TrendingDown';
+import LanguageIcon from '@material-ui/icons/Language';
+import ReceiptIcon from '@material-ui/icons/Receipt';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
+import StoreIcon from '@material-ui/icons/Store';
+import PaymentIcon from '@material-ui/icons/Payment';
+import PermContactCalendarIcon from '@material-ui/icons/PermContactCalendar';
+import MobileScreenShareIcon from '@material-ui/icons/MobileScreenShare';
+import LaunchIcon from '@material-ui/icons/Launch';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   transactCard: {
     width: "100%",
+
   },
   paper: {
     padding: theme.spacing(1),
@@ -95,19 +107,19 @@ export default function Transaction({ products, ...rest }) {
                 send
                 title="REQUEST MONEY"
                 className={classes.transactCard}
-                icon={<CallMadeIcon style={{fill: "#00AB55"}}/>}
+                icon={<TrendingDownIcon style={{fill: "#00AB55"}}/>}
               />
               <TransactCard
                 send
                 title="GLOBAL"
                 className={classes.transactCard}
-                icon={<CallMadeIcon style={{fill: "#00AB55"}}/>}
+                icon={<LanguageIcon style={{fill: "#00AB55"}}/>}
               />
               <TransactCard
                 send
-                title="REQUEST ANOTHER"
+                title="ANOTHER NETWORK "
                 className={classes.transactCard}
-                icon={<CallMadeIcon style={{fill: "#00AB55"}}/>}
+                icon={<ImportExportIcon  style={{fill: "#00AB55"}}/>}
               />
             </CardWrapper>
             </div>
@@ -118,25 +130,25 @@ export default function Transaction({ products, ...rest }) {
                 pay
                 title="PAY BILL"
                 className={classes.transactCard}
-                icon={<CallMadeIcon style={{fill:"#036ECC"}} />}
+                icon={<ReceiptIcon style={{fill:"#036ECC"}} />}
               />
               <TransactCard
                 pay
                 title="BUY GOODS"
                 className={classes.transactCard}
-                icon={<CallMadeIcon style={{fill: "#036ECC"}}/>}
+                icon={<ShoppingBasketIcon style={{fill: "#036ECC"}}/>}
               />
               <TransactCard
                 pay
                 title="POCHI LA BIASHARA"
                 className={classes.transactCard}
-                icon={<CallMadeIcon style={{fill: "#036ECC"}}/>}
+                icon={<PhoneAndroidIcon style={{fill: "#036ECC"}}/>}
               />
               <TransactCard
                 pay
                 title="FULIZA"
                 className={classes.transactCard}
-                icon={<CallMadeIcon style={{fill: "#036ECC"}}/>}
+                icon={<LaunchIcon style={{fill: "#036ECC"}}/>}
               />
             </CardWrapper>
             </div>
@@ -145,15 +157,15 @@ export default function Transaction({ products, ...rest }) {
             <CardWrapper>
               <TransactCard
                 withdraw
-                title="AT ATM"
+                title="AT AGENT"
                 className={classes.transactCard}
-                icon={<CallMadeIcon style={{fill:"#f7005b"}}/>}
+                icon={<StoreIcon style={{fill: "#f7005b"}}/>}
               />
               <TransactCard
                 withdraw
-                title="AT AGENT"
+                title="AT ATM"
                 className={classes.transactCard}
-                icon={<CallMadeIcon style={{fill: "#f7005b"}}/>}
+                icon={<PaymentIcon style={{fill:"#f7005b"}}/>}
               />
             </CardWrapper>
             </div>
@@ -163,12 +175,12 @@ export default function Transaction({ products, ...rest }) {
               <TransactCard
                 title="FOR MY NUMBER"
                 className={classes.transactCard}
-                icon={<CallMadeIcon style={{fill: "#11E2F6"}}/>}
+                icon={<MobileScreenShareIcon  style={{fill: "#11E2F6"}}/>}
               />
               <TransactCard
                 title="FOR ANOTHER NUMBER"
                 className={classes.transactCard}
-                icon={<CallMadeIcon style={{fill: "#11E2F6"}}/>}
+                icon={<PermContactCalendarIcon style={{fill: "#11E2F6"}}/>}
               />
             </CardWrapper>
             </div>
