@@ -4,7 +4,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import CallMadeIcon from "@material-ui/icons/CallMade";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TransactCard({ send, pay, withdraw, title }) {
+export default function TransactCard({ send, pay, withdraw, title,icon }) {
   const classes = useStyles();
 
   return (
@@ -55,19 +55,7 @@ export default function TransactCard({ send, pay, withdraw, title }) {
         </CardContent>
         <div className={classes.controls}>
           <IconButton className={classes.icon}>
-            <CallMadeIcon
-              style={{
-                color: `${
-                  send
-                    ? "#00AB55"
-                    : pay
-                    ? "#036ECC"
-                    : withdraw
-                    ? "#f7005b"
-                    : "#11E2F6"
-                }`,
-              }}
-            />
+            {icon}  
           </IconButton>
         </div>
       </div>

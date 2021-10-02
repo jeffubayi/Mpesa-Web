@@ -10,6 +10,7 @@ import React from "react";
 import TransactCard from "./TransactCard";
 import Paper from "@material-ui/core/Paper";
 import styled from "styled-components";
+import CallMadeIcon from "@material-ui/icons/CallMade";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,6 +52,7 @@ const Main = styled.div`
   }
 `;
 
+
 export default function Transaction({ products, ...rest }) {
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
@@ -87,21 +89,25 @@ export default function Transaction({ products, ...rest }) {
                 send
                 title="SEND MONEY"
                 className={classes.transactCard}
+                icon={<CallMadeIcon style={{fill:"#00AB55"}}/>}
               />
               <TransactCard
                 send
                 title="REQUEST MONEY"
                 className={classes.transactCard}
+                icon={<CallMadeIcon style={{fill: "#00AB55"}}/>}
               />
               <TransactCard
                 send
                 title="GLOBAL"
                 className={classes.transactCard}
+                icon={<CallMadeIcon style={{fill: "#00AB55"}}/>}
               />
               <TransactCard
                 send
                 title="REQUEST ANOTHER"
                 className={classes.transactCard}
+                icon={<CallMadeIcon style={{fill: "#00AB55"}}/>}
               />
             </CardWrapper>
             </div>
@@ -112,21 +118,25 @@ export default function Transaction({ products, ...rest }) {
                 pay
                 title="PAY BILL"
                 className={classes.transactCard}
+                icon={<CallMadeIcon style={{fill:"#036ECC"}} />}
               />
               <TransactCard
                 pay
                 title="BUY GOODS"
                 className={classes.transactCard}
+                icon={<CallMadeIcon style={{fill: "#036ECC"}}/>}
               />
               <TransactCard
                 pay
                 title="POCHI LA BIASHARA"
                 className={classes.transactCard}
+                icon={<CallMadeIcon style={{fill: "#036ECC"}}/>}
               />
               <TransactCard
                 pay
                 title="FULIZA"
                 className={classes.transactCard}
+                icon={<CallMadeIcon style={{fill: "#036ECC"}}/>}
               />
             </CardWrapper>
             </div>
@@ -137,11 +147,13 @@ export default function Transaction({ products, ...rest }) {
                 withdraw
                 title="AT ATM"
                 className={classes.transactCard}
+                icon={<CallMadeIcon style={{fill:"#f7005b"}}/>}
               />
               <TransactCard
                 withdraw
                 title="AT AGENT"
                 className={classes.transactCard}
+                icon={<CallMadeIcon style={{fill: "#f7005b"}}/>}
               />
             </CardWrapper>
             </div>
@@ -151,10 +163,12 @@ export default function Transaction({ products, ...rest }) {
               <TransactCard
                 title="FOR MY NUMBER"
                 className={classes.transactCard}
+                icon={<CallMadeIcon style={{fill: "#11E2F6"}}/>}
               />
               <TransactCard
                 title="FOR ANOTHER NUMBER"
                 className={classes.transactCard}
+                icon={<CallMadeIcon style={{fill: "#11E2F6"}}/>}
               />
             </CardWrapper>
             </div>
