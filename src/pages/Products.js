@@ -33,6 +33,22 @@ const CardWrapper = styled.div`
   display: grid;
   gap: 1.2rem;
   grid-template-columns: repeat(2, auto);
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 3rem;
+  }
+`;
+
+const Main = styled.div`
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(1, auto);
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 5rem;
+  }
 `;
 
 export default function Transaction({ products, ...rest }) {
@@ -63,7 +79,8 @@ export default function Transaction({ products, ...rest }) {
           <Typography variant="h4" gutterBottom>
             Transact
           </Typography>
-          <div>
+          <Main>
+            <div>
             <Paper className={classes.paper}>SEND AND REQUEST</Paper>
             <CardWrapper>
               <TransactCard
@@ -87,7 +104,8 @@ export default function Transaction({ products, ...rest }) {
                 className={classes.transactCard}
               />
             </CardWrapper>
-
+            </div>
+             <div>
             <Paper className={classes.paper}>PAYMENT</Paper>
             <CardWrapper>
               <TransactCard
@@ -111,7 +129,8 @@ export default function Transaction({ products, ...rest }) {
                 className={classes.transactCard}
               />
             </CardWrapper>
-
+            </div>
+            <div>
             <Paper className={classes.paper}>WITHDRAW</Paper>
             <CardWrapper>
               <TransactCard
@@ -125,7 +144,8 @@ export default function Transaction({ products, ...rest }) {
                 className={classes.transactCard}
               />
             </CardWrapper>
-
+            </div>
+            <div>
             <Paper className={classes.paper}>BUY AIRTIME</Paper>
             <CardWrapper>
               <TransactCard
@@ -137,7 +157,8 @@ export default function Transaction({ products, ...rest }) {
                 className={classes.transactCard}
               />
             </CardWrapper>
-          </div>
+            </div>
+          </Main>
           <ProductCartWidget />
         </Container>
       </Page>
