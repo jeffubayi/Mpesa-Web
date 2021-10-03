@@ -4,7 +4,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-
+import Checkout from "../components/MpesaCheckout/SendMoneyDialog"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,8 +36,27 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TransactCard({ send, pay, withdraw, title,icon }) {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
+    <>
+    {open && (
+      <Checkout
+        openDialog={handleClickOpen}
+        closeDialog={handleClose}
+        buttonHelperText="Close"
+        title="Warning"
+        description="You lack permissions to view the requested resources"
+      />
+    )}
     <Card
       style={{
         display: "grid",
@@ -46,6 +65,7 @@ export default function TransactCard({ send, pay, withdraw, title,icon }) {
           send ? "#00AB55" : pay ? "#036ECC" : withdraw ? "#f7005b" : "#11E2F6"
         }`,
       }}
+      onClick={handleClickOpen}
     >
       <div>
         <CardContent>
@@ -60,5 +80,6 @@ export default function TransactCard({ send, pay, withdraw, title,icon }) {
         </div>
       </div>
     </Card>
+    </>
   );
 }
