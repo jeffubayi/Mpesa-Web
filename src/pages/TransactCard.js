@@ -69,7 +69,7 @@ export default function TransactCard({ send, pay, withdraw, title,icon }) {
     >
       <div>
         <CardContent>
-          <Typography variant="subtitle1" className={classes.cover}>
+          <Typography variant="subtitle2" className={classes.cover}>
             {title}
           </Typography>
         </CardContent>
