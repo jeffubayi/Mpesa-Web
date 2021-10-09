@@ -15,7 +15,7 @@ const tutorialSteps = [
   {
     label: 'Payments have never been this easy,',
     imgPath:
-      ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjYpAGdgHFnzHAlTLv6hoZyvq-kzISwPF70w&usqp=CAU',
+      ' https://i1.wp.com/tech-ish.com/wp-content/uploads/2020/11/MPESA-Mshwari-Safaricom.png',
   },
   {
     label: 'Download the Mpesa app on your phone',
@@ -37,7 +37,6 @@ const tutorialSteps = [
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    flexGrow: 1,
     borderRadius: '1rem'
   },
   header: {
@@ -49,8 +48,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
   },
   img: {
-    height: 230,
-    display: 'block',
+    height: 250,
     overflow: 'hidden',
     width: '100%',
     borderRadius: '1rem'
