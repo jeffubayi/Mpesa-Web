@@ -4,6 +4,7 @@ import Card from "@material-ui/core/Card";
 import{CardActions,CardContent,Button}  from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
+import styled from "styled-components"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,9 +22,6 @@ const useStyles = makeStyles((theme) => ({
     width: 400,
     height:110,
   },
-  actions: {
-    margin:"3rem 0 0 9rem ",
-  },
   controls: {
     display: "flex",
     alignItems: "center",
@@ -35,6 +33,13 @@ const useStyles = makeStyles((theme) => ({
     width: 38,
   },
 }));
+
+const Controls = styled.div`
+  margin-top:1rem  ;
+  @media (min-width: 768px) {
+    margin:3rem 0 0 9rem ;
+  }
+`;
 
 export default function HighlightCard() {
   const classes = useStyles();
@@ -56,7 +61,7 @@ export default function HighlightCard() {
           </Typography>
         </CardContent>
       </div>
-      <div className={classes.actions}>
+      <Controls>
       <CardActions style={{display:"flex",justifyContent:"space-between"}}>
         <Button size="small" color="primary" variant="contained">
           Buy bundles
@@ -65,7 +70,7 @@ export default function HighlightCard() {
           Tunukiwa bundles
         </Button>
       </CardActions>
-      </div>
+      </Controls>
     </Card>
   );
 }
