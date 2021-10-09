@@ -62,7 +62,7 @@ export default function AppWebsiteVisits() {
 
   return (
     <Card>
-      <CardHeader title={fDateMonth(new Date())} subheader="KSH : 4,000" />
+      <CardHeader title={`Total spent in ${fDateMonth(new Date())}`} subheader="KSH : 4,000" />
       <Box sx={{ p: 3, pb: 1 }} dir="ltr">
         <ReactApexChart
           type="line"

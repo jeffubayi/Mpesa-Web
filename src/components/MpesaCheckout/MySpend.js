@@ -18,7 +18,7 @@ const tutorialSteps = [
       ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjYpAGdgHFnzHAlTLv6hoZyvq-kzISwPF70w&usqp=CAU',
   },
   {
-    label: 'Download the Mpesa app on your phone and have it on the go',
+    label: 'Download the Mpesa app on your phone',
     imgPath:
       'https://www.safaricom.co.ke/blog/wp-content/uploads/2016/05/Blog_bannerapp.jpg',
   },
@@ -28,7 +28,7 @@ const tutorialSteps = [
       ' https://secureservercdn.net/104.238.71.250/fcf.f5f.myftpupload.com/wp-content/uploads/AAEAAQAAAAAAAAISAAAAJDdhZjNjNzgwLWQ4N2EtNDFiOS1hNTQ3LWUxZWE3NjZkNzlmMA-2.png',
   },
   {
-    label: 'Transforming lives throughout the country',
+    label: 'Transforming lives across the country',
     imgPath:
       'https://cms.qz.com/wp-content/uploads/2013/11/reuters-mpesa.jpg?quality=75&strip=all&w=1600&h=900&crop=1',
   },
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     flexGrow: 1,
-    borderRadius: '2rem'
+    borderRadius: '1rem'
   },
   header: {
     display: 'flex',
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     overflow: 'hidden',
     width: '100%',
-    borderRadius: '2rem'
+    borderRadius: '1rem'
   },
 }));
 
