@@ -33,7 +33,7 @@ const sidebarConfig = [
   },
   {
     title: 'grow',
-    path: '/404',
+    path: '/dashboard/grow',
     icon: <TrendingUpIcon/>,
   },
   {

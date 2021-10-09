@@ -41,33 +41,33 @@ const Controls = styled.div`
   }
 `;
 
-export default function HighlightCard() {
+export default function HighlightCard({title, subtitle,outlinedButton,containedButton,img}) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
       <CardMedia
         className={classes.cover}
-        image="https://www.techinafrica.com/wp-content/uploads/2021/08/151.-safaricom.png"
-        title="safaricom"
+        image={img}
+        title={title}
       />
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography component="h5" variant="h5">
-            SAFARICOM BUNDLES
+          {title}
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
-            safaricom
+          {subtitle}
           </Typography>
         </CardContent>
       </div>
       <Controls>
       <CardActions style={{display:"flex",justifyContent:"space-between"}}>
         <Button size="small" color="primary" variant="contained">
-          Buy bundles
+        {outlinedButton}
         </Button>
         <Button size="small" color="primary" variant="outlined">
-          Tunukiwa bundles
+          {containedButton}
         </Button>
       </CardActions>
       </Controls>

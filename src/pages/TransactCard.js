@@ -61,8 +61,11 @@ export default function TransactCard({ send, pay, withdraw, title,icon }) {
       style={{
         display: "grid",
         width: "auto",
-        backgroundColor: `${
-          send ? "#00AB55" : pay ? "#036ECC" : withdraw ? "#f7005b" : "#11E2F6"
+        backgroundImage: `${
+          send ?  "linear-gradient( 136deg, #00AB55 0%, #00AB55 60%, #FAFAFA 100%)"
+           : pay ?  "linear-gradient( 136deg, #036ECC 0%, #036ECC 60%, #FAFAFA 100%)"
+           : withdraw ? "linear-gradient( 136deg, #f7005b 0%, #f7005b 60%, #FAFAFA 100%)" 
+           : "linear-gradient( 136deg, #11E2F6 0%, #11E2F6 60%, #FAFAFA 100%)"
         }`,
       }}
       onClick={handleClickOpen}
