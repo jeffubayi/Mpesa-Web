@@ -51,57 +51,6 @@ export default function LoginForm() {
     <FormikProvider value={formik}>
       <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
         <Stack spacing={3}>
-          <TextField
-            fullWidth
-            autoComplete="username"
-            type="number"
-            label="National ID / Passport"
-            {...getFieldProps("id")}
-            error={Boolean(touched.id && errors.id)}
-            helperText={touched.id && errors.id}
-          />
-
-          <TextField
-            fullWidth
-            autoComplete="current-phoneNumber"
-            type="number"
-            label="Phone Number"
-            {...getFieldProps("phoneNumber")}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="end">
-                  <IconButton onClick={handleShowPhoneNumber} edge="end">
-                    <Icon icon={showPhoneNumber ? eyeFill : eyeOffFill} />
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-            error={Boolean(touched.phoneNumber && errors.phoneNumber)}
-            helperText={touched.phoneNumber && errors.phoneNumber}
-          />
-        </Stack>
-
-        <Stack
-          direction="row"
-          alignItems="center"
-          justifyContent="space-between"
-          sx={{ my: 2 }}
-        >
-          <FormControlLabel
-            control={
-              <Checkbox
-                {...getFieldProps("remember")}
-                checked={values.remember}
-              />
-            }
-            label="Remember me"
-          />
-
-          <Link component={RouterLink} variant="subtitle2" to="#">
-            Forgot phoneNumber?
-          </Link>
-        </Stack>
-
         <LoadingButton
           fullWidth
           size="large"
@@ -109,8 +58,18 @@ export default function LoginForm() {
           variant="contained"
           loading={isSubmitting}
         >
-          Login
+          Login to mpesa
         </LoadingButton>
+        <LoadingButton
+          fullWidth
+          size="large"
+          type="submit"
+          variant="outlined"
+          loading={isSubmitting}
+        >
+          Register an account
+        </LoadingButton>
+        </Stack>
       </Form>
     </FormikProvider>
   );
