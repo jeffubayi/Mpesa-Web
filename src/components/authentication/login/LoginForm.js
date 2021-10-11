@@ -58,7 +58,7 @@ export default function LoginForm() {
           variant="contained"
           loading={isSubmitting}
         >
-          Login to mpesa
+          Login 
         </LoadingButton>
         <LoadingButton
           fullWidth
