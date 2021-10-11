@@ -24,7 +24,9 @@ const SectionStyle = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  margin: theme.spacing(2, 0, 2, 2)
+  margin: theme.spacing(2, 0, 2, 2),
+  backgroundSize: "cover",
+  backgroundImage: `url("https://i1.wp.com/www.mobileworldlive.com/wp-content/uploads/2017/02/mPesa-new.jpg?fit=640%2C426&ssl=1")`
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
@@ -51,10 +53,6 @@ export default function Register() {
 
       <MHidden width="mdDown">
         <SectionStyle>
-          <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-            The future of money is with Mpesa
-          </Typography>
-          <img alt="register" src="/static/illustrations/illustration_register.png" />
         </SectionStyle>
       </MHidden>
 
@@ -62,7 +60,7 @@ export default function Register() {
         <ContentStyle>
           <Box sx={{ mb: 5 }}>
             <Typography variant="h4" gutterBottom>
-              Make your payments on the fly
+              Choose Mpesa Web Registration Process
             </Typography>
             <Typography sx={{ color: 'text.secondary' }}>
               From your Laptop or Tablet. No limits on payments.
