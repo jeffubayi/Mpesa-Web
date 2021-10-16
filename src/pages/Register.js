@@ -8,7 +8,6 @@ import AuthLayout from '../layouts/AuthLayout';
 import Page from '../components/Page';
 import { MHidden } from '../components/@material-extend';
 import { RegisterForm } from '../components/authentication/register';
-import AuthSocial from '../components/authentication/AuthSocial';
 
 // ----------------------------------------------------------------------
 
@@ -62,14 +61,18 @@ export default function Register() {
         <ContentStyle>
           <Box sx={{ mb: 5 }}>
             <Typography variant="h4" gutterBottom>
-              Make your payments on the fly
+              To use Mpesa App on your computer:
             </Typography>
             <Typography sx={{ color: 'text.secondary' }}>
-              From your Laptop or Tablet. No limits on payments.
+              1. Open Mpesa App on your Phone.
+            </Typography>
+            <Typography sx={{ color: 'text.secondary' }}>
+              2. Tap Menu or settings and select Linked Devices
+            </Typography>
+            <Typography sx={{ color: 'text.secondary' }}>
+             3. Point your phone to the screen to capture the code below
             </Typography>
           </Box>
-
-          <AuthSocial />
 
           <RegisterForm />
 
