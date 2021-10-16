@@ -8,17 +8,17 @@ import { LoadingButton } from "@material-ui/lab";
 // ----------------------------------------------------------------------
 
 export default function LoginForm() {
+
   return (
-    <>
+      <form autoComplete="off" >
         <Stack spacing={3}>
         <LoadingButton
           fullWidth
           size="large"
           type="submit"
           variant="contained"
-          onClick={() => window.location.assign(`/dashboard/app`)}
         >
-          Login to mpesa
+          Login 
         </LoadingButton>
         <Divider sx={{ my: 3 }}>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
@@ -30,11 +30,10 @@ export default function LoginForm() {
           size="large"
           type="submit"
           variant="outlined"
-          onClick={() => window.location.assign(`/register`)}
         >
           Register an account
         </LoadingButton>
         </Stack>
-        </>
+      </form>
   );
 }
