@@ -38,7 +38,7 @@ const sidebarConfig = [
   },
   {
     title: 'settings',
-    path: '/404',
+    path: '/dashboard/settings',
     icon: < SettingsIcon/>,
   },
   {
