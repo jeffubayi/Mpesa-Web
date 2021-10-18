@@ -25,13 +25,13 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import MailIcon from "@material-ui/icons/Mail";
 import PhoneIcon from "@material-ui/icons/Phone";
 import LanguageIcon from "@material-ui/icons/Language";
-import LocalLibraryIcon from "@material-ui/icons/LocalLibrary";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ScreenLockPortraitIcon from "@material-ui/icons/ScreenLockPortrait";
 import DescriptionIcon from "@material-ui/icons/Description";
+import ThumbsUpDownIcon from '@material-ui/icons/ThumbsUpDown';
+import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import EditIcon from "@material-ui/icons/Edit";
 import account from "../_mocks_/account";
 
@@ -70,8 +70,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#11E2F6",
   },
   avatar: {
-    height: "5rem",
-    width: "5rem",
+    height: "4.5rem",
+    width: "4.5rem",
   },
 }));
 
@@ -132,7 +132,7 @@ export default function Transaction({ products, ...rest }) {
             action={
               <Button
                 variant="outlined"
-                color="primary"
+                disabled
                 className={classes.button}
                 startIcon={<EditIcon />}
               >
@@ -149,7 +149,7 @@ export default function Transaction({ products, ...rest }) {
                 <List>
                   <ListItem>
                     <ListItemAvatar>
-                      <Avatar className={classes.iconBlue}>
+                      <Avatar className={classes.iconPurple}>
                         <StarIcon className={classes.iconWhite} />
                       </Avatar>
                     </ListItemAvatar>
@@ -219,7 +219,7 @@ export default function Transaction({ products, ...rest }) {
                   <ListItem>
                     <ListItemAvatar>
                       <Avatar className={classes.iconBlue}>
-                        <LocalLibraryIcon className={classes.iconWhite} />
+                        <ImportContactsIcon className={classes.iconWhite} />
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary="FAQs" />
@@ -273,7 +273,7 @@ export default function Transaction({ products, ...rest }) {
                   <ListItem>
                     <ListItemAvatar>
                       <Avatar className={classes.iconPurple}>
-                        <ThumbUpIcon className={classes.iconWhite} />
+                        <ThumbsUpDownIcon className={classes.iconWhite} />
                       </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary="RATE US ON APPSTORE" />
