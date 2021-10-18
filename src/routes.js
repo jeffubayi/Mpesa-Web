@@ -11,6 +11,7 @@ import Blog from './pages/Blog';
 import User from './pages/User';
 import NotFound from './pages/Page404';
 import Grow from './pages/Grow';
+import Settings from './pages/Settings';
 
 // ----------------------------------------------------------------------
 
@@ -25,7 +26,8 @@ export default function Router() {
         { path: 'user', element: <User /> },
         { path: 'products', element: <Products /> },
         { path: 'blog', element: <Blog /> },
-        { path: 'grow', element: <Grow/> }
+        { path: 'grow', element: <Grow/> },
+        { path: 'settings', element: <Settings/> }
       ]
     },
     {
