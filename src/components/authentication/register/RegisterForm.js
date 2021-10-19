@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 // material
 import { Stack, TextField, IconButton, InputAdornment } from '@material-ui/core';
 import { LoadingButton } from '@material-ui/lab';
+import { Link  } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
@@ -90,7 +91,8 @@ export default function RegisterForm() {
             error={Boolean(touched.password && errors.password)}
             helperText={touched.password && errors.password}
           />
-
+          <Link to="/dashboard/app">
+              
           <LoadingButton
             fullWidth
             size="large"
@@ -100,6 +102,7 @@ export default function RegisterForm() {
           >
             Register
           </LoadingButton>
+              </Link>
         </Stack>
       </Form>
     </FormikProvider>
