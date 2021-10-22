@@ -1,9 +1,5 @@
 import * as Yup from 'yup';
-import { useState } from 'react';
-import { Icon } from '@iconify/react';
 import { useFormik, Form, FormikProvider } from 'formik';
-import eyeFill from '@iconify/icons-eva/eye-fill';
-import eyeOffFill from '@iconify/icons-eva/eye-off-fill';
 import { useNavigate } from 'react-router-dom';
 // material
 import { Stack, TextField,Divider,Typography,Avatar } from '@material-ui/core';
@@ -16,7 +12,6 @@ import { Link as RouterLink } from "react-router-dom";
 
 export default function RegisterForm() {
   const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
 
   const RegisterSchema = Yup.object().shape({
     firstName: Yup.string()
@@ -41,7 +36,7 @@ export default function RegisterForm() {
     }
   });
 
-  const { errors, touched, handleSubmit, isSubmitting, getFieldProps } = formik;
+  const { errors, touched, handleSubmit, getFieldProps } = formik;
 
   return (
     <FormikProvider value={formik}>

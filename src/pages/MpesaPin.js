@@ -2,12 +2,9 @@ import { Link as RouterLink } from "react-router-dom";
 // material
 import { experimentalStyled as styled } from "@material-ui/core/styles";
 import { Box, Card, Link, Container, Typography } from "@material-ui/core";
-// layouts
-import AuthLayout from "../layouts/AuthLayout";
 // components
 import Page from "../components/Page";
 import { MHidden } from "../components/@material-extend";
-import { RegisterForm } from "../components/authentication/register";
 import NumberPin from "../components/authentication/register/NumberPin";
 import Checkbox from "@material-ui/core/Checkbox";
 import { LoadingButton } from "@material-ui/lab";
