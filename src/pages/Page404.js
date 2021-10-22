@@ -43,7 +43,7 @@ export default function Page404() {
               />
             </motion.div>
 
-            <Button to="/" size="large" variant="contained" component={RouterLink}>
+            <Button to="/mpesa/app" size="large" variant="contained" component={RouterLink}>
               Go to Mpesa Home
             </Button>
           </Box>
