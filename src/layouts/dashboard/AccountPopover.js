@@ -18,17 +18,17 @@ const MENU_OPTIONS = [
   {
     label: 'Home',
     icon: homeFill,
-    linkTo: '/'
+    linkTo: '/mpesa/app'
   },
   {
     label: 'Profile',
     icon: personFill,
-    linkTo: '#'
+    linkTo: '/mpesa/settings'
   },
   {
     label: 'Settings',
     icon: settings2Fill,
-    linkTo: '#'
+    linkTo: '/mpesa/settings'
   }
 ];
 
@@ -110,7 +110,7 @@ export default function AccountPopover() {
         ))}
 
         <Box sx={{ p: 2, pt: 1.5 }}>
-          <Button fullWidth color="inherit" variant="outlined">
+          <Button to="/login" fullWidth color="inherit" variant="outlined" component={RouterLink} >
             Logout
           </Button>
         </Box>

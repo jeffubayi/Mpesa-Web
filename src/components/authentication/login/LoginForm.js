@@ -8,7 +8,7 @@ export default function LoginForm() {
   return (
     <form autoComplete="off">
       <Stack spacing={3}>
-        <Link to="/dashboard/app">
+        <Link to="/password" style={{textDecoration: 'none'}}>
           <LoadingButton
             fullWidth
             size="large"
@@ -23,7 +23,7 @@ export default function LoginForm() {
             OR
           </Typography>
         </Divider>
-        <Link to="/register">
+        <Link to="/register" style={{textDecoration: 'none'}}>
           <LoadingButton
             fullWidth
             size="large"

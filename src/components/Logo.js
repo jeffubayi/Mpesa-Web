@@ -9,5 +9,5 @@ Logo.propTypes = {
 };
 
 export default function Logo({ sx }) {
-  return <Box component="img" src="https://www.dailypost.co.ke/wp-content/uploads/2020/06/Mpesa-logo.jpg" sx={{ width: "8.5rem", height: "2.5rem", ...sx }} />;
+  return <Box component="img" src="" sx={{ width: "8.5rem", height: "2.5rem", ...sx }} />;
 }

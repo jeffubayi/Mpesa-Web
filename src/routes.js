@@ -4,6 +4,7 @@ import DashboardLayout from './layouts/dashboard';
 import LogoOnlyLayout from './layouts/LogoOnlyLayout';
 //
 import Login from './pages/Login';
+import MpesaPin from './pages/MpesaPin';
 import Register from './pages/Register';
 import DashboardApp from './pages/DashboardApp';
 import Products from './pages/Products';
@@ -18,14 +19,14 @@ import Settings from './pages/Settings';
 export default function Router() {
   return useRoutes([
     {
-      path: '/dashboard',
+      path: '/mpesa',
       element: <DashboardLayout />,
       children: [
-        { path: '/', element: <Navigate to="/dashboard/app" replace /> },
+        { path: '/mpesa', element: <Navigate to="/mpesa/app" replace /> },
         { path: 'app', element: <DashboardApp /> },
-        { path: 'user', element: <User /> },
-        { path: 'products', element: <Products /> },
-        { path: 'blog', element: <Blog /> },
+        { path: 'my-spend', element: <User /> },
+        { path: 'transact', element: <Products /> },
+        { path: 'discover', element: <Blog /> },
         { path: 'grow', element: <Grow/> },
         { path: 'settings', element: <Settings/> }
       ]
@@ -35,9 +36,10 @@ export default function Router() {
       element: <LogoOnlyLayout />,
       children: [
         { path: 'login', element: <Login /> },
+        { path: 'password', element: <MpesaPin /> },
         { path: 'register', element: <Register /> },
         { path: '404', element: <NotFound /> },
-        { path: '/', element: <Navigate to="/dashboard" /> },
+        { path: '/', element: <Navigate to="/login" /> },
         { path: '*', element: <Navigate to="/404" /> }
       ]
     },
