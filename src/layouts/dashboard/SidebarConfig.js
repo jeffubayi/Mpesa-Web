@@ -13,32 +13,32 @@ const getIcon = (name) => <Icon icon={name} width={22} height={22} />;
 const sidebarConfig = [
   {
     title: 'home',
-    path: '/dashboard/app',
+    path: '/mpesa/app',
     icon: <HomeIcon/>,
   },
   {
     title: 'transact',
-    path: '/dashboard/products',
+    path: '/mpesa/transact',
     icon: <AddToHomeScreenIcon/>,
   },
   {
     title: 'discover',
-    path: '/dashboard/blog',
+    path: '/mpesa/discover',
     icon: <ExploreIcon/>,
   },
   {
     title: 'my spend',
-    path: '/dashboard/user',
+    path: '/mpesa/my-spend',
     icon: getIcon(pieChart2Fill)
   },
   {
     title: 'grow',
-    path: '/dashboard/grow',
+    path: '/mpesa/grow',
     icon: <TrendingUpIcon/>,
   },
   {
     title: 'settings',
-    path: '/dashboard/settings',
+    path: '/mpesa/settings',
     icon: < SettingsIcon/>,
   },
   {
