@@ -5,7 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import clsx from "clsx";
-
 import Fab from "@material-ui/core/Fab";
 import CheckIcon from "@material-ui/icons/Check";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
@@ -65,10 +64,6 @@ const NumberPin = () => {
         setLoading(false);
       }, 5000);
     }
-  };
-
-  const handleLogin = () => {
-    
   };
 
   return (

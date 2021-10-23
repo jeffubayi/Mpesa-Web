@@ -19,13 +19,12 @@ const RootStyle = styled(Page)(({ theme }) => ({
 
 const SectionStyle = styled(Card)(({ theme }) => ({
   width: '100%',
-  maxWidth: 464,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  margin: theme.spacing(2, 0, 2, 2),
-  backgroundSize: "cover",
-  backgroundImage: `url("https://i1.wp.com/www.mobileworldlive.com/wp-content/uploads/2017/02/mPesa-new.jpg?fit=640%2C426&ssl=1")`
+  margin: theme.spacing(10, 0, 5, 2),
+  backgroundSize: "repeat",
+  backgroundImage: `url("https://i2.wp.com/tech-ish.com/wp-content/uploads/2020/03/MPESA-QR-CODES-Kenya.png")`
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
