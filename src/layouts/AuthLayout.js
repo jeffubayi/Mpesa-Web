@@ -3,8 +3,6 @@ import { Link as RouterLink } from 'react-router-dom';
 // material
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-// components
-import Logo from '../components/Logo';
 //
 import { MHidden } from '../components/@material-extend';
 
@@ -35,8 +33,7 @@ AuthLayout.propTypes = {
 export default function AuthLayout({ children }) {
   return (
     <HeaderStyle>
-      <RouterLink to="/">
-        <Logo />
+      <RouterLink to="/" style={{textDecoration: 'none'}}>
       </RouterLink>
 
       <MHidden width="smDown">

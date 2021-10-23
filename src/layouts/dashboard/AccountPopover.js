@@ -110,7 +110,7 @@ export default function AccountPopover() {
         ))}
 
         <Box sx={{ p: 2, pt: 1.5 }}>
-          <Button to="/login" fullWidth color="inherit" variant="outlined" component={RouterLink} >
+          <Button to="/password" fullWidth color="inherit" variant="outlined" component={RouterLink} >
             Logout
           </Button>
         </Box>

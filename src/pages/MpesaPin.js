@@ -1,13 +1,21 @@
 import { Link as RouterLink } from "react-router-dom";
 // material
 import { experimentalStyled as styled } from "@material-ui/core/styles";
-import { Box, Card, Link, Container, Typography } from "@material-ui/core";
+import {
+  Box,
+  Card,
+  Link,
+  Container,
+  Typography,
+  Avatar,
+  Stack,
+} from "@material-ui/core";
 // components
 import Page from "../components/Page";
 import { MHidden } from "../components/@material-extend";
 import NumberPin from "../components/authentication/register/NumberPin";
 import Checkbox from "@material-ui/core/Checkbox";
-import { LoadingButton } from "@material-ui/lab";
+import account from "../_mocks_/account";
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(Page)(({ theme }) => ({
@@ -18,7 +26,6 @@ const RootStyle = styled(Page)(({ theme }) => ({
 
 const SectionStyle = styled(Card)(({ theme }) => ({
   width: "100%",
-  maxWidth: 464,
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -46,29 +53,37 @@ export default function Register() {
         <SectionStyle></SectionStyle>
       </MHidden>
 
-      <Container>
+      <Container maxWidth="sm">
         <ContentStyle>
+          <Stack sx={{ mb: 7 }} alignItems="center">
+            <Avatar
+              src={account.photoURL}
+              style={{ height: "5rem", width: "5rem" }}
+            />
+            <Typography variant="subtitle1" gutterBottom>
+              {account.displayName}
+            </Typography>
+            <Typography variant="body2" sx={{ color: "text.secondary" }}>
+              {account.role}
+            </Typography>
+          </Stack>
           <Box sx={{ mb: 5 }}>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h6" gutterBottom sx={{ textAlign: "center" }}>
               Enter Mpesa Pin
             </Typography>
           </Box>
 
           <NumberPin />
-          <Typography variant="subtitle2" sx={{ mt: 3, textAlign: "center" }}>
+          <Typography variant="subtitle2" sx={{ textAlign: "center" }}>
             Keep me logged in
-            <Checkbox inputProps={{ "aria-label": "primary checkbox" }} />
-          </Typography>
-          <Link to="/mpesa/app" component={RouterLink}>
-            <LoadingButton
-              fullWidth
-              size="large"
-              type="submit"
-              variant="contained"
+            <Link
+              to="/mpesa/app"
+              component={RouterLink}
+              sx={{ textDecoration: "none" }}
             >
-              Login
-            </LoadingButton>
-          </Link>
+              <Checkbox inputProps={{ "aria-label": "primary checkbox" }} />
+            </Link>
+          </Typography>
         </ContentStyle>
       </Container>
     </RootStyle>
