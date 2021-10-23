@@ -43,7 +43,7 @@ const sidebarConfig = [
   },
   {
     title: 'logout',
-    path: '/login',
+    path: '/password',
     icon: <ExitToAppIcon/>,
   }
 ];
