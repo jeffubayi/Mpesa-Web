@@ -11,7 +11,6 @@ export default function PaymentForm() {
           display: "grid",
           gap: "2rem",
           gridTemplateColumn: "repeat(2,auto",
-          padding:"0 3rem 0"
         }}>
       <Grid item xs={12} md={6} lg={12}>
           <TextField
@@ -31,8 +30,6 @@ export default function PaymentForm() {
             autoComplete="cc-number"
           />
         </Grid>
-       
-       
       </Grid>
     </React.Fragment>
   );
