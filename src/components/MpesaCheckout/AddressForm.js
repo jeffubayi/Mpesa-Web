@@ -24,7 +24,7 @@ export default function AddressForm() {
         <div style={{
           display: "grid",
           gap: "1rem",
-          gridTemplateColumn: "repeat(1,auto",
+          gridTemplateColumns: "repeat(1,auto",
           justifyContent: "center",
         }}>
           <Divider/>
@@ -33,7 +33,7 @@ export default function AddressForm() {
           </Typography>
           <Divider/>
         </div>
-        <Grid item xs={12} sm={6} lg={12}>
+        <Grid item xs={12} sm={12} lg={12}  justifyContent="center"  alignContent="center">
           <TextField
             required
             id="cardNumber"
