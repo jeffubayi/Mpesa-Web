@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
-
+import styled from "styled-components";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
   buttons: {
     display: 'flex',
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
   },
   button: {
     marginTop: theme.spacing(3),
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const steps = ['Recipient Details ', 'Transaction Details', 'Confirm Transaction'];
+const steps = ['Recipient Details ', 'Transaction Details', 'Confirm '];
 
 function getStepContent(step) {
   switch (step) {
@@ -64,6 +64,15 @@ function getStepContent(step) {
       throw new Error('Unknown step');
   }
 }
+
+
+const Text = styled(Typography)`
+  display: grid;
+  text-align:center;
+  @media (min-width: 768px) {
+    text-align:flex-start;
+  }
+`;
 
 export default function Checkout() {
   const classes = useStyles();
@@ -93,13 +102,13 @@ export default function Checkout() {
           </Stepper>
           <React.Fragment>
             {activeStep === steps.length ? (
-              <React.Fragment>
-                <Typography variant="h5" gutterBottom>
+              <React.Fragment >
+                <Text variant="h5" gutterBottom>
                   Mpesa Confirmed.
-                </Typography>
-                <Typography variant="subtitle1">
+                </Text>
+                <Text variant="subtitle1">
                   Your transaction number is #2001539. We have emailed your mpesa statement.
-                </Typography>
+                </Text>
               </React.Fragment>
             ) : (
               <React.Fragment>
