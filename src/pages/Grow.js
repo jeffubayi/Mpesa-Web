@@ -10,7 +10,7 @@ const discover = [
   {
     id: "1",
     cover:
-      "https://1.bp.blogspot.com/-z273SXbpMB0/XwXYCoMcL5I/AAAAAAAAGpo/Y3TrlB9nPSsGC5s9FEY0jMFIF8DPs8yNwCNcBGAsYHQ/s1600/images-12.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReF1GX3AsmRC_z0AVKuiZ3-VVquZKfCgEm53ZqSS0dqpjwKAMLUuWZ8wvEgnvR9hc7py0&usqp=CAU",
     title: "Mshwari",
   },
   {
@@ -60,7 +60,7 @@ export default function Blog() {
           </Typography>
         </Stack>
         <High>
-        <HighlightCard title="MSHWARI" subtitle="Go for it" outlinedButton="loans" containedButton="savings" img="https://1.bp.blogspot.com/-z273SXbpMB0/XwXYCoMcL5I/AAAAAAAAGpo/Y3TrlB9nPSsGC5s9FEY0jMFIF8DPs8yNwCNcBGAsYHQ/s1600/images-12.jpeg" />
+        <HighlightCard title="MSHWARI" subtitle="Go for it" outlinedButton="loans" containedButton="savings" img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReF1GX3AsmRC_z0AVKuiZ3-VVquZKfCgEm53ZqSS0dqpjwKAMLUuWZ8wvEgnvR9hc7py0&usqp=CAU" />
         <HighlightCard title="KCB" subtitle="Go ahead" outlinedButton="loans" containedButton="savings" img="http://2.bp.blogspot.com/-AYWTmr5Lq_c/VMHQlDgfSvI/AAAAAAAABRQ/amUjLtWwu5g/s1600/KCB%2BMpesa%2BPaybill%2BNumber.jpg" />
         </High>
         <Stack
