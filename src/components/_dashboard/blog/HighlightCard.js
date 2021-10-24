@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
     flex: "1 0 auto",
   },
   cover: {
-    width: 400,
-    height:110,
+    width: "100%",
+    height:"100%",
   },
   controls: {
     display: "flex",
@@ -39,6 +39,16 @@ const Controls = styled.div`
   @media (min-width: 768px) {
     margin:3rem 0 0 9rem ;
   }
+`;
+
+const High= styled(CardActions)`
+display: grid;
+gap: 1.2rem;
+grid-template-columns: repeat(1, auto);
+@media (min-width: 768px) {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
 `;
 
 export default function HighlightCard({title, subtitle,outlinedButton,containedButton,img}) {
@@ -62,14 +72,14 @@ export default function HighlightCard({title, subtitle,outlinedButton,containedB
         </CardContent>
       </div>
       <Controls>
-      <CardActions style={{display:"flex",justifyContent:"space-between"}}>
+      <High >
         <Button size="small" color="primary" variant="contained">
         {outlinedButton}
         </Button>
         <Button size="small" color="primary" variant="outlined">
           {containedButton}
         </Button>
-      </CardActions>
+      </High>
       </Controls>
     </Card>
   );
