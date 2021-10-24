@@ -12,7 +12,6 @@ import {
   AppWeeklySales,
 } from "../components/_dashboard/app";
 import Checkout from "../components/MpesaCheckout/SendMoneyDialog";
-import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import IconButton from "@material-ui/core/IconButton";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -20,8 +19,6 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import clsx from "clsx";
-import { makeStyles } from "@material-ui/styles";
 
 // ----------------------------------------------------------------------
 
