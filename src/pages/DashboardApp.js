@@ -24,24 +24,9 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/styles";
 
 // ----------------------------------------------------------------------
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexWrap: "wrap",
-  },
-  margin: {
-    margin: theme.spacing(1),
-  },
-  withoutLabel: {
-    marginTop: theme.spacing(3),
-  },
-  textField: {
-    width: "25ch",
-  },
-}));
+
 
 export default function DashboardApp() {
-  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [values, setValues] = React.useState({
     amount: "",
@@ -82,7 +67,7 @@ export default function DashboardApp() {
           />
         )}
         <Box sx={{ pb: 5 }}>
-          <FormControl className={clsx(classes.margin, classes.textField)}>
+          <FormControl >
             <InputLabel htmlFor="standard-adornment-password">
               Current Balance
             </InputLabel>
