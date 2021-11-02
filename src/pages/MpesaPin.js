@@ -42,6 +42,7 @@ const ContentStyle = styled("div")(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   padding: theme.spacing(12, 0),
+  marginTop: "-2.5rem",
 }));
 
 // ----------------------------------------------------------------------

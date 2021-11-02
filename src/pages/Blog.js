@@ -90,7 +90,7 @@ export default function Blog() {
             HIGHLIGHTED
           </Typography>
         </Stack>
-        <HighlightCard title="SAFARICOM BUNDLES" subtitle="safaricom" outlinedButton="Buy Bundles" containedButton="Tunukiwa bunbles" img="https://www.techinafrica.com/wp-content/uploads/2021/08/151.-safaricom.png"/>
+        <HighlightCard title="SAFARICOM BUNDLES" subtitle="safaricom" outlinedButton="Buy Bundles" containedButton="Tunukiwa bundles" img="https://www.techinafrica.com/wp-content/uploads/2021/08/151.-safaricom.png"/>
         <Stack
           mb={5}
           direction="row"
