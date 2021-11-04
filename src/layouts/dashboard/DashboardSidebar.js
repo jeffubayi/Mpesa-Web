@@ -81,7 +81,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
       <Box sx={{ flexGrow: 1 }} />
 
-      <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
+      <Box sx={{ px: 2.5, pb: 3, mt: 7 }}>
         <Stack
           alignItems="center"
           spacing={3}
@@ -114,6 +114,11 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           <YouTubeIcon/>
         </IconButton>
         </div>
+        <Box sx={{ textAlign: 'center' ,marginTop:"-1rem" }}>
+            <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+             made by @ubeezy
+            </Typography>
+          </Box>
         </Stack>
       </Box>
     </Scrollbar>
