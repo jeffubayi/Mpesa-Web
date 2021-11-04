@@ -18,7 +18,7 @@ export default function PaymentForm() {
             id="cardNumber"
             label="Enter Amount"
             fullWidth
-            autoComplete="cc-number"
+            autoComplete="phone number"
           />
         </Grid>
         <Grid item xs={12} md={6} lg={12}>
@@ -27,7 +27,7 @@ export default function PaymentForm() {
             id="cardNumber"
             label="Enter Mpesa Pin"
             fullWidth
-            autoComplete="cc-number"
+            autoComplete="phone number"
           />
         </Grid>
       </Grid>
