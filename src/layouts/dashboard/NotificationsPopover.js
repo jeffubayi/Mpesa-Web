@@ -44,7 +44,7 @@ const NOTIFICATIONS = [
   {
     id: faker.datatype.uuid(),
     title: "Mpesa",
-    description: 'PKGLEGMQQP Confirmed, Ksh XXX sent to Safaricom Limited for account  on XXXX . New Mpesa balance is XXXX',
+    description: 'PKD0153BT9 Confirmed. Ksh 200 sent to John Smith 0114476990 on 4/11/21 at 6:12 PM. New M-PESA balance is Ksh 200. Transaction cost, Ksh21.00. ',
     avatar: logo,
     type: 'friend_interactive',
     createdAt: sub(new Date(), { hours: 3, minutes: 30 }),
