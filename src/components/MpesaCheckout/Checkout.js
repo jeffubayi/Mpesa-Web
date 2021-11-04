@@ -1,30 +1,31 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/styles';
-import Paper from '@material-ui/core/Paper';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import AddressForm from './AddressForm';
-import PaymentForm from './PaymentForm';
-import Review from './Review';
+import React from "react";
+import { makeStyles } from "@material-ui/styles";
+import Paper from "@material-ui/core/Paper";
+import Stepper from "@material-ui/core/Stepper";
+import Step from "@material-ui/core/Step";
+import StepLabel from "@material-ui/core/StepLabel";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import AddressForm from "./AddressForm";
+import PaymentForm from "./PaymentForm";
+import Review from "./Review";
 import styled from "styled-components";
-
+import Fab from "@material-ui/core/Fab";
+import CheckIcon from "@material-ui/icons/Check";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    position: 'relative',
+    position: "relative",
   },
   layout: {
-    width: 'auto',
+    width: "auto",
     marginTop: theme.spacing(-9),
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
     [theme.breakpoints.up(600 + theme.spacing(2) * 2)]: {
       width: 600,
-      marginLeft: 'auto',
-      marginRight: 'auto',
+      marginLeft: "auto",
+      marginRight: "auto",
     },
   },
   paper: {
@@ -41,16 +42,22 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3, 0, 5),
   },
   buttons: {
-    display: 'flex',
-    justifyContent: 'center',
+    display: "flex",
+    justifyContent: "center",
   },
   button: {
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(1),
   },
+  wrapper: {
+    display: "grid",
+    justifyContent: "center",
+    position: "relative",
+    margin:"1rem 0 1rem 0"
+  },
 }));
 
-const steps = ['Recipient Details ', 'Transaction Details', 'Confirm '];
+const steps = ["Recipient Details ", "Transaction Details", "Confirm "];
 
 function getStepContent(step) {
   switch (step) {
@@ -61,16 +68,17 @@ function getStepContent(step) {
     case 2:
       return <Review />;
     default:
-      throw new Error('Unknown step');
+      throw new Error("Unknown step");
   }
 }
 
-
-const Text = styled(Typography)`
+const Text = styled.div`
   display: grid;
-  text-align:center;
+  text-align: center;
+  margin: auto;
   @media (min-width: 768px) {
-    text-align:flex-start;
+    text-align: center;
+    margin: 0 12rem;
   }
 `;
 
@@ -102,20 +110,36 @@ export default function Checkout() {
           </Stepper>
           <React.Fragment>
             {activeStep === steps.length ? (
-              <React.Fragment >
-                <Text variant="h5" gutterBottom>
-                  Mpesa Confirmed.
+              <Text>
+                <Typography variant="h5" gutterBottom>
+                  Transaction Complete
+                </Typography>
+                <div className={classes.wrapper}>
+                  <Fab
+                    aria-label="save"
+                    color="primary"
+                  >
+                     <CheckIcon />
+                  </Fab>
+                </div>
+                <Text variant="subtitle2" color="textSecondary">
+                  PK20D0153BY9 Confirmed. Ksh 200 sent to John Smith
+                  0114476990 on 4/11/21 at 6:12 PM. New M-PESA balance is Ksh
+                  200. Transaction cost, Ksh21.00. Amount you can transact
+                  within the day is 299,800.00. To reverse, forward this message
+                  to 456. We have emailed your mpesa statement.
                 </Text>
-                <Text variant="subtitle1">
-                  Your transaction number is #2001539. We have emailed your mpesa statement.
-                </Text>
-              </React.Fragment>
+              </Text>
             ) : (
               <React.Fragment>
                 {getStepContent(activeStep)}
                 <div className={classes.buttons}>
                   {activeStep !== 0 && (
-                    <Button onClick={handleBack} className={classes.button} variant="outlined" >
+                    <Button
+                      onClick={handleBack}
+                      className={classes.button}
+                      variant="outlined"
+                    >
                       PREVIOUS
                     </Button>
                   )}
@@ -125,7 +149,7 @@ export default function Checkout() {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'CONFIRM ' : 'CONTINUE'}
+                    {activeStep === steps.length - 1 ? "CONFIRM " : "CONTINUE"}
                   </Button>
                 </div>
               </React.Fragment>
