@@ -25,12 +25,11 @@ const discover = [
 
 const High= styled.div`
 display: grid;
-gap: 1.2rem;
+gap: 0.5rem;
 grid-template-columns: repeat(1, auto);
 @media (min-width: 768px) {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  gap: 3rem;
 }
 `;
 
