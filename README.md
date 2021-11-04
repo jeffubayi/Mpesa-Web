@@ -1,6 +1,6 @@
 ## [MPESA-WEB]()
 
->  Mpesa Dashboard made with Material-UI components and React.
+>  Mpesa Dashboard made with Material-UI component library and React.
 
 #### Desktop 
 
@@ -16,6 +16,6 @@
 ## Getting started
 
 - Recommended `node js 14+` and `npm 6+`
-- Install dependencies: `npm install` or `yarn`
-- Start the server: `npm run start` or `yarn start`
+- Install dependencies:  `yarn`
+- Start the server:  `yarn start`
 
