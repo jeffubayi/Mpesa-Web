@@ -9,6 +9,7 @@ import {
   Typography,
   Avatar,
   Stack,
+  Paper
 } from "@material-ui/core";
 // components
 import Page from "../components/Page";
@@ -16,6 +17,7 @@ import { MHidden } from "../components/@material-extend";
 import NumberPin from "../components/authentication/register/NumberPin";
 import Checkbox from "@material-ui/core/Checkbox";
 import account from "../_mocks_/account";
+import PinInput from "react-pin-input";
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(Page)(({ theme }) => ({
@@ -56,7 +58,8 @@ export default function Register() {
 
       <Container maxWidth="sm">
         <ContentStyle>
-          <Stack sx={{ mb: 7 }} alignItems="center">
+          <Paper elevation={5} sx={{p:3}}>
+          <Stack sx={{mt:2}} alignItems="center">
             <Avatar
               src={account.photoURL}
               style={{ height: "5rem", width: "5rem" }}
@@ -67,13 +70,27 @@ export default function Register() {
             <Typography variant="body2" sx={{ color: "text.secondary" }}>
               {account.role}
             </Typography>
-          </Stack>
-          <Box sx={{ mb: 5 }}>
+        
+          <Box sx={{ mb: 2,mt:3 }}>
             <Typography variant="h6" gutterBottom sx={{ textAlign: "center" }}>
               Enter Mpesa Pin
             </Typography>
           </Box>
-
+          <PinInput
+              length={4}
+              initialValue=""
+              secret
+              onChange={(value, index) => {}}
+              type="numeric"
+              inputMode="number"
+              style={{ padding: "20px" }}
+              inputStyle={{ borderColor: "#00AB55", borderRadius: "2rem" }}
+              inputFocusStyle={{ borderColor: "red", borderRadius: "2rem" }}
+              onComplete={(value, index) => {}}
+              autoSelect={true}
+              regexCriteria={/^[ A-Za-z0-9_@./#&+-]*$/}
+            />
+              </Stack>
           <NumberPin />
           <Typography variant="subtitle2" sx={{ textAlign: "center" }}>
             Keep me logged in
@@ -85,6 +102,7 @@ export default function Register() {
               <Checkbox inputProps={{ "aria-label": "primary checkbox" }} />
             </Link>
           </Typography>
+          </Paper>
         </ContentStyle>
       </Container>
     </RootStyle>
