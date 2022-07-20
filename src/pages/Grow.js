@@ -19,6 +19,12 @@ const discover = [
       "http://2.bp.blogspot.com/-AYWTmr5Lq_c/VMHQlDgfSvI/AAAAAAAABRQ/amUjLtWwu5g/s1600/KCB%2BMpesa%2BPaybill%2BNumber.jpg",
     title: "KCB Mpesa",
   },
+  {
+    id: "3",
+    cover:
+      "https://khusoko.com/wp-content/uploads/2022/06/M-Pesa-GlobalPay.jpg",
+    title: " Global Pay",
+  },
 ];
 
 // ----------------------------------------------------------------------

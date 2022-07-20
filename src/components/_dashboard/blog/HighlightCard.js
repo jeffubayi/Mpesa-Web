@@ -42,13 +42,6 @@ const Controls = styled.div`
 `;
 
 const High= styled(CardActions)`
-display: grid;
-gap: 1.2rem;
-grid-template-columns: repeat(1, auto);
-@media (min-width: 768px) {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-}
 `;
 
 export default function HighlightCard({title, subtitle,outlinedButton,containedButton,img}) {

@@ -3,7 +3,7 @@ import { Grid, Container, Stack, Typography } from "@material-ui/core";
 // components
 import Page from "../components/Page";
 import { BlogPostCard } from "../components/_dashboard/blog";
-import { green, pink, red, purple } from "@material-ui/core/colors";
+import { green, pink, red, purple ,grey,blue,indigo,orange,amber} from "@material-ui/core/colors";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/styles";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -12,6 +12,12 @@ import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 import LocalBarIcon from "@material-ui/icons/LocalBar";
 import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import Main from "./Main"
+import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
+import SchoolIcon from '@material-ui/icons/School';
+import RedeemIcon from "@material-ui/icons/Redeem";
+import StorefrontIcon from '@material-ui/icons/Storefront';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,9 +38,33 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     backgroundColor: purple[500],
   },
+  education: {
+    color: "#fff",
+    backgroundColor: grey[700],
+  },
   red: {
     color: "#fff",
     backgroundColor: red[700],
+  },
+  events: {
+    color: "#fff",
+    backgroundColor: purple[300],
+  },
+  finance: {
+    color: "#fff",
+    backgroundColor: blue[300],
+  },
+  gifting: {
+    color: "#fff",
+    backgroundColor: orange[700],
+  },
+  house: {
+    color: "#fff",
+    backgroundColor: amber[700],
+  },
+  transport: {
+    color: "#fff",
+    backgroundColor: green[800],
   },
 }));
 // ----------------------------------------------------------------------
@@ -152,11 +182,52 @@ export default function Blog() {
         >
           {" "}
           <Stack direction="column" alignItems="center" justifyContent="center">
+            <Avatar className={classes.events}>
+              <ConfirmationNumberIcon />
+            </Avatar>
+            <Typography variant="caption" gutterBottom color="textSecondary">
+             Events
+            </Typography>
+          </Stack>
+          <Stack direction="column" alignItems="center" justifyContent="center">
+            <Avatar className={classes.education}>
+              <SchoolIcon />
+            </Avatar>
+            <Typography variant="caption" gutterBottom color="textSecondary">
+             Education
+            </Typography>
+          </Stack>
+          <Stack direction="column" alignItems="center" justifyContent="center">
+            <Avatar className={classes.finance}>
+              <MonetizationOnIcon />
+            </Avatar>
+            <Typography variant="caption" gutterBottom color="textSecondary">
+              Finance
+            </Typography>
+          </Stack>
+          <Stack direction="column" alignItems="center" justifyContent="center">
+            <Avatar className={classes.gifting}>
+              <RedeemIcon />
+            </Avatar>
+            <Typography variant="caption" gutterBottom color="textSecondary">
+             Gifting
+            </Typography>
+          </Stack>
+          <Stack direction="column" alignItems="center" justifyContent="center">
             <Avatar className={classes.red}>
               <FavoriteIcon />
             </Avatar>
             <Typography variant="caption" gutterBottom color="textSecondary">
               Health
+            </Typography>
+          </Stack>
+         
+          <Stack direction="column" alignItems="center" justifyContent="center">
+            <Avatar className={classes.greenny}>
+              <StorefrontIcon/>
+            </Avatar>
+            <Typography variant="caption" gutterBottom color="textSecondary">
+              Marketing
             </Typography>
           </Stack>
           <Stack direction="column" alignItems="center" justifyContent="center">
@@ -167,6 +238,7 @@ export default function Blog() {
               Travel
             </Typography>
           </Stack>
+         
           <Stack direction="column" justifyContent="center" alignItems="center">
             <Avatar className={classes.purple}>
               <LocalBarIcon />
@@ -183,12 +255,20 @@ export default function Blog() {
               Medical
             </Typography>
           </Stack>
-          <Stack direction="column" justifyContent="center" alignItems="center">
+          <Stack direction="column" alignItems="center" justifyContent="center">
             <Avatar className={classes.pink}>
+              <HomeWorkIcon  />
+            </Avatar>
+            <Typography variant="caption" gutterBottom color="textSecondary">
+             Goverment<br/> services
+            </Typography>
+          </Stack>
+          <Stack direction="column" justifyContent="center" alignItems="center">
+            <Avatar className={classes.green}>
               <HomeWorkIcon />
             </Avatar>
             <Typography variant="caption" gutterBottom color="textSecondary">
-              Others
+              Transport
             </Typography>
           </Stack>
         </Stack>
