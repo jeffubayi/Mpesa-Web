@@ -26,7 +26,7 @@ export default function Router() {
         { path: 'app', element: <DashboardApp /> },
         { path: 'my-spend', element: <User /> },
         { path: 'transact', element: <Products /> },
-        { path: 'discover', element: <Blog /> },
+        { path: 'services', element: <Blog /> },
         { path: 'grow', element: <Grow/> },
         { path: 'settings', element: <Settings/> }
       ]

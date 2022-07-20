@@ -132,7 +132,7 @@ const discover = [
 export default function Blog() {
   const classes = useStyles();
   return (
-    <Page title="Discover | Mpesa ">
+    <Page title="Services | Mpesa ">
       <Container>
         <Stack
           direction="row"
@@ -141,7 +141,7 @@ export default function Blog() {
           mb={3}
         >
           <Typography variant="h4" gutterBottom>
-            Discover
+            Services
           </Typography>
         </Stack>
         <Stack

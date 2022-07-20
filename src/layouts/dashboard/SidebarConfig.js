@@ -22,8 +22,8 @@ const sidebarConfig = [
     icon: <AddToHomeScreenIcon/>,
   },
   {
-    title: 'discover',
-    path: '/mpesa/discover',
+    title: 'services',
+    path: '/mpesa/services',
     icon: <ExploreIcon/>,
   },
   {
