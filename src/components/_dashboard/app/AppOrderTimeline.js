@@ -17,30 +17,20 @@ import { fDateTime } from '../../../utils/formatTime';
 
 const TIMELINES = [
   {
-    title: '1983, orders, $4220',
-    time: faker.date.past(),
-    type: 'order1'
-  },
-  {
-    title: '12 Invoices have been paid',
-    time: faker.date.past(),
+    title: 'Ride Little',
+    time: "Ride on big discounts with little cab on your first 2 rides",
     type: 'order2'
   },
   {
-    title: 'Order #37745 from September',
-    time: faker.date.past(),
+    title: 'AAR Insurance',
+    time: "Enjoy 5% discount on your home's insurance",
     type: 'order3'
   },
   {
-    title: 'New order placed #XF-2356',
-    time: faker.date.past(),
+    title: 'Masoko',
+    time: "Get the ematic android box as a smart TV ",
     type: 'order4'
   },
-  {
-    title: 'New order placed #XF-2346',
-    time: faker.date.past(),
-    type: 'order5'
-  }
 ];
 
 // ----------------------------------------------------------------------
@@ -70,7 +60,7 @@ function OrderItem({ item, isLast }) {
       <TimelineContent>
         <Typography variant="subtitle2">{title}</Typography>
         <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-          {fDateTime(time)}
+          {time}
         </Typography>
       </TimelineContent>
     </TimelineItem>
@@ -86,7 +76,7 @@ export default function AppOrderTimeline() {
         }
       }}
     >
-      <CardHeader title="Order Timeline" />
+      <CardHeader title="Suggested for you" />
       <CardContent>
         <Timeline>
           {TIMELINES.map((item, index) => (

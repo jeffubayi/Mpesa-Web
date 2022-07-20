@@ -80,7 +80,7 @@ export default function AppNewsUpdate() {
   const [selected, setSelected] = useState([]);
   const [orderBy, setOrderBy] = useState("name");
   const [filterName, setFilterName] = useState("");
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(4);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -141,11 +141,11 @@ export default function AppNewsUpdate() {
   return (
     <Card>
       <CardHeader title="Mpesa statement" />
-      <UserListToolbar
+      {/* <UserListToolbar
         numSelected={selected.length}
         filterName={filterName}
         onFilterName={handleFilterByName}
-      />
+      /> */}
 
       <Scrollbar>
         <TableContainer sx={{ minWidth: 800 }}>
@@ -183,7 +183,7 @@ export default function AppNewsUpdate() {
                         />
                       </TableCell>
                       <TableCell component="th" scope="row" padding="none">
-                        <Stack direction="row" alignItems="center" spacing={2}>
+                        <Stack direction="row" alignItems="center" spacing={1}>
                           <List >
                             <ListItem alignItems="flex-start">
                               <ListItemAvatar>
@@ -236,7 +236,7 @@ export default function AppNewsUpdate() {
       </Scrollbar>
 
       <TablePagination
-        rowsPerPageOptions={[5, 10, 25]}
+        rowsPerPageOptions={[4, 10, 25]}
         component="div"
         count={USERLIST.length}
         rowsPerPage={rowsPerPage}
