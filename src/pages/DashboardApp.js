@@ -4,17 +4,12 @@ import { Box, Grid, Container, Typography } from "@material-ui/core";
 // components
 import Page from "../components/Page";
 import {
-  AppCurrentVisits,
-  AppNewUsers,
-  AppBugReports,
-  AppItemOrders,
-  AppNewsUpdate,
-  AppWeeklySales,
-  AppTrafficBySite,
-  AppOrderTimeline,
-  AppConversionRates,
-  AppCurrentSubject,
-  AppTasks,
+  AppExpense ,
+  AppStatement,
+  AppServices,
+  AppCategories,
+  AppStories,
+  AppTransaction
 } from "../components/_dashboard/app";
 import Checkout from "../components/MpesaCheckout/SendMoneyDialog";
 import IconButton from "@material-ui/core/IconButton";
@@ -97,29 +92,23 @@ export default function DashboardApp() {
           </FormControl>
         </Box>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={3} onClick={handleClickOpen}>
-            <AppWeeklySales />
+          <Grid item xs={12} sm={6} md={8} >
+            <AppTransaction/>
           </Grid>
-          <Grid item xs={12} sm={6} md={3} onClick={handleClickOpen}>
-            <AppItemOrders />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} onClick={handleClickOpen}>
-            <AppBugReports />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} onClick={handleClickOpen}>
-            <AppNewUsers />
+          <Grid item xs={12} md={6} lg={4}>
+            <AppStories/>
           </Grid>
           <Grid item xs={12} md={12} lg={8}>
-            <AppNewsUpdate />
+            <AppStatement />
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <AppCurrentVisits />
+            <AppExpense />
           </Grid>
           <Grid item xs={12} md={6} lg={8}>
-            <AppTrafficBySite />
+            <AppServices />
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <AppTasks/>
+            <AppCategories/>
           </Grid>
         </Grid>
       </Container>
