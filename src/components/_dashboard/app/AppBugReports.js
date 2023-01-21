@@ -7,7 +7,7 @@ import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 
 const RootStyle = styled(Card)(({ theme }) => ({
   textAlign: 'center',
-  padding: theme.spacing(5, 0),
+  padding: theme.spacing(3, 0),
   color: "black",
   backgroundColor:"#FFFF"
 }));

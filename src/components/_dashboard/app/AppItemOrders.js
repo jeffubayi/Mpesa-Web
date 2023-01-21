@@ -8,7 +8,7 @@ import { Card, Typography } from '@material-ui/core';
 
 const RootStyle = styled(Card)(({ theme }) => ({
   textAlign: 'center',
-  padding: theme.spacing(5, 0),
+  padding: theme.spacing(3, 0),
   color: "black",
   backgroundColor: '#FFFF',
 }));

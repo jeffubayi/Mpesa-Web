@@ -1,24 +1,28 @@
-import PropTypes from 'prop-types';
-import { Form, FormikProvider, useFormik } from 'formik';
+import PropTypes from "prop-types";
+import { Form, FormikProvider, useFormik } from "formik";
 // material
 import {
   Box,
   Card,
-  Checkbox,
+  Avatar,
   CardHeader,
-  Typography,
-  FormControlLabel,
-  Stack
-} from '@material-ui/core';
+  ListItemSecondaryAction,
+  IconButton,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText
+} from "@material-ui/core";
+
+import ControlCameraIcon from '@material-ui/icons/ControlCamera';
 
 // ----------------------------------------------------------------------
 
 const TASKS = [
-  'Create FireStone Logo',
-  'Add SCSS and JS files if required',
-  'Stakeholder Meeting',
-  'Scoping & Estimations',
-  'Sprint Showcase'
+  "Entertainment",
+  "Financial",
+  "Transport",
+  "Education",
 ];
 
 // ----------------------------------------------------------------------
@@ -26,52 +30,45 @@ const TASKS = [
 TaskItem.propTypes = {
   task: PropTypes.string,
   checked: PropTypes.bool,
-  formik: PropTypes.object
+  formik: PropTypes.object,
 };
 
 function TaskItem({ task, checked, formik, ...other }) {
   const { getFieldProps } = formik;
 
   return (
-    <Stack direction="row" justifyContent="space-between" sx={{ py: 0.75 }}>
-      <FormControlLabel
-        control={
-          <Checkbox {...getFieldProps('checked')} value={task} checked={checked} {...other} />
-        }
-        label={
-          <Typography
-            variant="body2"
-            sx={{
-              ...(checked && {
-                color: 'text.disabled',
-                textDecoration: 'line-through'
-              })
-            }}
-          >
-            {task}
-          </Typography>
-        }
-      />
-    </Stack>
+    <List>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar />
+        </ListItemAvatar>
+        <ListItemText primary={task} secondary={"mpesa services"} />
+      </ListItem>
+      <ListItemSecondaryAction>
+          <IconButton edge="end" aria-label="delete">
+             <ControlCameraIcon/>
+          </IconButton>
+        </ListItemSecondaryAction>
+    </List>
   );
 }
 
 export default function AppTasks() {
   const formik = useFormik({
     initialValues: {
-      checked: [TASKS[2]]
+      checked: [TASKS[2]],
     },
     onSubmit: (values) => {
       console.log(values);
-    }
+    },
   });
 
   const { values, handleSubmit } = formik;
 
   return (
     <Card>
-      <CardHeader title="Suggested for you" />
-      <Box sx={{ px: 3, py: 1 }}>
+      <CardHeader title="Categories" />
+      <Box sx={{ px: 2,  }}>
         <FormikProvider value={formik}>
           <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
             {TASKS.map((task) => (

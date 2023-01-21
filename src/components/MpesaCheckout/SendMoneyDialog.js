@@ -11,6 +11,8 @@ import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 import { makeStyles } from '@material-ui/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -36,9 +38,11 @@ const TwDialog = ({
   helperText,
 }) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Dialog fullScreen open={openDialog}
+    <Dialog fullScreen={fullScreen} open={openDialog}
       onClose={closeDialog}
       TransitionComponent={Transition}>
         <AppBar className={classes.appBar}>
