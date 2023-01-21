@@ -83,7 +83,7 @@ export default function Register() {
               onChange={(value, index) => {}}
               type="numeric"
               inputMode="number"
-              style={{ padding: "20px" }}
+              style={{ padding: "20px",color:"#00AB55" }}
               inputStyle={{ borderColor: "#00AB55", borderRadius: "2rem" }}
               inputFocusStyle={{ borderColor: "red", borderRadius: "2rem" }}
               onComplete={(value, index) => {}}

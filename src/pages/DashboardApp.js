@@ -11,7 +11,10 @@ import {
   AppNewsUpdate,
   AppWeeklySales,
   AppTrafficBySite,
-  AppOrderTimeline
+  AppOrderTimeline,
+  AppConversionRates,
+  AppCurrentSubject,
+  AppTasks,
 } from "../components/_dashboard/app";
 import Checkout from "../components/MpesaCheckout/SendMoneyDialog";
 import IconButton from "@material-ui/core/IconButton";
@@ -116,12 +119,8 @@ export default function DashboardApp() {
             <AppTrafficBySite />
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <AppOrderTimeline />
+            <AppTasks/>
           </Grid>
-         
-
-         
-         
         </Grid>
       </Container>
     </Page>

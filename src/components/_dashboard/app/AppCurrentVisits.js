@@ -7,11 +7,12 @@ import { Card, CardHeader } from '@material-ui/core';
 import { fNumber } from '../../../utils/formatNumber';
 //
 import { BaseOptionChart } from '../../charts';
+import { fDateMonth } from "../../../utils/formatTime";
 
 // ----------------------------------------------------------------------
 
-const CHART_HEIGHT = 372;
-const LEGEND_HEIGHT = 72;
+const CHART_HEIGHT = 390;
+const LEGEND_HEIGHT = 80;
 
 const ChartWrapperStyle = styled('div')(({ theme }) => ({
   height: CHART_HEIGHT,
@@ -63,7 +64,7 @@ export default function AppCurrentVisits() {
 
   return (
     <Card>
-      <CardHeader title="Total spent this month" />
+      <CardHeader title={`Total spent in ${fDateMonth(new Date())}`} />
       <ChartWrapperStyle dir="ltr">
         <ReactApexChart type="pie" series={CHART_DATA} options={chartOptions} height={280} />
       </ChartWrapperStyle>
