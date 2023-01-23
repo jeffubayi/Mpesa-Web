@@ -3,21 +3,28 @@ import { useRef, useState } from 'react';
 import { alpha } from '@material-ui/core/styles';
 import { Box, MenuItem, ListItemIcon, ListItemText, IconButton } from '@material-ui/core';
 // components
+import { Icon } from '@iconify/react';
 import MenuPopover from '../../components/MenuPopover';
 import SettingsOverscanIcon from '@material-ui/icons/SettingsOverscan';
+import {
+  AppExpense 
+} from "../../components/_dashboard/app";
+import pieChart2Fill from '@iconify/icons-eva/pie-chart-2-fill';
 
 // ----------------------------------------------------------------------
 
 const LANGS = [
   {
     value: 'en',
-    label: 'Kenya',
-    icon: 'https://image.flaticon.com/icons/png/128/630/630611.png'
+    label: 'This Month',
+    icon: 'https://image.flaticon.com/icons/png/128/630/630611.png',
+    linkTo: '/mpesa/my-spend'
   },
   {
     value: 'de',
-    label: 'Ethiopia',
-    icon: 'https://image.flaticon.com/icons/png/128/630/630603.png'
+    label: 'This Year',
+    icon: 'https://image.flaticon.com/icons/png/128/630/630603.png',
+    linkTo: '/mpesa/app'
   },
 ];
 
@@ -26,7 +33,7 @@ const LANGS = [
 export default function LanguagePopover() {
   const anchorRef = useRef(null);
   const [open, setOpen] = useState(false);
-
+  const getIcon = (name) => <Icon icon={name} width={22} height={22} />;
   const handleOpen = () => {
     setOpen(true);
   };
@@ -49,27 +56,13 @@ export default function LanguagePopover() {
           })
         }}
       >
-        <SettingsOverscanIcon/>
+        {getIcon(pieChart2Fill)}
       </IconButton>
 
       <MenuPopover open={open} onClose={handleClose} anchorEl={anchorRef.current}>
-        <Box sx={{ py: 1 }}>
-          {LANGS.map((option) => (
-            <MenuItem
-              key={option.value}
-              selected={option.value === LANGS[0].value}
-              onClick={handleClose}
-              sx={{ py: 1, px: 2.5 }}
-            >
-              <ListItemIcon>
-                <Box component="img" alt={option.label} src={option.icon} style={{width:"2rem", height:"2rem"}} />
-              </ListItemIcon>
-              <ListItemText primaryTypographyProps={{ variant: 'body2' }}>
-                {option.label}
-              </ListItemText>
-            </MenuItem>
-          ))}
-        </Box>
+      
+          < AppExpense/>
+        
       </MenuPopover>
     </>
   );

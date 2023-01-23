@@ -177,9 +177,8 @@ function SiteItem({ site }) {
               </Typography>
             </Toolbar>
           </AppBar>
-          <div style={{ marginTop: 1 }}>
-            <IconWrapperStyle color={mainTheme}>{icon}</IconWrapperStyle>
-            <Stepper activeStep={activeStep} className={classes.stepper}>
+          <DialogContent sx={{ py: 5 ,px:2}}>
+            <Stepper activeStep={activeStep}  sx={{ mb: 3 }}>
               {steps.map((label) => (
                 <Step key={label}>
                   <StepLabel>{label}</StepLabel>
@@ -188,26 +187,25 @@ function SiteItem({ site }) {
             </Stepper>
             <React.Fragment>
               {activeStep === steps.length ? (
-                <Paper sx={{ p: 4, textAlign: "center" }}>
-                  <Typography variant="h5" gutterBottom>
+                <React.Fragment>
+                <Paper sx={{ p: 4,mb:2, textAlign: "center",backgroundColor:"#fafafa" }}>
+                  <Typography variant="h6" gutterBottom>
                     Transaction Complete
                   </Typography>
                   <Typography variant="subtitle2" color="textSecondary">
-                    PK20D0153BY9 Confirmed. Ksh 200 sent to John Smith
-                    0114476990 on 4/11/21 at 6:12 PM. New M-PESA balance is Ksh
-                    200. Transaction cost, Ksh21.00. Amount you can transact
-                    within the day is 299,800.00. To reverse, forward this
-                    message to 456. We have emailed your mpesa statement.
+                    Sucessfully sent Ksh: 500 to 083084038403
                   </Typography>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleClose}
-                    fullWidth
-                  >
-                    CONFIRM
-                  </Button>
+                 
                 </Paper>
+                 <Button
+                 variant="contained"
+                 color="primary"
+                 onClick={handleClose}
+                 fullWidth
+               >
+                 Close
+               </Button>
+               </React.Fragment>
               ) : (
                 <React.Fragment>
                   <Paper
@@ -220,10 +218,10 @@ function SiteItem({ site }) {
                   >
                     {getStepContent(activeStep)}
                   </Paper>
-                  <DialogActions sx={{ justifyContent: "center", px: 4 }}>
+                  <DialogActions sx={{  px: 4 }}>
                     {activeStep !== 0 && (
                       <Button onClick={handleBack} variant="outlined" fullWidth>
-                        PREVIOUS
+                        Back
                       </Button>
                     )}
                     <Button
@@ -233,14 +231,14 @@ function SiteItem({ site }) {
                       fullWidth
                     >
                       {activeStep === steps.length - 1
-                        ? "CONFIRM "
-                        : "CONTINUE"}
+                        ? "Confirm "
+                        : "Next"}
                     </Button>
                   </DialogActions>
                 </React.Fragment>
               )}
             </React.Fragment>
-          </div>
+          </DialogContent>
         </Dialog>
       )}
       <Grid item xs={6} lg={3} onClick={handleClickOpen}>

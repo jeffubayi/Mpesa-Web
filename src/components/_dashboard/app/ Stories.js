@@ -2,7 +2,7 @@ import { Card, Avatar, CardHeader, Grid, Typography,Paper } from "@material-ui/c
 
 // ----------------------------------------------------------------------
 
-const TASKS = ["Hustler Fund", "Unlimited offers", "Home Fibre"];
+const TASKS = ["Hustler Fund", "Offers", "Home Fibre"];
 
 // ----------------------------------------------------------------------
 

@@ -20,6 +20,7 @@ import {
   ListItemText
 } from "@material-ui/core";
 import { fDate } from '../../../utils/formatTime';
+import { useMediaQuery } from '@material-ui/core';
 // utils
 //
 import Scrollbar from "../../Scrollbar";
@@ -81,6 +82,7 @@ export default function AppNewsUpdate() {
   const [orderBy, setOrderBy] = useState("name");
   const [filterName, setFilterName] = useState("");
   const [rowsPerPage, setRowsPerPage] = useState(4);
+  const hiddenUp = useMediaQuery((theme) => theme.breakpoints.up(""));
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";

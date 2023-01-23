@@ -12,24 +12,27 @@ import MenuPopover from '../../components/MenuPopover';
 //
 import account from '../../_mocks_/account';
 
+import pieChart2Fill from '@iconify/icons-eva/pie-chart-2-fill';
+
 // ----------------------------------------------------------------------
 
 const MENU_OPTIONS = [
+ 
   {
-    label: 'Home',
-    icon: homeFill,
-    linkTo: '/mpesa/app'
-  },
-  {
-    label: 'Profile',
-    icon: personFill,
-    linkTo: '/mpesa/settings'
+    label: 'My spend',
+    icon: pieChart2Fill,
+    linkTo: '/mpesa/my-spend'
   },
   {
     label: 'Settings',
     icon: settings2Fill,
     linkTo: '/mpesa/settings'
-  }
+  },
+  {
+    label: 'Preferences',
+    icon: personFill,
+    linkTo: '/mpesa/app'
+  },
 ];
 
 // ----------------------------------------------------------------------
