@@ -59,6 +59,7 @@ export default function Register() {
   const [success, setSuccess] = React.useState(false);
   const timer = React.useRef();
 
+
   React.useEffect(() => {
     return () => {
       clearTimeout(timer.current);
@@ -130,10 +131,10 @@ export default function Register() {
                 aria-labelledby="customized-dialog-title"
                 open={open}
               >
-                <DialogContent sx={{ textAlign: "center" }}>
+                <DialogContent sx={{ textAlign: "center" ,px:10}}>
                 {!success ? (
                   <>
-                  <CircularProgress size={68} color="primary" />
+                  <CircularProgress size={40} color="primary" />
                   <Typography variant="subtitle2" sx={{ textAlign: "center" }}>
                     Confirming pin, wait a moment!
                   </Typography>

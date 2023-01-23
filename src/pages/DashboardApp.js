@@ -91,7 +91,7 @@ export default function DashboardApp() {
             />
           </FormControl>
         </Box>
-        <Grid container spacing={3}>
+        <Grid container spacing={3} >
           <Grid item xs={12} sm={6} md={8} >
             <AppTransaction/>
           </Grid>
@@ -107,7 +107,7 @@ export default function DashboardApp() {
           <Grid item xs={12} md={6} lg={8}>
             <AppServices />
           </Grid>
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} md={6} lg={4} mb={8}>
             <AppCategories/>
           </Grid>
         </Grid>

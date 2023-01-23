@@ -170,7 +170,7 @@ export default function Transaction({ products, ...rest }) {
             </CardWrapper>
             </div>
             <div>
-            <Paper className={classes.paper}>BUY AIRTIME</Paper>
+            <Paper className={classes.paper}>AIRTIME</Paper>
             <CardWrapper>
               <TransactCard
                 title="FOR MY NUMBER"
