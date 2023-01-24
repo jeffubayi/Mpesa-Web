@@ -11,7 +11,6 @@ import {
   AppStories,
   AppTransaction
 } from "../components/_dashboard/app";
-import Checkout from "../components/MpesaCheckout/SendMoneyDialog";
 import IconButton from "@material-ui/core/IconButton";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -20,10 +19,8 @@ import FormControl from "@material-ui/core/FormControl";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
-// ----------------------------------------------------------------------
 
 export default function DashboardApp() {
-  const [open, setOpen] = React.useState(false);
   const [values, setValues] = React.useState({
     amount: "",
     password: "",
@@ -42,26 +39,9 @@ export default function DashboardApp() {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
   return (
     <Page title="Home | Mpesa">
       <Container maxWidth="xl">
-        {open && (
-          <Checkout
-            openDialog={handleClickOpen}
-            closeDialog={handleClose}
-            buttonHelperText="Close"
-            title="Warning"
-            description="You lack permissions to view the requested resources"
-          />
-        )}
         <Box sx={{ pb: 5 }}>
           <FormControl>
             <InputLabel htmlFor="standard-adornment-password">
@@ -92,7 +72,7 @@ export default function DashboardApp() {
           </FormControl>
         </Box>
         <Grid container spacing={3} >
-          <Grid item xs={12} sm={6} md={8} >
+          <Grid item xs={12} sm={12} md={8} >
             <AppTransaction/>
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
@@ -107,7 +87,7 @@ export default function DashboardApp() {
           <Grid item xs={12} md={6} lg={8}>
             <AppServices />
           </Grid>
-          <Grid item xs={12} md={6} lg={4} mb={8}>
+          <Grid item xs={12} md={6} lg={4} >
             <AppCategories/>
           </Grid>
         </Grid>

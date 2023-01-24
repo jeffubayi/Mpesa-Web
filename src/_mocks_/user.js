@@ -11,7 +11,7 @@ const users = [...Array(24)].map((_, index) => ({
   name: faker.name.findName(),
   company:faker.phone.phoneNumberFormat(),
   date: faker.date.past(),
-  status: sample(['sent', 'declined']),
+  status: sample(['sent', 'received']),
   role: faker.commerce.price(),
 }));
 
