@@ -24,9 +24,9 @@ export default function DashboardApp() {
       <Container maxWidth="xl">
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={2.5}>
-            <Card sx={{ height: 160, textAlign: "center" }}>
-              <CardHeader title="Balance" />
-              <Typography style={{mb:1}} variant="subtitle-2">KSH. 0.00</Typography>
+            <Card sx={{ height: 160, textAlign: "center",}}>
+              <CardHeader title="Balance" style={{mb:2}} />
+              <Typography  variant="subtitle-2">KSH. 0.00</Typography>
               <Typography variant="body2">Available fuliza balance </Typography>
               <Typography variant="caption">KSH. 0.00</Typography>
             </Card>

@@ -81,13 +81,13 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
       <Box sx={{ flexGrow: 1 }} />
 
-      <Box sx={{ px: 2.5, pb: 3, mt: 7 }}>
+      <Box sx={{ px: 2, pb: 3, mt: 7 }}>
         <Stack
           alignItems="center"
           spacing={3}
           sx={{
             p: 2.5,
-            pt: 5,
+            pt: 1,
             borderRadius: 2,
             position: 'relative',
             bgcolor: 'grey.200'
@@ -100,7 +100,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           />
           <Box sx={{ textAlign: 'center' }}>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-             The future of money
+             The future of money<br/>v1.0.3
             </Typography>
           </Box>
           <div style={{ display:"flex",flexDirection:"rows"}}>
@@ -114,7 +114,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
           <YouTubeIcon/>
         </IconButton>
         </div>
-        <Box sx={{ textAlign: 'center' ,marginTop:"-1rem" }}>
+        <Box sx={{ textAlign: 'center'  }}>
             <Typography variant="caption" sx={{ color: 'text.secondary' }}>
              made by @ubeezy
             </Typography>
