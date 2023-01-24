@@ -13,16 +13,45 @@ import {
   ListItemAvatar,
   ListItemText
 } from "@material-ui/core";
-
+import SchoolIcon from '@material-ui/icons/School';
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+import StorefrontIcon from '@material-ui/icons/Storefront';
 import ControlCameraIcon from '@material-ui/icons/ControlCamera';
-
+import RedeemIcon from "@material-ui/icons/Redeem";
 // ----------------------------------------------------------------------
 
 const TASKS = [
   "Entertainment",
   "Financial",
-  "Transport",
   "Education",
+];
+
+const CATEGORIES = [
+  {name:"Financial",
+  icon:<MonetizationOnIcon/>,
+  color:"#00AB55"
+  },
+  {name:"Education",
+  icon:<SchoolIcon />,
+  color:"#1890FF"
+
+  },
+  {name:"Health",
+  icon:<FavoriteIcon/>,
+  color:"#FF4842"
+
+  },
+  {name:"Gifting",
+  icon:<RedeemIcon />,
+  color:"blue"
+
+  },
+ 
+  {name:"Marketing",
+  icon:<StorefrontIcon />,
+  color:"#FFC107"
+  },
 ];
 
 // ----------------------------------------------------------------------
@@ -37,12 +66,14 @@ function TaskItem({ task, checked, formik, ...other }) {
   const { getFieldProps } = formik;
 
   return (
-    <List>
-      <ListItem>
+    <List >
+      <ListItem style={{paddingTop:2,paddingBottom:2}}>
         <ListItemAvatar>
-          <Avatar />
+          <Avatar style={{backgroundColor:`${task.color}`,height:"2.3rem",width:"2.3rem"}} >
+          {task.icon}
+          </Avatar>
         </ListItemAvatar>
-        <ListItemText primary={task} secondary={"mpesa services"} />
+        <ListItemText primary={task.name} />
       </ListItem>
       <ListItemSecondaryAction>
           <IconButton edge="end" aria-label="delete">
@@ -71,7 +102,7 @@ export default function AppTasks() {
       <Box sx={{ px: 2,  }}>
         <FormikProvider value={formik}>
           <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
-            {TASKS.map((task) => (
+            {CATEGORIES.map((task) => (
               <TaskItem
                 key={task}
                 task={task}

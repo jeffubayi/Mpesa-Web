@@ -37,7 +37,6 @@ import SearchNotFound from "../../SearchNotFound";
 const TABLE_HEAD = [
   { id: "name", label: "Name", alignRight: false },
   { id: "role", label: "Amount", alignRight: false },
-  { id: "date", label: "Date", alignRight: false },
   { id: "status", label: "Status", alignRight: false },
 ];
 
@@ -165,7 +164,7 @@ export default function AppNewsUpdate() {
               {filteredUsers
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row) => {
-                  const { id, name, status, company,role, avatarUrl, date } =
+                  const { id, name, status, company,role, avatarUrl } =
                     row;
                   const isItemSelected = selected.indexOf(name) !== -1;
 
@@ -200,13 +199,11 @@ export default function AppNewsUpdate() {
                         </Stack>
                       </TableCell>
                       <TableCell align="left">{role}</TableCell>
-                      <TableCell align="left">
-                        {fDate(date)}
-                      </TableCell>
+                  
                       <TableCell align="left">
                         <Label
                           variant="ghost"
-                          color={(status === "declined" && "error") || "success"}
+                          color={(status === "received" && "info") || "success"}
                         >
                           {sentenceCase(status)}
                         </Label>
