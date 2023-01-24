@@ -1,14 +1,8 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/styles';
-import MobileStepper from '@material-ui/core/MobileStepper';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-
+import { Card, CardHeader } from "@material-ui/core";
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
@@ -20,17 +14,17 @@ const tutorialSteps = [
   {
     label: 'Download the Mpesa app on your phone',
     imgPath:
-      'https://www.safaricom.co.ke/blog/wp-content/uploads/2016/05/Blog_bannerapp.jpg',
+"https://i.ytimg.com/vi/-65tZBmCR4s/maxresdefault.jpg",
   },
   {
     label: 'Checkout all the best deals inclusive',
     imgPath:
-      ' https://secureservercdn.net/104.238.71.250/fcf.f5f.myftpupload.com/wp-content/uploads/AAEAAQAAAAAAAAISAAAAJDdhZjNjNzgwLWQ4N2EtNDFiOS1hNTQ3LWUxZWE3NjZkNzlmMA-2.png',
+      ' https://media.licdn.com/dms/image/C4D22AQGSeIxh_pHUvQ/feedshare-shrink_2048_1536/0/1674199077984?e=2147483647&v=beta&t=WgqSls7Gws35fe6n8xjKY5P7buAJLSgdeSv9ak8eQ70',
   },
   {
     label: 'Transforming lives across the country',
     imgPath:
-      'https://cms.qz.com/wp-content/uploads/2013/11/reuters-mpesa.jpg?quality=75&strip=all&w=1600&h=900&crop=1',
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLqiIw8ksmkzwC7PVDjT0NE7K1QQc_07Vkg&usqp=CAU"
   },
 ];
 
@@ -48,10 +42,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
   },
   img: {
-    height: 250,
+    height: 110,
     overflow: 'hidden',
     width: '100%',
-    borderRadius: '1rem'
   },
 }));
 
@@ -59,26 +52,15 @@ function SwipeableTextMobileStepper() {
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = tutorialSteps.length;
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
 
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
 
   return (
-    <div className={classes.root}>
-      <Paper square elevation={0} className={classes.header}>
-        <Typography>{tutorialSteps[activeStep].label}</Typography>
-      </Paper>
-      <AutoPlaySwipeableViews
+     <Card >
+      <CardHeader title="Suggested for you" />
+   <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
         onChangeIndex={handleStepChange}
@@ -92,25 +74,8 @@ function SwipeableTextMobileStepper() {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-      <MobileStepper
-        steps={maxSteps}
-        position="static"
-        variant="text"
-        activeStep={activeStep}
-        nextButton={
-          <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-            Next
-            {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-            Back
-          </Button>
-        }
-      />
-    </div>
+
+    </Card>
   );
 }
 

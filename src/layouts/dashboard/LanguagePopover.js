@@ -1,52 +1,60 @@
 import { useRef, useState } from 'react';
 // material
 import { alpha } from '@material-ui/core/styles';
-import { Box, MenuItem, ListItemIcon, ListItemText, IconButton } from '@material-ui/core';
+import {  DialogContent, IconButton } from '@material-ui/core';
 // components
 import { Icon } from '@iconify/react';
-import MenuPopover from '../../components/MenuPopover';
-import SettingsOverscanIcon from '@material-ui/icons/SettingsOverscan';
 import {
-  AppExpense 
+   AppWebsiteVisits 
 } from "../../components/_dashboard/app";
 import pieChart2Fill from '@iconify/icons-eva/pie-chart-2-fill';
+import React from 'react';
+import { makeStyles } from "@material-ui/styles";
+import Dialog from '@material-ui/core/Dialog';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import CloseIcon from '@material-ui/icons/Close';
+import Slide from '@material-ui/core/Slide';
+import FilterListIcon from '@material-ui/icons/FilterList';
 
 // ----------------------------------------------------------------------
 
-const LANGS = [
-  {
-    value: 'en',
-    label: 'This Month',
-    icon: 'https://image.flaticon.com/icons/png/128/630/630611.png',
-    linkTo: '/mpesa/my-spend'
+
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+    position: 'relative',
   },
-  {
-    value: 'de',
-    label: 'This Year',
-    icon: 'https://image.flaticon.com/icons/png/128/630/630603.png',
-    linkTo: '/mpesa/app'
+  title: {
+    marginLeft: theme.spacing(2),
+    flex: 1,
   },
-];
+}));
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 // ----------------------------------------------------------------------
 
 export default function LanguagePopover() {
-  const anchorRef = useRef(null);
-  const [open, setOpen] = useState(false);
-  const getIcon = (name) => <Icon icon={name} width={22} height={22} />;
-  const handleOpen = () => {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
   };
+  const getIcon = (name) => <Icon icon={name} width={22} height={22} />;
+
 
   return (
     <>
       <IconButton
-        ref={anchorRef}
-        onClick={handleOpen}
+        onClick={handleClickOpen}
         sx={{
           padding: 0,
           width: 44,
@@ -58,12 +66,24 @@ export default function LanguagePopover() {
       >
         {getIcon(pieChart2Fill)}
       </IconButton>
-
-      <MenuPopover open={open} onClose={handleClose} anchorEl={anchorRef.current}>
-      
-          < AppExpense/>
-        
-      </MenuPopover>
+      <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+        <AppBar className={classes.appBar}>
+          <Toolbar>
+            <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
+              <CloseIcon />
+            </IconButton>
+            <Typography variant="h6" className={classes.title}>
+              My Spend
+            </Typography>
+            <IconButton autoFocus color="inherit" onClick={handleClose}>
+              <FilterListIcon/>
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <DialogContent>
+        < AppWebsiteVisits/>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

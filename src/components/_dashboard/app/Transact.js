@@ -242,9 +242,9 @@ function SiteItem({ site }) {
         </Dialog>
       )}
       <Grid item xs={6} lg={3} onClick={handleClickOpen}>
-        <Paper sx={{ py: 1, textAlign: "center" }}>
+        <Paper sx={{ py: 0.5, textAlign: "center" }}>
           <IconWrapperStyle color={mainTheme}>{icon}</IconWrapperStyle>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          <Typography variant="caption" sx={{ color: "text.secondary" }}>
             {name}
           </Typography>
         </Paper>
