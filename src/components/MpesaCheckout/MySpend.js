@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function SwipeableTextMobileStepper() {
+function AppStatus() {
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -79,5 +79,5 @@ function SwipeableTextMobileStepper() {
   );
 }
 
-export default SwipeableTextMobileStepper;
+export default AppStatus;
 

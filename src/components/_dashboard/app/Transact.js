@@ -54,7 +54,7 @@ const SOCIALS = [
   {
     name: "PAY",
     icon: <PaymentIcon width={24} height={24} />,
-    mainTheme: "#036ECC",
+    mainTheme: "#0484fb",
   },
   {
     name: "WITHDRAW",
@@ -64,7 +64,7 @@ const SOCIALS = [
   {
     name: "AIRTIME",
     icon: <PhonelinkRingIcon width={24} height={24} />,
-    mainTheme: "#11E2F6",
+    mainTheme: "#08ccdd",
   },
 ];
 
@@ -162,7 +162,11 @@ function SiteItem({ site }) {
           onClose={handleClose}
           aria-labelledby="responsive-dialog-title"
         >
-          <AppBar className={classes.appBar}>
+          <AppBar className={classes.appBar} sx={{
+            '.css-1t29gy6-MuiToolbar-root':{
+              backgroundColor:`${mainTheme}`
+            }
+          }} >
             <Toolbar>
               <IconButton
                 edge="start"
@@ -180,8 +184,32 @@ function SiteItem({ site }) {
           <DialogContent sx={{ py: 5 ,px:2}}>
             <Stepper activeStep={activeStep}  sx={{ mb: 3 }}>
               {steps.map((label) => (
-                <Step key={label}>
-                  <StepLabel>{label}</StepLabel>
+                <Step key={label}   sx={{
+                  '& .MuiStepLabel-root .Mui-active':{
+                    color:"#000"
+                  },
+                  '& .MuiStepIcon-root.MuiStepIcon-completed':{
+                    color: `${mainTheme}`,
+                  },
+                  '& .MuiStepLabel-root .Mui-completed': {
+                    color: `${mainTheme}`, // circle color (COMPLETED)
+                  },
+                  '& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel':
+                    {
+                      color: 'grey.500', // Just text label (COMPLETED)
+                    },
+                  '& .MuiStepLabel-root .Mui-active': {
+                    color: `${mainTheme}`, // circle color (ACTIVE)
+                  },
+                  '& .MuiStepLabel-label.Mui-active.MuiStepLabel-alternativeLabel':
+                    {
+                      color: 'common.white', // Just text label (ACTIVE)
+                    },
+                  '& .MuiStepLabel-root .Mui-active .MuiStepIcon-text': {
+                    fill: 'common.white', // circle's number (ACTIVE)
+                  },
+                }}>
+                  <StepLabel >{label}</StepLabel>
                 </Step>
               ))}
             </Stepper>
@@ -199,7 +227,7 @@ function SiteItem({ site }) {
                 </Paper>
                  <Button
                  variant="contained"
-                 color="primary"
+                 style={{backgroundColor:`${mainTheme}`}}
                  onClick={handleClose}
                  fullWidth
                >
@@ -220,13 +248,13 @@ function SiteItem({ site }) {
                   </Paper>
                   <DialogActions sx={{  px: 4 }}>
                     {activeStep !== 0 && (
-                      <Button onClick={handleBack} variant="outlined" fullWidth>
+                      <Button onClick={handleBack} variant="outlined" style={{color:`${mainTheme}`,borderColor:`${mainTheme}`}} fullWidth>
                         Back
                       </Button>
                     )}
                     <Button
                       variant="contained"
-                      color="primary"
+                      style={{backgroundColor:`${mainTheme}`}}
                       onClick={handleNext}
                       fullWidth
                     >
