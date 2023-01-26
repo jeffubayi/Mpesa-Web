@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TransactCard({ send, pay, withdraw, title,icon }) {
+export default function TransactCard({ type, title,icon }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -62,10 +62,10 @@ export default function TransactCard({ send, pay, withdraw, title,icon }) {
         display: "grid",
         width: "auto",
         backgroundImage: `${
-          send ?  "linear-gradient( 136deg, #00AB55 0%, #00AB55 60%, #66ffb3 100%)"
-           : pay ?  "linear-gradient( 136deg, #036ECC 0%, #036ECC 60%, #81c3fd 100%)"
-           : withdraw ? "linear-gradient( 136deg, #f7005b 0%, #f7005b 60%, #ff99be 100%)" 
-           : "linear-gradient( 136deg, #11E2F6 0%, #11E2F6 60%, #b5f7fd 100%)"
+          type === "send" ?  "linear-gradient( 136deg, #00AB55 0%, #00AB55 60%, #66ffb3 100%)"
+           :  type === "pay" ?  "linear-gradient( 136deg, #036ECC 0%, #036ECC 60%, #81c3fd 100%)"
+           :  type === "withdraw" ? "linear-gradient( 136deg, #f7005b 0%, #f7005b 60%, #ff99be 100%)" 
+           :   "linear-gradient( 136deg, #11E2F6 0%, #11E2F6 60%, #b5f7fd 100%)" 
         }`,
       }}
       onClick={handleClickOpen}
