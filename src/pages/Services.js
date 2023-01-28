@@ -3,7 +3,7 @@ import { Grid, Container, Stack, Typography } from "@material-ui/core";
 // components
 import Page from "../components/Page";
 import { BlogPostCard } from "../components/_dashboard/blog";
-import { green, pink, red, purple ,grey,blue,indigo,orange,amber} from "@material-ui/core/colors";
+import { green, pink, red, purple ,grey,blue,orange,amber} from "@material-ui/core/colors";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/styles";
 import FavoriteIcon from "@material-ui/icons/Favorite";
