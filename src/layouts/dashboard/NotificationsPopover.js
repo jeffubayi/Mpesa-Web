@@ -43,9 +43,9 @@ const NOTIFICATIONS = [
   },
   {
     id: faker.datatype.uuid(),
-    title: "Mpesa",
-    description: 'PKD0153BT9 Confirmed. Ksh 200 sent to John Smith 0114476990 on 4/11/21 at 6:12 PM. New M-PESA balance is Ksh 200. Transaction cost, Ksh21.00. ',
-    avatar: logo,
+    title: 'Hakikisha Alert',
+    description: 'Cancelling too many transactions will make you unable to confirm other users names for a while',
+   avatar: logo,
     type: 'friend_interactive',
     createdAt: sub(new Date(), { hours: 3, minutes: 30 }),
     isUnRead: true
