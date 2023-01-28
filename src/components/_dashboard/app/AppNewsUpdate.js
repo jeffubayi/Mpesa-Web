@@ -19,14 +19,11 @@ import {
   ListItemAvatar,
   ListItemText
 } from "@material-ui/core";
-import { fDate } from '../../../utils/formatTime';
-import { useMediaQuery } from '@material-ui/core';
 // utils
 //
 import Scrollbar from "../../Scrollbar";
 import {
   UserListHead,
-  UserListToolbar,
   UserMoreMenu,
 } from "../../_dashboard/user";
 import USERLIST from "../../../_mocks_/user";
@@ -79,9 +76,8 @@ export default function AppNewsUpdate() {
   const [order, setOrder] = useState("asc");
   const [selected, setSelected] = useState([]);
   const [orderBy, setOrderBy] = useState("name");
-  const [filterName, setFilterName] = useState("");
+  const [filterName] = useState("");
   const [rowsPerPage, setRowsPerPage] = useState(4);
-  const hiddenUp = useMediaQuery((theme) => theme.breakpoints.up(""));
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -125,9 +121,6 @@ export default function AppNewsUpdate() {
     setPage(0);
   };
 
-  const handleFilterByName = (event) => {
-    setFilterName(event.target.value);
-  };
 
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;

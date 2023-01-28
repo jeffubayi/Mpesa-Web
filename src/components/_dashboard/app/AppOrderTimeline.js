@@ -1,4 +1,3 @@
-import faker from 'faker';
 import PropTypes from 'prop-types';
 // material
 import { Card, Typography, CardHeader, CardContent } from '@material-ui/core';
@@ -10,8 +9,6 @@ import {
   TimelineSeparator,
   TimelineDot
 } from '@material-ui/lab';
-// utils
-import { fDateTime } from '../../../utils/formatTime';
 
 // ----------------------------------------------------------------------
 

@@ -24,7 +24,7 @@ const tutorialSteps = [
   {
     label: 'Transforming lives across the country',
     imgPath:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLqiIw8ksmkzwC7PVDjT0NE7K1QQc_07Vkg&usqp=CAU"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWNK7OJ-i5Y8l8ZEFDI8REhDxyhon30IvJw9gISUTHGJ3NyIf7gAE2g4nQNiAX9HkuQAM&usqp=CAU"
   },
 ];
 

@@ -63,7 +63,6 @@ TaskItem.propTypes = {
 };
 
 function TaskItem({ task, checked, formik, ...other }) {
-  const { getFieldProps } = formik;
 
   return (
     <List >
