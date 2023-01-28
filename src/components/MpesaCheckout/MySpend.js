@@ -3,6 +3,8 @@ import { makeStyles, useTheme } from '@material-ui/styles';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import { Card, CardHeader } from "@material-ui/core";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
@@ -28,7 +30,7 @@ const tutorialSteps = [
   },
 ];
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme,fullScreen) => ({
   root: {
     width: "100%",
     borderRadius: '1rem'
@@ -42,17 +44,17 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
   },
   img: {
-    height: 110,
+    height: fullScreen ?  150 : 110,
     overflow: 'hidden',
     width: '100%',
   },
 }));
 
 function AppStatus() {
-  const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const classes = useStyles(fullScreen);
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
