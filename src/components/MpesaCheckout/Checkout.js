@@ -111,8 +111,8 @@ export default function Checkout() {
           <React.Fragment>
             {activeStep === steps.length ? (
               <Text>
-                <Typography variant="h5" gutterBottom>
-                  Transaction Complete
+                <Typography Completeypography variant="h5" gutterBottom>
+                  Confirm
                 </Typography>
                 <div className={classes.wrapper}>
                   <Fab

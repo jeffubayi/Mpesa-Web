@@ -8,6 +8,7 @@ import {
   Typography,
   CardContent,
   TextField,
+  Avatar,
 } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -20,7 +21,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
-
+import toast from "react-hot-toast";
 // utils
 import { alpha, experimentalStyled as styled } from "@material-ui/core/styles";
 import SendIcon from "@material-ui/icons/Send";
@@ -30,6 +31,17 @@ import PhonelinkRingIcon from "@material-ui/icons/PhonelinkRing";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
+import CallMadeIcon from "@material-ui/icons/CallMade";
+import ImportExportIcon from "@material-ui/icons/ImportExport";
+import TrendingDownIcon from "@material-ui/icons/TrendingDown";
+import LanguageIcon from "@material-ui/icons/Language";
+import ReceiptIcon from "@material-ui/icons/Receipt";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
+import StoreIcon from "@material-ui/icons/Store";
+import PermContactCalendarIcon from "@material-ui/icons/PermContactCalendar";
+import MobileScreenShareIcon from "@material-ui/icons/MobileScreenShare";
+import LaunchIcon from "@material-ui/icons/Launch";
 // ----------------------------------------------------------------------
 
 const useStyles = makeStyles((theme) => ({
@@ -41,26 +53,87 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
 }));
+
 const SOCIALS = [
   {
     name: "SEND & REQUEST",
     icon: <SendIcon width={24} height={24} />,
     mainTheme: "#00AB55",
+    type1: {
+      name: "Send ",
+      color: "send",
+      icon: <ImportExportIcon  />,
+    },
+    type2: {
+      name: "Request ",
+      color: "send",
+      icon: <TrendingDownIcon  />,
+    },
+    type3: {
+      name: "Global",
+      color: "send",
+      icon: <LanguageIcon  />,
+    },
+    type4: {
+      name: "Another network",
+      color: "send",
+      icon: <CallMadeIcon  />,
+    },
   },
   {
     name: "PAY",
     icon: <PaymentIcon width={24} height={24} />,
-    mainTheme: "#0484fb",
+    mainTheme: "#036ECC",
+    type1: {
+      name: "Pay Bill",
+      color: "pay",
+      icon: <ReceiptIcon />,
+    },
+    type2: {
+      name: "Buy Goods",
+      color: "pay",
+      icon: <ShoppingBasketIcon />,
+    },
+    type3: {
+      name: "Pochi La Biashara",
+      color: "pay",
+      icon: <PhoneAndroidIcon />,
+    },
+    type4: {
+      name: "Fuliza",
+      color: "pay",
+      icon: <LaunchIcon />,
+    },
   },
   {
     name: "WITHDRAW",
     icon: <RemoveCircleOutlineIcon width={24} height={24} />,
     mainTheme: "#f7005b",
+    type1: {
+      name: "At Agent",
+      color: "withdraw",
+      icon: <StoreIcon  />,
+    },
+    type2: {
+      name: "ATM",
+      color: "withdraw",
+      icon: <PaymentIcon  />,
+    },
   },
   {
     name: "AIRTIME",
     icon: <PhonelinkRingIcon width={24} height={24} />,
     mainTheme: "#08ccdd",
+    type1: {
+      name: "For my number",
+      color: "credo",
+      icon: <MobileScreenShareIcon />,
+    },
+    type2: {
+      name: "For another number",
+      color: "credo",
+      icon: <PermContactCalendarIcon />,
+    },
   },
 ];
 
@@ -69,6 +142,12 @@ const SOCIALS = [
 SiteItem.propTypes = {
   site: PropTypes.object,
 };
+
+const CardMediaStyle = styled("div")({
+  display: "grid",
+  justifyContent: "center",
+  marginBottom: "0.3rem",
+});
 
 const IconWrapperStyle = styled("div")(({ theme, color }) => ({
   margin: "auto",
@@ -87,9 +166,9 @@ const IconWrapperStyle = styled("div")(({ theme, color }) => ({
 }));
 
 function SiteItem({ site }) {
-  const steps = ["Recipient", "Amount", "Confirm "];
+  const steps = ["Select", "Number", "Amount", "Confirm "];
   const classes = useStyles();
-  const { icon, name, mainTheme } = site;
+  const { icon, name, mainTheme, type1, type2, type3, type4 } = site;
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [open, setOpen] = React.useState(false);
@@ -110,9 +189,77 @@ function SiteItem({ site }) {
     setOpen(false);
   };
 
+  const notify = () => {
+    setOpen(false);
+    toast("Mpesa confirmed, 100 sent to number", {
+      position: "top-right",
+    });
+  };
+
   function getStepContent(step) {
     switch (step) {
       case 0:
+        return (
+          <Grid container spacing={2}>
+            <Grid item xs={6} lg={6}>
+              <Paper variant="outlined" sx={{ py: 2.5, textAlign: "center" }}>
+                <CardMediaStyle>
+                  <Avatar sx={{ mb: 0.5,backgroundColor:`${mainTheme}` }}>{type1.icon}</Avatar>
+                </CardMediaStyle>
+                <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                  {type1.name}
+                </Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={6} lg={6}>
+              <Paper variant="outlined" sx={{ py: 2.5, textAlign: "center" }}>
+                <CardMediaStyle>
+                  <Avatar sx={{ mb: 0.5,backgroundColor:`${mainTheme}` }}>{type2.icon}</Avatar>
+                </CardMediaStyle>
+                <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                  {type2.name}
+                </Typography>
+              </Paper>
+            </Grid>
+            {type3 !== undefined && (
+              <>
+                <Grid item xs={6} lg={6}>
+                  <Paper
+                    variant="outlined"
+                    sx={{ py: 2.5, textAlign: "center" }}
+                  >
+                    <CardMediaStyle>
+                      <Avatar sx={{ mb: 0.5,backgroundColor:`${mainTheme}` }}>{type3.icon}</Avatar>
+                    </CardMediaStyle>
+                    <Typography
+                      variant="body2"
+                      sx={{ color: "text.secondary" }}
+                    >
+                      {type3.name}
+                    </Typography>
+                  </Paper>
+                </Grid>
+                <Grid item xs={6} lg={6}>
+                  <Paper
+                    variant="outlined"
+                    sx={{ py: 2.5, textAlign: "center" }}
+                  >
+                    <CardMediaStyle>
+                      <Avatar sx={{ mb: 0.5,backgroundColor:`${mainTheme}` }}>{type4.icon}</Avatar>
+                    </CardMediaStyle>
+                    <Typography
+                      variant="body2"
+                      sx={{ color: "text.secondary" }}
+                    >
+                      {type4.name}
+                    </Typography>
+                  </Paper>
+                </Grid>
+              </>
+            )}
+          </Grid>
+        );
+      case 1:
         return (
           <TextField
             size="small"
@@ -122,22 +269,22 @@ function SiteItem({ site }) {
             type="number"
           />
         );
-      case 1:
-        return (
-          <TextField
-          size="small"
-            margin="dense"
-            fullWidth
-            id="name"
-            label="Enter Amont"
-            type="number"
-          />
-        );
       case 2:
         return (
           <TextField
-          size="small"
-          fullWidth
+            size="small"
+            margin="dense"
+            fullWidth
+            id="name"
+            label="Enter Amount"
+            type="number"
+          />
+        );
+      case 3:
+        return (
+          <TextField
+            size="small"
+            fullWidth
             margin="dense"
             id="name"
             label="Enter Pin"
@@ -158,11 +305,14 @@ function SiteItem({ site }) {
           onClose={handleClose}
           aria-labelledby="responsive-dialog-title"
         >
-          <AppBar className={classes.appBar} sx={{
-            '.css-1t29gy6-MuiToolbar-root':{
-              backgroundColor:`${mainTheme}`
-            }
-          }} >
+          <AppBar
+            className={classes.appBar}
+            sx={{
+              ".css-1t29gy6-MuiToolbar-root": {
+                backgroundColor: `${mainTheme}`,
+              },
+            }}
+          >
             <Toolbar>
               <IconButton
                 edge="start"
@@ -177,57 +327,107 @@ function SiteItem({ site }) {
               </Typography>
             </Toolbar>
           </AppBar>
-          <DialogContent sx={{ py: 5 ,px:2}}>
-            <Stepper activeStep={activeStep}  sx={{ mb: 3 }}>
+          <DialogContent sx={{ py: 5, px: 2 }}>
+            <Stepper activeStep={activeStep} sx={{ mb: 3 }}>
               {steps.map((label) => (
-                <Step key={label}   sx={{
-                  '& .MuiStepLabel-root .Mui-active':{
-                    color:`${mainTheme}`
-                  },
-                  '& .MuiStepIcon-root.MuiStepIcon-completed':{
-                    color: `${mainTheme}`,
-                  },
-                  '& .MuiStepLabel-root .Mui-completed': {
-                    color: `${mainTheme}`, // circle color (COMPLETED)
-                  },
-                  '& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel':
-                    {
-                      color: 'grey.500', // Just text label (COMPLETED)
+                <Step
+                  key={label}
+                  sx={{
+                    "& .MuiStepLabel-root .Mui-active": {
+                      color: `${mainTheme}`,
                     },
-                 
-                  '& .MuiStepLabel-label.Mui-active.MuiStepLabel-alternativeLabel':
-                    {
-                      color: 'common.white', // Just text label (ACTIVE)
+                    "& .MuiStepIcon-root.MuiStepIcon-completed": {
+                      color: `${mainTheme}`,
                     },
-                  '& .MuiStepLabel-root .Mui-active .MuiStepIcon-text': {
-                    fill: 'common.white', // circle's number (ACTIVE)
-                  },
-                }}>
-                  <StepLabel >{label}</StepLabel>
+                    "& .MuiStepLabel-root .Mui-completed": {
+                      color: `${mainTheme}`, // circle color (COMPLETED)
+                    },
+                    "& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel":
+                      {
+                        color: "grey.500", // Just text label (COMPLETED)
+                      },
+
+                    "& .MuiStepLabel-label.Mui-active.MuiStepLabel-alternativeLabel":
+                      {
+                        color: "common.white", // Just text label (ACTIVE)
+                      },
+                    "& .MuiStepLabel-root .Mui-active .MuiStepIcon-text": {
+                      fill: "common.white", // circle's number (ACTIVE)
+                    },
+                  }}
+                >
+                  <StepLabel>{label}</StepLabel>
                 </Step>
               ))}
             </Stepper>
             <React.Fragment>
               {activeStep === steps.length ? (
                 <React.Fragment>
-                <Paper sx={{ p: 4,mb:2, textAlign: "center",backgroundColor:"#fafafa" }}>
-                  <Typography variant="h6" gutterBottom>
-                    Transaction Complete
-                  </Typography>
-                  <Typography variant="subtitle2" color="textSecondary">
-                    Sucessfully sent Ksh: 500 to 083084038403
-                  </Typography>
-                 
-                </Paper>
-                 <Button
-                 variant="contained"
-                 style={{backgroundColor:`${mainTheme}`}}
-                 onClick={handleClose}
-                 fullWidth
-               >
-                 Close
-               </Button>
-               </React.Fragment>
+                  <Paper
+                    sx={{
+                      p: 4,
+                      mb: 2,
+                      textAlign: "center",
+                      justifyContent: "space-between",
+                      backgroundColor: "#fafafa",
+                    }}
+                  >
+                    <Typography variant="h6" gutterBottom>
+                      Confirm
+                    </Typography>
+                    <Grid
+                      container
+                      direction="column"
+                      justifyContent="space-evenly"
+                      alignItems="stretch"
+                    >
+                      <Grid item xs>
+                        <Typography
+                          gutterBottom
+                          variant="body2"
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          <em> Number: </em> <b>4.50/=</b>
+                        </Typography>
+                      </Grid>
+                      <Grid item xs>
+                        <Typography
+                          gutterBottom
+                          variant="body2"
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          <em>Amount: </em> <b>4.50/=</b>
+                        </Typography>
+                      </Grid>
+                      <Grid item xs>
+                        <Typography
+                          gutterBottom
+                          variant="body2"
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          <em> Transaction cost: </em> <b>4.50/=</b>
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </Paper>
+                  <Button
+                    variant="contained"
+                    style={{ backgroundColor: `${mainTheme}` }}
+                    onClick={notify}
+                    fullWidth
+                  >
+                    Send
+                  </Button>
+                </React.Fragment>
               ) : (
                 <React.Fragment>
                   <Paper
@@ -240,21 +440,27 @@ function SiteItem({ site }) {
                   >
                     {getStepContent(activeStep)}
                   </Paper>
-                  <DialogActions sx={{  px: 4 }}>
+                  <DialogActions sx={{ px: 4 }}>
                     {activeStep !== 0 && (
-                      <Button onClick={handleBack} variant="outlined" style={{color:`${mainTheme}`,borderColor:`${mainTheme}`}} fullWidth>
+                      <Button
+                        onClick={handleBack}
+                        variant="outlined"
+                        style={{
+                          color: `${mainTheme}`,
+                          borderColor: `${mainTheme}`,
+                        }}
+                        fullWidth
+                      >
                         Back
                       </Button>
                     )}
                     <Button
                       variant="contained"
-                      style={{backgroundColor:`${mainTheme}`}}
+                      style={{ backgroundColor: `${mainTheme}` }}
                       onClick={handleNext}
                       fullWidth
                     >
-                      {activeStep === steps.length - 1
-                        ? "Confirm "
-                        : "Next"}
+                      {activeStep === steps.length - 1 ? "Confirm " : "Next"}
                     </Button>
                   </DialogActions>
                 </React.Fragment>

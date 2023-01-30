@@ -182,7 +182,7 @@ export default function TransactCard({ type, title, icon, mainTheme }) {
                     }}
                   >
                     <Typography variant="h6" gutterBottom>
-                      Transaction Complete
+                      Confirm
                     </Typography>
                     <Typography variant="subtitle2" color="textSecondary">
                       Sucessfully sent Ksh: 500 to 083084038403
