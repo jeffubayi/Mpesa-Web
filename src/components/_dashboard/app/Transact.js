@@ -7,7 +7,6 @@ import {
   Paper,
   Typography,
   CardContent,
-  TextField,
   Avatar,
 } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
@@ -22,6 +21,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import toast from "react-hot-toast";
+import { TextField} from "formik-mui";
 // utils
 import { alpha, experimentalStyled as styled } from "@material-ui/core/styles";
 import SendIcon from "@material-ui/icons/Send";
@@ -42,6 +42,7 @@ import StoreIcon from "@material-ui/icons/Store";
 import PermContactCalendarIcon from "@material-ui/icons/PermContactCalendar";
 import MobileScreenShareIcon from "@material-ui/icons/MobileScreenShare";
 import LaunchIcon from "@material-ui/icons/Launch";
+import { Formik, Field, Form } from "formik";
 // ----------------------------------------------------------------------
 
 const useStyles = makeStyles((theme) => ({
@@ -57,31 +58,33 @@ const useStyles = makeStyles((theme) => ({
 const SOCIALS = [
   {
     name: "SEND & REQUEST",
+    mode: ["Select Mode", `Phone Number`, "Amount", "Confirm "],
     icon: <SendIcon width={24} height={24} />,
     mainTheme: "#00AB55",
     type1: {
       name: "Send ",
       color: "send",
-      icon: <ImportExportIcon  />,
+      icon: <ImportExportIcon />,
     },
     type2: {
       name: "Request ",
       color: "send",
-      icon: <TrendingDownIcon  />,
+      icon: <TrendingDownIcon />,
     },
     type3: {
       name: "Global",
       color: "send",
-      icon: <LanguageIcon  />,
+      icon: <LanguageIcon />,
     },
     type4: {
       name: "Another network",
       color: "send",
-      icon: <CallMadeIcon  />,
+      icon: <CallMadeIcon />,
     },
   },
   {
     name: "PAY",
+    mode: ["Select Mode", `Till Number`, "Amount", "Confirm "],
     icon: <PaymentIcon width={24} height={24} />,
     mainTheme: "#036ECC",
     type1: {
@@ -107,21 +110,23 @@ const SOCIALS = [
   },
   {
     name: "WITHDRAW",
+    mode: ["Select Mode", `Agent Number`, "Amount", "Confirm "],
     icon: <RemoveCircleOutlineIcon width={24} height={24} />,
     mainTheme: "#f7005b",
     type1: {
       name: "At Agent",
       color: "withdraw",
-      icon: <StoreIcon  />,
+      icon: <StoreIcon />,
     },
     type2: {
       name: "ATM",
       color: "withdraw",
-      icon: <PaymentIcon  />,
+      icon: <PaymentIcon />,
     },
   },
   {
     name: "AIRTIME",
+    mode: ["Select Mode", `Phone Number`, "Amount", "Confirm "],
     icon: <PhonelinkRingIcon width={24} height={24} />,
     mainTheme: "#08ccdd",
     type1: {
@@ -166,9 +171,9 @@ const IconWrapperStyle = styled("div")(({ theme, color }) => ({
 }));
 
 function SiteItem({ site }) {
-  const steps = ["Select", "Number", "Amount", "Confirm "];
   const classes = useStyles();
-  const { icon, name, mainTheme, type1, type2, type3, type4 } = site;
+  const { icon, name, mainTheme, type1, type2, type3, type4, mode } = site;
+  const steps = mode;
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [open, setOpen] = React.useState(false);
@@ -204,7 +209,9 @@ function SiteItem({ site }) {
             <Grid item xs={6} lg={6}>
               <Paper variant="outlined" sx={{ py: 2.5, textAlign: "center" }}>
                 <CardMediaStyle>
-                  <Avatar sx={{ mb: 0.5,backgroundColor:`${mainTheme}` }}>{type1.icon}</Avatar>
+                  <Avatar sx={{ mb: 0.5, backgroundColor: `${mainTheme}` }}>
+                    {type1.icon}
+                  </Avatar>
                 </CardMediaStyle>
                 <Typography variant="body2" sx={{ color: "text.secondary" }}>
                   {type1.name}
@@ -214,7 +221,9 @@ function SiteItem({ site }) {
             <Grid item xs={6} lg={6}>
               <Paper variant="outlined" sx={{ py: 2.5, textAlign: "center" }}>
                 <CardMediaStyle>
-                  <Avatar sx={{ mb: 0.5,backgroundColor:`${mainTheme}` }}>{type2.icon}</Avatar>
+                  <Avatar sx={{ mb: 0.5, backgroundColor: `${mainTheme}` }}>
+                    {type2.icon}
+                  </Avatar>
                 </CardMediaStyle>
                 <Typography variant="body2" sx={{ color: "text.secondary" }}>
                   {type2.name}
@@ -229,7 +238,9 @@ function SiteItem({ site }) {
                     sx={{ py: 2.5, textAlign: "center" }}
                   >
                     <CardMediaStyle>
-                      <Avatar sx={{ mb: 0.5,backgroundColor:`${mainTheme}` }}>{type3.icon}</Avatar>
+                      <Avatar sx={{ mb: 0.5, backgroundColor: `${mainTheme}` }}>
+                        {type3.icon}
+                      </Avatar>
                     </CardMediaStyle>
                     <Typography
                       variant="body2"
@@ -245,7 +256,9 @@ function SiteItem({ site }) {
                     sx={{ py: 2.5, textAlign: "center" }}
                   >
                     <CardMediaStyle>
-                      <Avatar sx={{ mb: 0.5,backgroundColor:`${mainTheme}` }}>{type4.icon}</Avatar>
+                      <Avatar sx={{ mb: 0.5, backgroundColor: `${mainTheme}` }}>
+                        {type4.icon}
+                      </Avatar>
                     </CardMediaStyle>
                     <Typography
                       variant="body2"
@@ -261,34 +274,41 @@ function SiteItem({ site }) {
         );
       case 1:
         return (
-          <TextField
-            size="small"
+          <Field
+            id="number"
+            fcomponent={TextField}
             fullWidth
-            id="name"
+            size="small"
+            name="number"
+            placeHolder="0728323203"
             label="Enter Phone number"
             type="number"
           />
         );
       case 2:
         return (
-          <TextField
-            size="small"
-            margin="dense"
-            fullWidth
-            id="name"
-            label="Enter Amount"
-            type="number"
+          <Field
+          component={TextField}
+          fullWidth
+          size="small"
+          name="amount"
+          placeHolder="1000"
+          label="Enter Amount"
+          type="number"
           />
         );
       case 3:
         return (
-          <TextField
-            size="small"
+          <Field
+            id="pin"
             fullWidth
-            margin="dense"
-            id="name"
+            name="pin"
+            component={TextField}
+            size="small"
+            placeHolder="****"
             label="Enter Pin"
             type="number"
+            password
           />
         );
       default:
@@ -360,112 +380,138 @@ function SiteItem({ site }) {
                 </Step>
               ))}
             </Stepper>
-            <React.Fragment>
-              {activeStep === steps.length ? (
-                <React.Fragment>
-                  <Paper
-                    sx={{
-                      p: 4,
-                      mb: 2,
-                      textAlign: "center",
-                      justifyContent: "space-between",
-                      backgroundColor: "#fafafa",
-                    }}
-                  >
-                    <Typography variant="h6" gutterBottom>
-                      Confirm
-                    </Typography>
-                    <Grid
-                      container
-                      direction="column"
-                      justifyContent="space-evenly"
-                      alignItems="stretch"
-                    >
-                      <Grid item xs>
-                        <Typography
-                          gutterBottom
-                          variant="body2"
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          <em> Number: </em> <b>4.50/=</b>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs>
-                        <Typography
-                          gutterBottom
-                          variant="body2"
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          <em>Amount: </em> <b>4.50/=</b>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs>
-                        <Typography
-                          gutterBottom
-                          variant="body2"
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          <em> Transaction cost: </em> <b>4.50/=</b>
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Paper>
-                  <Button
-                    variant="contained"
-                    style={{ backgroundColor: `${mainTheme}` }}
-                    onClick={notify}
-                    fullWidth
-                  >
-                    Send
-                  </Button>
-                </React.Fragment>
-              ) : (
-                <React.Fragment>
-                  <Paper
-                    sx={{
-                      p: 2,
-                      display: "flex",
-                      justifyContent: "center",
-                      gap: 2,
-                    }}
-                  >
-                    {getStepContent(activeStep)}
-                  </Paper>
-                  <DialogActions sx={{ px: 4 }}>
-                    {activeStep !== 0 && (
-                      <Button
-                        onClick={handleBack}
-                        variant="outlined"
-                        style={{
-                          color: `${mainTheme}`,
-                          borderColor: `${mainTheme}`,
+            <Formik
+              initialValues={{
+                number: "",
+                amount: "",
+                pin: "",
+              }}
+              onSubmit={async (values) => {
+                await new Promise((r) => setTimeout(r, 500));
+                alert(JSON.stringify(values, null, 2));
+                setOpen(false);
+                toast(
+                  `Mpesa confirmed,Ksh : ${values.amount} sent to ${
+                    values.number
+                  } on ${new Date()}`,
+                  {
+                    position: "top-right",
+                  }
+                );
+              }}
+            >
+              {({ values }) => (
+                <Form>
+                  {activeStep === steps.length ? (
+                    <React.Fragment>
+                      <Paper
+                        sx={{
+                          p: 4,
+                          mb: 2,
+                          textAlign: "center",
+                          justifyContent: "space-between",
+                          backgroundColor: "#fafafa",
                         }}
-                        fullWidth
                       >
-                        Back
+                        <Typography variant="h6" gutterBottom>
+                          Confirm
+                        </Typography>
+                        <Grid
+                          container
+                          direction="column"
+                          justifyContent="space-evenly"
+                          alignItems="stretch"
+                        >
+                          <Grid item xs>
+                            <Typography
+                              gutterBottom
+                              variant="body2"
+                              style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                              }}
+                            >
+                              <em> Number: </em> <b>{values.number}</b>
+                            </Typography>
+                          </Grid>
+                          <Grid item xs>
+                            <Typography
+                              gutterBottom
+                              variant="body2"
+                              style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                              }}
+                            >
+                              <em>Amount: </em> <b>{values.amount}/=</b>
+                            </Typography>
+                          </Grid>
+                          <Grid item xs>
+                            <Typography
+                              gutterBottom
+                              variant="body2"
+                              style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                              }}
+                            >
+                              <em> Transaction cost: </em> <b>4.50/=</b>
+                            </Typography>
+                          </Grid>
+                        </Grid>
+                      </Paper>
+                      <Button
+                        variant="contained"
+                        style={{ backgroundColor: `${mainTheme}` }}
+                        onClick={notify}
+                        fullWidth
+                        type="submit"
+                      >
+                        Send
                       </Button>
-                    )}
-                    <Button
-                      variant="contained"
-                      style={{ backgroundColor: `${mainTheme}` }}
-                      onClick={handleNext}
-                      fullWidth
-                    >
-                      {activeStep === steps.length - 1 ? "Confirm " : "Next"}
-                    </Button>
-                  </DialogActions>
-                </React.Fragment>
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                      <Paper
+                        sx={{
+                          p: 2,
+                          display: "flex",
+                          justifyContent: "center",
+                          gap: 2,
+                        }}
+                      >
+                        {getStepContent(activeStep)}
+                      </Paper>
+                      <DialogActions sx={{ px: 4 }}>
+                        {activeStep !== 0 && (
+                          <Button
+                            onClick={handleBack}
+                            variant="outlined"
+                            style={{
+                              color: `${mainTheme}`,
+                              borderColor: `${mainTheme}`,
+                            }}
+                            fullWidth
+                          >
+                            Back
+                          </Button>
+                        )}
+                        <Button
+                          variant="contained"
+                          style={{ backgroundColor: `${mainTheme}` }}
+                          onClick={handleNext}
+                          fullWidth
+                        >
+                          {activeStep === steps.length - 1
+                            ? "Confirm "
+                            : "Next"}
+                        </Button>
+                      </DialogActions>
+                    </React.Fragment>
+                  )}
+                </Form>
               )}
-            </React.Fragment>
+            </Formik>
           </DialogContent>
         </Dialog>
       )}
