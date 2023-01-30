@@ -8,6 +8,7 @@ import {
   Typography,
   CardContent,
   Avatar,
+  TextField
 } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -21,7 +22,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import toast from "react-hot-toast";
-import { TextField} from "formik-mui";
 // utils
 import { alpha, experimentalStyled as styled } from "@material-ui/core/styles";
 import SendIcon from "@material-ui/icons/Send";
@@ -276,7 +276,7 @@ function SiteItem({ site }) {
         return (
           <Field
             id="number"
-            fcomponent={TextField}
+            component={TextField}
             fullWidth
             size="small"
             name="number"
@@ -290,6 +290,7 @@ function SiteItem({ site }) {
           <Field
           component={TextField}
           fullWidth
+          id="amount"
           size="small"
           name="amount"
           placeHolder="1000"
