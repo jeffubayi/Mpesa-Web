@@ -88,8 +88,8 @@ export default function Register() {
           <div style={{ display: "grid", justifyContent: "center" }}>
             <img
               alt="register"
-              src="http://internationalbarcodes.com/wp-content/uploads/sites/95/2020/09/Int.com-Dynamic.jpg"
-              style={{ height: "25rem", width: "25rem" }}
+              src="https://i0.wp.com/tech-ish.com/wp-content/uploads/2020/03/MPESA-QR-CODES-Kenya.png?fit=1920%2C1080&ssl=1"
+              style={{ height: "20rem", width: "35rem" }}
             />
           </div>
         </SectionStyle>

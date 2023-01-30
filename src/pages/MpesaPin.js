@@ -91,7 +91,7 @@ export default function Register() {
       <Container maxWidth="sm">
         <ContentStyle>
           <Paper elevation={5} sx={{ p: 3 }}>
-            <Stack sx={{ mt: 2 }} alignItems="center">
+            <Stack sx={{ mt: 2,mb: 2 }} alignItems="center">
               <Box sx={{ mb: 2, mt: 3 }}>
                 <Typography
                   variant="h6"
