@@ -4,6 +4,7 @@ import Router from './routes';
 import ThemeConfig from './theme';
 // components
 import ScrollToTop from './components/ScrollToTop';
+import  { Toaster } from 'react-hot-toast';
 
 // ----------------------------------------------------------------------
 
@@ -12,6 +13,7 @@ export default function App() {
     <ThemeConfig>
       <ScrollToTop />
       <Router />
+      <Toaster />
     </ThemeConfig>
   );
 }
