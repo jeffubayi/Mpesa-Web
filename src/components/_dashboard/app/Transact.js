@@ -43,6 +43,8 @@ import PermContactCalendarIcon from "@material-ui/icons/PermContactCalendar";
 import MobileScreenShareIcon from "@material-ui/icons/MobileScreenShare";
 import LaunchIcon from "@material-ui/icons/Launch";
 import { Formik, Field, Form } from "formik";
+import {validationSchema,initialValues} from "../../../utils/validation"
+import {fDateTime} from "../../../utils/formatTime"
 // ----------------------------------------------------------------------
 
 const useStyles = makeStyles((theme) => ({
@@ -194,12 +196,36 @@ function SiteItem({ site }) {
     setOpen(false);
   };
 
-  const notify = () => {
-    setOpen(false);
-    toast("Mpesa confirmed, 100 sent to number", {
-      position: "top-right",
-    });
+  const onSubmit = async (values,{setSubmitting}) => {
+    await new Promise((r) => setTimeout(r, 500));
+                if (!isLastStep()) {
+                  setSubmitting(false);
+                  handleNext();
+                  return;
+                }
+                handleNext();
+                        
   };
+
+  const isLastStep = () => {
+		return activeStep === steps.length - 1;
+	};
+
+  const save = (values) => {
+    console.log(`values`,values)
+    setOpen(false);
+    toast(
+      `Mpesa confirmed,Ksh : ${values.amount} sent to ${
+        values.number
+      } on ${fDateTime}`,
+      {
+        position: "top-right",
+      }
+    );
+	};
+
+
+ 
 
   function getStepContent(step) {
     switch (step) {
@@ -275,41 +301,38 @@ function SiteItem({ site }) {
       case 1:
         return (
           <Field
-            id="number"
-            component={TextField}
+            // component={TextField}
             fullWidth
             size="small"
             name="number"
-            placeHolder="0728323203"
             label="Enter Phone number"
+            required
             type="number"
           />
         );
       case 2:
         return (
           <Field
-          component={TextField}
+          // component={TextField}
           fullWidth
-          id="amount"
           size="small"
           name="amount"
-          placeHolder="1000"
           label="Enter Amount"
+          required
           type="number"
           />
         );
       case 3:
         return (
           <Field
-            id="pin"
+          // component={TextField}
             fullWidth
             name="pin"
-            component={TextField}
             size="small"
-            placeHolder="****"
             label="Enter Pin"
-            type="number"
             password
+            type="number"
+            required
           />
         );
       default:
@@ -382,26 +405,11 @@ function SiteItem({ site }) {
               ))}
             </Stepper>
             <Formik
-              initialValues={{
-                number: "",
-                amount: "",
-                pin: "",
-              }}
-              onSubmit={async (values) => {
-                await new Promise((r) => setTimeout(r, 500));
-                alert(JSON.stringify(values, null, 2));
-                setOpen(false);
-                toast(
-                  `Mpesa confirmed,Ksh : ${values.amount} sent to ${
-                    values.number
-                  } on ${new Date()}`,
-                  {
-                    position: "top-right",
-                  }
-                );
-              }}
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+              onSubmit={onSubmit}
             >
-              {({ values }) => (
+              {({ values,isSubmitting }) => (
                 <Form>
                   {activeStep === steps.length ? (
                     <React.Fragment>
@@ -464,9 +472,8 @@ function SiteItem({ site }) {
                       <Button
                         variant="contained"
                         style={{ backgroundColor: `${mainTheme}` }}
-                        onClick={notify}
+                        onClick={save(values)}
                         fullWidth
-                        type="submit"
                       >
                         Send
                       </Button>
@@ -500,12 +507,11 @@ function SiteItem({ site }) {
                         <Button
                           variant="contained"
                           style={{ backgroundColor: `${mainTheme}` }}
-                          onClick={handleNext}
+                          disabled={isSubmitting}
+                          type="submit"
                           fullWidth
                         >
-                          {activeStep === steps.length - 1
-                            ? "Confirm "
-                            : "Next"}
+                          {isLastStep() ? 'Confirm' : 'Next'}
                         </Button>
                       </DialogActions>
                     </React.Fragment>
