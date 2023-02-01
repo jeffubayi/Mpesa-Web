@@ -8,7 +8,6 @@ import {
   Typography,
   CardContent,
   Avatar,
-  TextField
 } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -44,7 +43,6 @@ import MobileScreenShareIcon from "@material-ui/icons/MobileScreenShare";
 import LaunchIcon from "@material-ui/icons/Launch";
 import { Formik, Field, Form } from "formik";
 import {validationSchema,initialValues} from "../../../utils/validation"
-import {fDateTime} from "../../../utils/formatTime"
 // ----------------------------------------------------------------------
 
 const useStyles = makeStyles((theme) => ({
@@ -203,7 +201,6 @@ function SiteItem({ site }) {
                   handleNext();
                   return;
                 }
-                handleNext();
                         
   };
 
@@ -217,7 +214,7 @@ function SiteItem({ site }) {
     toast(
       `Mpesa confirmed,Ksh : ${values.amount} sent to ${
         values.number
-      } on ${fDateTime}`,
+      } on ${new Date().toLocaleString()}`,
       {
         position: "top-right",
       }
@@ -313,7 +310,6 @@ function SiteItem({ site }) {
       case 2:
         return (
           <Field
-          // component={TextField}
           fullWidth
           size="small"
           name="amount"
