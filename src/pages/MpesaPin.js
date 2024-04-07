@@ -116,6 +116,9 @@ export default function Register() {
                 regexCriteria={/^[ A-Za-z0-9_@./#&+-]*$/}
               />
             </Stack>
+            <Typography variant="caption" sx={{ textAlign: "center" }}>
+              For demo purposes kindly type 1234 as your mpesa pin
+            </Typography>
             <Button
                 variant="contained"
                 color="primary"
