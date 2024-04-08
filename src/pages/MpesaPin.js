@@ -170,7 +170,7 @@ export default function Register() {
             )}
 
             <Typography variant="subtitle2" sx={{ textAlign: "center" }}>
-              For demo purposes kindly type 1234 as your mpesa pin
+              For demo purposes, kindly type 1234 as your mpesa pin.
             </Typography>
             <Typography variant="subtitle2" sx={{ textAlign: "center" }}>
               Keep me logged in
